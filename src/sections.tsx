@@ -1,6 +1,13 @@
 import { marked } from "marked";
 import type { JSX } from "solid-js";
-import { createEffect, createMemo, createSignal, For, Show } from "solid-js";
+import {
+	createEffect,
+	createMemo,
+	createSignal,
+	For,
+	onCleanup,
+	Show,
+} from "solid-js";
 import { Badge } from "./components/Badge";
 import { ComponentDemo } from "./components/ComponentDemo";
 import { Tag } from "./components/Tag";
@@ -87,15 +94,31 @@ function enhanceMarkdown(el: HTMLDivElement) {
 function MarkdownDoc(props: { source: string }) {
 	let el: HTMLDivElement | undefined;
 
-	createEffect(() => {
-		const str = marked.parse(props.source) as string;
-		if (el) {
+	const renderMarkdown = () => {
+		if (!el) return;
+		try {
+			const str = marked.parse(props.source) as string;
 			el.innerHTML = str;
 			queueMicrotask(() => enhanceMarkdown(el as HTMLDivElement));
+		} catch (err) {
+			el.innerHTML = `<p class="rt-markdown__error">Failed to render docs: ${err}</p>`;
 		}
+	};
+
+	createEffect(renderMarkdown);
+	onCleanup(() => {
+		el = undefined;
 	});
 
-	return <div ref={el} class="rt-markdown" />;
+	return (
+		<div
+			ref={(node) => {
+				el = node;
+				renderMarkdown();
+			}}
+			class="rt-markdown"
+		/>
+	);
 }
 
 function TableOfContents(props: { source: string }) {
