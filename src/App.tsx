@@ -1,4 +1,3 @@
-import { createRootRoute } from "@tanstack/solid-router";
 import { createEffect, createSignal, For, onMount } from "solid-js";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
@@ -11,13 +10,9 @@ import { newSections, type Section } from "./sections";
 import "./theme.css";
 import "./app.css";
 
-export const rootRoute = createRootRoute({
-	component: App,
-});
-
 const defaultId = newSections[0]?.id ?? "root-package-json";
 
-function App() {
+export function App() {
 	const [active, setActive] = createSignal(defaultId);
 	const [search, setSearch] = createSignal("");
 	const [navOpen, setNavOpen] = createSignal(false);

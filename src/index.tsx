@@ -1,10 +1,6 @@
-import { createRouter, RouterProvider } from "@tanstack/solid-router";
 import { render } from "solid-js/web";
-import { rootRoute } from "./App";
-
-const routeTree = rootRoute;
-const router = createRouter({ routeTree });
+import { App } from "./App";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("root element not found");
-render(() => <RouterProvider router={router} />, root);
+render(() => <App />, root);

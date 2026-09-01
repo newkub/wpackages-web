@@ -12,12 +12,9 @@
 	},
 	"dependencies": {
 		"@cloudflare/kv-asset-handler": "^0.3.4",
-		"@tanstack/solid-query": "^5.102.8",
-		"@tanstack/solid-router": "^1.170.30",
 		"solid-js": "^1.9.15"
 	},
 	"devDependencies": {
-		"@tanstack/router-plugin": "^1.168.35",
 		"typescript": "^5.9.3",
 		"vite": "^6.4.3",
 		"vite-plugin-solid": "^2.11.14",
