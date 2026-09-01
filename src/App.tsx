@@ -1,9 +1,17 @@
-import { createEffect, createSignal, For, onMount } from "solid-js";
+import {
+	createEffect,
+	createSignal,
+	For,
+	onCleanup,
+	onMount,
+	Show,
+} from "solid-js";
+import { EmptyState } from "./components/EmptyState";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { LoadingState } from "./components/LoadingState";
 import { SearchInput } from "./components/SearchInput";
 import { StatusBar } from "./components/StatusBar";
-import { Text } from "./components/Text";
 import { sectionMeta } from "./section-meta";
 import { newSections, type Section } from "./sections";
 
@@ -16,6 +24,7 @@ export function App() {
 	const [active, setActive] = createSignal(defaultId);
 	const [search, setSearch] = createSignal("");
 	const [navOpen, setNavOpen] = createSignal(false);
+	const [isReady, setIsReady] = createSignal(false);
 
 	onMount(() => {
 		const resolveId = (raw: string): string => {
@@ -28,14 +37,24 @@ export function App() {
 
 		const id = resolveId(window.location.pathname);
 		setActive(id);
+		setIsReady(true);
 
 		const onPopState = () => {
 			const newId = resolveId(window.location.pathname);
 			setActive(newId);
 		};
 
+		const onKeyDown = (e: KeyboardEvent) => {
+			if (e.key === "Escape") setNavOpen(false);
+		};
+
 		window.addEventListener("popstate", onPopState);
-		return () => window.removeEventListener("popstate", onPopState);
+		window.addEventListener("keydown", onKeyDown);
+
+		onCleanup(() => {
+			window.removeEventListener("popstate", onPopState);
+			window.removeEventListener("keydown", onKeyDown);
+		});
 	});
 
 	createEffect(() => {
@@ -81,17 +100,18 @@ export function App() {
 
 	const activeLabel = () => activeSection()?.label ?? active();
 
+	const selectSection = (id: string) => {
+		setActive(id);
+		setNavOpen(false);
+	};
+
 	return (
 		<div class="rt-app">
 			<Header
 				title="wpackages"
 				subtitle="Explore every workspace in the rust-packages monorepo"
 			/>
-			<StatusBar
-				left="v0.2.0"
-				center="Solid + TanStack Router"
-				right={activeLabel()}
-			/>
+			<StatusBar left="v0.2.0" center="SolidJS" right={activeLabel()} />
 			<button
 				class="rt-nav-toggle"
 				classList={{ "rt-nav-toggle--open": navOpen() }}
@@ -115,45 +135,74 @@ export function App() {
 						onChange={setSearch}
 						placeholder="Filter workspaces..."
 					/>
-					<ul class="rt-nav-list">
-						<For each={groupedSections()}>
-							{([category, items]) => (
-								<li class="rt-nav-group">
-									<div class="rt-nav-group__title">{category}</div>
-									<ul class="rt-nav-group__list">
-										<For each={items}>
-											{(section) => (
-												<li>
-													<a
-														href={`/${section.id}`}
-														class="rt-nav-link"
-														classList={{
-															"rt-nav-link--active": active() === section.id,
-														}}
-														onClick={(e) => {
-															e.preventDefault();
-															setActive(section.id);
-														}}
-													>
-														{section.label}
-													</a>
-												</li>
-											)}
-										</For>
-									</ul>
-								</li>
-							)}
-						</For>
-					</ul>
+					<Show
+						when={groupedSections().length > 0}
+						fallback={
+							<div class="rt-nav-empty">
+								<EmptyState
+									icon="🔎"
+									title="No matches"
+									message="Try a different search term."
+								/>
+							</div>
+						}
+					>
+						<ul class="rt-nav-list">
+							<For each={groupedSections()}>
+								{([category, items]) => (
+									<li class="rt-nav-group">
+										<div class="rt-nav-group__title">
+											{category}
+											<span class="rt-nav-group__count">{items.length}</span>
+										</div>
+										<ul class="rt-nav-group__list">
+											<For each={items}>
+												{(section) => {
+													const isActive = () => active() === section.id;
+													return (
+														<li>
+															<a
+																href={`/${section.id}`}
+																class="rt-nav-link"
+																classList={{
+																	"rt-nav-link--active": isActive(),
+																}}
+																aria-current={isActive() ? "page" : undefined}
+																onClick={(e) => {
+																	e.preventDefault();
+																	selectSection(section.id);
+																}}
+															>
+																{section.label}
+															</a>
+														</li>
+													);
+												}}
+											</For>
+										</ul>
+									</li>
+								)}
+							</For>
+						</ul>
+					</Show>
 				</nav>
 				<main class="rt-main" onClick={() => setNavOpen(false)}>
-					{activeSection() ? (
-						activeSection()?.render()
-					) : (
-						<div class="rt-component-demo">
-							<Text variant="dim">Select a workspace from the sidebar.</Text>
-						</div>
-					)}
+					<Show
+						when={isReady()}
+						fallback={<LoadingState message="Loading workspaces..." />}
+					>
+						{activeSection() ? (
+							activeSection()?.render()
+						) : (
+							<div class="rt-component-demo rt-component-demo--flat">
+								<EmptyState
+									icon="📁"
+									title="Select a workspace"
+									message="Choose a workspace from the sidebar to view details."
+								/>
+							</div>
+						)}
+					</Show>
 				</main>
 			</div>
 			{navOpen() && (
@@ -169,7 +218,7 @@ export function App() {
 				items={[
 					["Enter", "select"],
 					["Tab", "next"],
-					["Esc", "quit"],
+					["Esc", "close"],
 				]}
 			/>
 		</div>
