@@ -1,5 +1,9 @@
 # wrikka-foundation-effect-core
 
+## Overview
+
+Core effect system - pure types, cancellation, composition
+
 ## Metadata
 
 | Field | Value |
@@ -10,9 +14,57 @@
 | Version | `0.1.0` |
 | Edition | `2021` |
 
-## Description
+## Directory Structure
 
-Core effect system - pure types, cancellation, composition
+- 📄 `Cargo.toml`
+- 📁 `src`
+- 📁 `src/application`
+- 📁 `src/domain`
+- 📄 `src/lib.rs`
+- 📁 `src/shared`
+
+## Source Files
+
+- `src/application/mod.rs`
+- `src/application/use_cases/batch.rs`
+- `src/application/use_cases/cache.rs`
+- `src/application/use_cases/composition.rs`
+- `src/application/use_cases/configuration.rs`
+- `src/application/use_cases/execution.rs`
+- `src/application/use_cases/manage.rs`
+- `src/application/use_cases/mod.rs`
+- `src/application/use_cases/monitor.rs`
+- `src/application/use_cases/retry.rs`
+- `src/domain/errors/error_classifications.rs`
+- `src/domain/errors/error_context.rs`
+- `src/domain/errors/error_metrics.rs`
+- `src/domain/errors/error_types.rs`
+- `src/domain/errors/mod.rs`
+- `src/domain/mod.rs`
+- `src/domain/modules/batch/mod.rs`
+- `src/domain/modules/batch/models.rs`
+- `src/domain/modules/batch/operations.rs`
+- `src/domain/modules/batch/validators/batch_validators.rs`
+- `src/domain/modules/batch/validators/dependency_validators.rs`
+- `src/domain/modules/batch/validators/execution_validators.rs`
+- `src/domain/modules/batch/validators/mod.rs`
+- `src/domain/modules/batch/validators/parallel_validators.rs`
+- `src/domain/modules/batch/validators/resource_validators.rs`
+- `src/domain/modules/batch/validators/strategy_validators.rs`
+- `src/domain/modules/batch.rs`
+- `src/domain/modules/composition/mod.rs`
+- `src/domain/modules/composition/models.rs`
+- `src/domain/modules/composition/operations.rs`
+- `src/domain/modules/composition/validators.rs`
+- `src/domain/modules/composition.rs`
+- `src/domain/modules/effect/mod.rs`
+- `src/domain/modules/effect/models.rs`
+- `src/domain/modules/effect/operations.rs`
+- `src/domain/modules/effect/validators.rs`
+- `src/domain/modules/effect.rs`
+- `src/domain/modules/execution/mod.rs`
+- `src/domain/modules/execution/models/error_handling.rs`
+- `src/domain/modules/execution/models/execution_context.rs`
 
 ## Quick Start
 
@@ -34,26 +86,23 @@ cargo test -p wrikka-foundation-effect-core
 cargo run -p wrikka-foundation-effect-core
 ```
 
-## Dependencies
+### Lint
 
-| Name | Version |
+```bash
+cargo clippy -p wrikka-foundation-effect-core
+```
+
+### Documentation
+
+```bash
+cargo doc -p wrikka-foundation-effect-core --no-deps
+```
+
+## Environment
+
+| Field | Value |
 | --- | --- |
-| tokio | `workspace` |
-| async-trait | `workspace` |
-| thiserror | `workspace` |
-| serde | `workspace` |
-| serde_json | `workspace` |
-| uuid | `workspace` |
-| chrono | `workspace` |
-| futures | `0.3.34` |
-| pin-project | `1.1.13` |
-| dashmap | `workspace` |
-| parking_lot | `workspace` |
-| lru | `0.18.3` |
-| once_cell | `1.21.4` |
-| anymap | `0.12.1` |
-| rand | `0.10.2` |
-| tracing | `workspace` |
+| Edition | `2021` |
 
 ## README
 

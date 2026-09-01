@@ -1,5 +1,9 @@
 # @wrikka/wwhiteboard-web
 
+## Overview
+
+@wrikka/wwhiteboard-web npm workspace at apps/wasm/canvas/web/package.json
+
 ## Metadata
 
 | Field | Value |
@@ -9,9 +13,57 @@
 | Path | `apps/wasm/canvas/web/package.json` |
 | Version | `0.1.0` |
 
-## Description
+## Directory Structure
 
-@wrikka/wwhiteboard-web npm workspace at apps/wasm/canvas/web/package.json
+- 📄 `biome.jsonc`
+- 📄 `bun.lock`
+- 📄 `index.html`
+- 📄 `moon.yml`
+- 📄 `package.json`
+- 📁 `src`
+- 📄 `src/App.tsx`
+- 📁 `src/application`
+- 📁 `src/components`
+- 📁 `src/domain`
+- 📁 `src/hooks`
+- 📄 `src/index.tsx`
+- 📁 `src/shared`
+- 📁 `src/styles`
+- 📄 `tsconfig.json`
+- 📄 `tsconfig.tsbuildinfo`
+- 📄 `uno.config.ts`
+- 📄 `vite.config.ts`
+
+## Source Files
+
+- `src/App.tsx`
+- `src/application/hooks/useCanvas.ts`
+- `src/application/hooks/useCanvasSelection.ts`
+- `src/application/hooks/useCanvasState.ts`
+- `src/application/hooks/useCanvasTools.ts`
+- `src/application/hooks/useCanvasViewport.ts`
+- `src/application/hooks/useWasmLoader.ts`
+- `src/components/Canvas.tsx`
+- `src/components/CommandPalette.tsx`
+- `src/components/DemoMode.tsx`
+- `src/components/index.ts`
+- `src/components/LayersPanel.tsx`
+- `src/components/PropertiesPanel.tsx`
+- `src/components/Toolbar.tsx`
+- `src/components/TutorialOverlay.tsx`
+- `src/domain/command-palette/palette-items.ts`
+- `src/domain/demo/demo-data.ts`
+- `src/domain/index.ts`
+- `src/domain/layers/layer-data.ts`
+- `src/domain/tutorial/tutorial-steps.ts`
+- `src/hooks/index.ts`
+- `src/hooks/useCanvas.ts`
+- `src/index.tsx`
+- `src/shared/constants/canvas.ts`
+- `src/shared/constants/index.ts`
+- `src/shared/constants/tools.ts`
+- `src/shared/types/canvas.ts`
+- `src/shared/types/index.ts`
 
 ## Quick Start
 
@@ -37,6 +89,18 @@ bun run dev
 
 ```bash
 bun run test
+```
+
+### Lint
+
+```bash
+bun run lint
+```
+
+### Preview
+
+```bash
+bun run preview
 ```
 
 ## Scripts

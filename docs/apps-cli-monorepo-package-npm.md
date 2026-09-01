@@ -1,5 +1,9 @@
 # @wrikka/rust-wmonorepo
 
+## Overview
+
+Monorepo management tool with Clean Architecture
+
 ## Metadata
 
 | Field | Value |
@@ -11,9 +15,76 @@
 | License | `MIT` |
 | Repository | <https://github.com/wrikka/wpackages> |
 
-## Description
+## Directory Structure
 
-Monorepo management tool with Clean Architecture
+- 📄 `Cargo.lock`
+- 📄 `Cargo.toml`
+- 📄 `clippy3.txt`
+- 📁 `docs`
+- 📄 `docs/architecture-diagram.md`
+- 📄 `docs/cli.md`
+- 📄 `docs/comparison.md`
+- 📄 `docs/features.md`
+- 📁 `examples`
+- 📄 `examples/rust-project.toml`
+- 📄 `examples/typescript-project.toml`
+- 📄 `examples/workspace.toml`
+- 📄 `moon.yml`
+- 📄 `package.json`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📁 `src/application`
+- 📁 `src/domain`
+- 📄 `src/lib.rs`
+- 📄 `src/main.rs`
+- 📁 `src/modules`
+- 📁 `src/presentation`
+- 📁 `src/shared`
+- 📄 `TODO.md`
+
+## Source Files
+
+- `src/adapters/cache_store/memory_store.rs`
+- `src/adapters/cache_store/mod.rs`
+- `src/adapters/config/mod.rs`
+- `src/adapters/db/mod.rs`
+- `src/adapters/db/workspace/file_workspace_repo.rs`
+- `src/adapters/db/workspace/in_memory_workspace_repo.rs`
+- `src/adapters/db/workspace/mod.rs`
+- `src/adapters/db/workspace/tests.rs`
+- `src/adapters/db/workspace_repo.rs`
+- `src/adapters/events/mod.rs`
+- `src/adapters/events/noop_publisher.rs`
+- `src/adapters/external/mod.rs`
+- `src/adapters/filesystem/local_filesystem.rs`
+- `src/adapters/filesystem/mod.rs`
+- `src/adapters/filesystem/project_detector.rs`
+- `src/adapters/http/mod.rs`
+- `src/adapters/infrastructure/caching/distributed/repositories.rs`
+- `src/adapters/infrastructure/caching/distributed.rs`
+- `src/adapters/infrastructure/caching/local.rs`
+- `src/adapters/infrastructure/caching/mod.rs`
+- `src/adapters/infrastructure/caching/repositories/local.rs`
+- `src/adapters/infrastructure/caching/repositories/mod.rs`
+- `src/adapters/infrastructure/caching/repositories/s3.rs`
+- `src/adapters/infrastructure/caching/repositories/warming.rs`
+- `src/adapters/infrastructure/config/ci_templates.rs`
+- `src/adapters/infrastructure/config/ci_types.rs`
+- `src/adapters/infrastructure/config/mod.rs`
+- `src/adapters/infrastructure/config/schema.rs`
+- `src/adapters/infrastructure/config/templates.rs`
+- `src/adapters/infrastructure/execution/local/executor.rs`
+- `src/adapters/infrastructure/execution/local/mod.rs`
+- `src/adapters/infrastructure/execution/local/script.rs`
+- `src/adapters/infrastructure/execution/local/types.rs`
+- `src/adapters/infrastructure/execution/manager.rs`
+- `src/adapters/infrastructure/execution/mod.rs`
+- `src/adapters/infrastructure/execution/process.rs`
+- `src/adapters/infrastructure/execution/remote.rs`
+- `src/adapters/infrastructure/external/git/mod.rs`
+- `src/adapters/infrastructure/external/git/service.rs`
+- `src/adapters/infrastructure/external/git/tests.rs`
 
 ## Quick Start
 
@@ -39,6 +110,12 @@ bun run dev
 
 ```bash
 bun run test
+```
+
+### Lint
+
+```bash
+bun run lint
 ```
 
 ## Scripts
@@ -192,3 +269,8 @@ async fn main() -> anyhow::Result<()> {
 | `clean` | Clean projects | `projects`, `cache` | all projects |
 | `status` | Show workspace status | `detailed` | — |
 | `list` | List all projects | `detailed` | — |
+
+## Links
+
+- Repository: <https://github.com/wrikka/wpackages>
+- Source: <https://github.com/wrikka/wpackages/blob/main/apps/cli/monorepo/package.json>

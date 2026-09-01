@@ -1,5 +1,9 @@
 # wrikka-editor-tui
 
+## Overview
+
+Modal TUI text editor with clean architecture
+
 ## Metadata
 
 | Field | Value |
@@ -9,15 +13,89 @@
 | Path | `apps/tui/editor-tui/Cargo.toml` |
 | Version | `0.1.0` |
 | Edition | `2021` |
+| Rust Version | `>= 1.70` |
 | License | `MIT` |
 | Repository | <https://github.com/wrikka/wpackages> |
 | Homepage | <https://github.com/wrikka/wpackages> |
 | Authors | Wrikka Team |
 | Keywords | tui, terminal, editor, vim, modal |
 
-## Description
+## Directory Structure
 
-Modal TUI text editor with clean architecture
+- 📄 `AGENTS.md`
+- 📄 `Cargo.lock`
+- 📄 `Cargo.toml`
+- 📁 `docs`
+- 📄 `docs/architecture-diagram.md`
+- 📄 `docs/cli.md`
+- 📄 `docs/comparison.md`
+- 📄 `docs/features.md`
+- 📄 `docs/uxui-design.md`
+- 📄 `FEATURES_PLAN.md`
+- 📄 `moon.yml`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📄 `src/lib.rs`
+- 📄 `src/main.rs`
+- 📁 `src/modules`
+- 📁 `src/presentation`
+- 📁 `src/shared`
+- 📄 `summary.md`
+- 📁 `tests`
+- 📁 `tests/common`
+- 📁 `tests/fixtures`
+- 📁 `tests/helpers`
+- 📄 `tests/integration_smoke.rs`
+- 📁 `tests/modules`
+- 📄 `TODO.md`
+
+## Source Files
+
+- `src/adapters/config/config_adapter.rs`
+- `src/adapters/config/mod.rs`
+- `src/adapters/db/memory_db.rs`
+- `src/adapters/db/mod.rs`
+- `src/adapters/external/git_adapter.rs`
+- `src/adapters/external/lsp_adapter.rs`
+- `src/adapters/external/mod.rs`
+- `src/adapters/filesystem/directory.rs`
+- `src/adapters/filesystem/filesystem_adapter.rs`
+- `src/adapters/filesystem/file_operations.rs`
+- `src/adapters/filesystem/metadata.rs`
+- `src/adapters/filesystem/mod.rs`
+- `src/adapters/file_adapter/adapter.rs`
+- `src/adapters/file_adapter/mod.rs`
+- `src/adapters/file_adapter/tests.rs`
+- `src/adapters/file_adapter/types.rs`
+- `src/adapters/http/http_client.rs`
+- `src/adapters/http/mod.rs`
+- `src/adapters/mod.rs`
+- `src/lib.rs`
+- `src/main.rs`
+- `src/modules/config/application/mod.rs`
+- `src/modules/config/application/usecases/config_usecase.rs`
+- `src/modules/config/application/usecases/mod.rs`
+- `src/modules/config/domain/events/config_events.rs`
+- `src/modules/config/domain/events/mod.rs`
+- `src/modules/config/domain/mod.rs`
+- `src/modules/config/domain/models/config.rs`
+- `src/modules/config/domain/models/mod.rs`
+- `src/modules/config/domain/operations/config_ops.rs`
+- `src/modules/config/domain/operations/mod.rs`
+- `src/modules/config/domain/validators/config_validation.rs`
+- `src/modules/config/domain/validators/mod.rs`
+- `src/modules/config/mod.rs`
+- `src/modules/config/ports/config_repository.rs`
+- `src/modules/config/ports/mod.rs`
+- `src/modules/config/types/mod.rs`
+- `src/modules/editor/application/mod.rs`
+- `src/modules/editor/application/usecases/clipboard_operations.rs`
+- `src/modules/editor/application/usecases/command_handler.rs`
+
+## Binaries
+
+- `wrikka-editor-tui`
 
 ## Quick Start
 
@@ -39,12 +117,24 @@ cargo test -p wrikka-editor-tui
 cargo run -p wrikka-editor-tui
 ```
 
-## Dev Dependencies
+### Lint
 
-| Name | Version |
+```bash
+cargo clippy -p wrikka-editor-tui
+```
+
+### Documentation
+
+```bash
+cargo doc -p wrikka-editor-tui --no-deps
+```
+
+## Environment
+
+| Field | Value |
 | --- | --- |
-| tokio-test | `0.4.5` |
-| tempfile | `3.10.1` |
+| Edition | `2021` |
+| Rust Version | `>= 1.70` |
 
 ## README
 
@@ -291,3 +381,9 @@ enabled = ["my-plugin"]
 ## License
 
 MIT License - see [LICENSE](../../LICENSE) for details.
+
+## Links
+
+- Repository: <https://github.com/wrikka/wpackages>
+- Homepage: <https://github.com/wrikka/wpackages>
+- Source: <https://github.com/wrikka/wpackages/blob/main/apps/tui/editor-tui/Cargo.toml>

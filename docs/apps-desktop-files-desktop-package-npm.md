@@ -1,5 +1,9 @@
 # @wrikka/files-desktop
 
+## Overview
+
+Wrikka Desktop Explorer — custom-column, agent-driven file explorer
+
 ## Metadata
 
 | Field | Value |
@@ -10,9 +14,81 @@
 | Version | `0.1.0` |
 | License | `MIT` |
 
-## Description
+## Directory Structure
 
-Wrikka Desktop Explorer — custom-column, agent-driven file explorer
+- 📄 `index.html`
+- 📄 `moon.yml`
+- 📄 `package.json`
+- 📁 `public`
+- 📄 `public/tauri.svg`
+- 📄 `public/vite.svg`
+- 📄 `README.md`
+- 📁 `src`
+- 📄 `src/App.css`
+- 📄 `src/App.tsx`
+- 📁 `src/assets`
+- 📁 `src/components`
+- 📄 `src/index.tsx`
+- 📁 `src/stores`
+- 📄 `src/style.css`
+- 📄 `src/types.ts`
+- 📄 `src/uno.d.ts`
+- 📁 `src/utils`
+- 📄 `src/utils.ts`
+- 📄 `src/vite-env.d.ts`
+- 📁 `src-tauri`
+- 📄 `src-tauri/build.rs`
+- 📁 `src-tauri/capabilities`
+- 📄 `src-tauri/Cargo.toml`
+- 📁 `src-tauri/gen`
+- 📁 `src-tauri/icons`
+- 📁 `src-tauri/src`
+- 📄 `src-tauri/tauri.conf.json`
+- 📄 `tsconfig.json`
+- 📄 `tsconfig.node.json`
+
+## Source Files
+
+- `src/App.tsx`
+- `src/components/ActionBar.tsx`
+- `src/components/ColumnEditor.tsx`
+- `src/components/ContextMenu.tsx`
+- `src/components/ErrorToast.tsx`
+- `src/components/FileTable.tsx`
+- `src/components/FileTableHeader.tsx`
+- `src/components/FileTableRow.tsx`
+- `src/components/GitHubPanel.tsx`
+- `src/components/GitHubRepoView.tsx`
+- `src/components/HomeView.tsx`
+- `src/components/PinButton.tsx`
+- `src/components/PreviewPane.tsx`
+- `src/components/Settings.tsx`
+- `src/components/Sidebar.tsx`
+- `src/components/SidebarCloud.tsx`
+- `src/components/SidebarDrives.tsx`
+- `src/components/SidebarFilters.tsx`
+- `src/components/StatusBar.tsx`
+- `src/components/TabBar.tsx`
+- `src/components/Toolbar.tsx`
+- `src/index.tsx`
+- `src/stores/ai.ts`
+- `src/stores/context-menu.ts`
+- `src/stores/explorer/columns.ts`
+- `src/stores/explorer/file-ops.ts`
+- `src/stores/explorer/index.ts`
+- `src/stores/explorer/navigation.ts`
+- `src/stores/explorer/preview.ts`
+- `src/stores/explorer/search.ts`
+- `src/stores/explorer/selection.ts`
+- `src/stores/explorer/store.ts`
+- `src/stores/github.ts`
+- `src/stores/settings.ts`
+- `src/stores/sidebar.ts`
+- `src/stores/tabs.ts`
+- `src/stores/theme.ts`
+- `src/types.ts`
+- `src/uno.d.ts`
+- `src/utils/cloud.ts`
 
 ## Quick Start
 
@@ -32,6 +108,12 @@ bun run build
 
 ```bash
 bun run dev
+```
+
+### Lint
+
+```bash
+bun run lint
 ```
 
 ## Scripts

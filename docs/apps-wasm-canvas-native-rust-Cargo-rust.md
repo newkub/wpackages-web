@@ -1,5 +1,9 @@
 # wcanvas-native-rust
 
+## Overview
+
+Native Rust implementation for wcanvas with storage, AI, and canvas core features
+
 ## Metadata
 
 | Field | Value |
@@ -9,15 +13,67 @@
 | Path | `apps/wasm/canvas/native-rust/Cargo.toml` |
 | Version | `0.1.0` |
 | Edition | `2021` |
+| Rust Version | `>= 1.80` |
 | License | `MIT` |
 | Repository | <https://github.com/wrikka/wpackages> |
 | Homepage | <https://github.com/wrikka/wpackages> |
 | Authors | Wrikka Team |
 | Keywords | canvas, storage, ai, native, graphics |
 
-## Description
+## Directory Structure
 
-Native Rust implementation for wcanvas with storage, AI, and canvas core features
+- 📄 `Cargo.toml`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📄 `src/lib.rs`
+- 📁 `src/modules`
+- 📁 `src/presentation`
+- 📁 `src/shared`
+- 📄 `TODO.md`
+
+## Source Files
+
+- `src/adapters/config/config_loader.rs`
+- `src/adapters/config/config_manager.rs`
+- `src/adapters/config/config_structs.rs`
+- `src/adapters/config/mod.rs`
+- `src/adapters/db/connection.rs`
+- `src/adapters/db/migrations.rs`
+- `src/adapters/db/mod.rs`
+- `src/adapters/db/repositories/canvas_repository.rs`
+- `src/adapters/db/repositories/layer_repository.rs`
+- `src/adapters/db/repositories/shape_repository.rs`
+- `src/adapters/db/repositories.rs`
+- `src/adapters/external/ai/adapter.rs`
+- `src/adapters/external/ai/mod.rs`
+- `src/adapters/external/ai/tests.rs`
+- `src/adapters/external/ai/types.rs`
+- `src/adapters/external/mod.rs`
+- `src/adapters/external/storage.rs`
+- `src/adapters/http/api_client.rs`
+- `src/adapters/http/canvas_controller.rs`
+- `src/adapters/http/mod.rs`
+- `src/adapters/mod.rs`
+- `src/adapters/plugins/hot_reload/manager.rs`
+- `src/adapters/plugins/hot_reload/mod.rs`
+- `src/adapters/plugins/hot_reload/tests.rs`
+- `src/adapters/plugins/hot_reload/types.rs`
+- `src/adapters/plugins/mod.rs`
+- `src/adapters/websocket/collaboration_server/mod.rs`
+- `src/adapters/websocket/collaboration_server/server.rs`
+- `src/adapters/websocket/collaboration_server/tests.rs`
+- `src/adapters/websocket/collaboration_server/types.rs`
+- `src/adapters/websocket/config.rs`
+- `src/adapters/websocket/connected_client.rs`
+- `src/adapters/websocket/event_broadcaster.rs`
+- `src/adapters/websocket/heartbeat_monitor.rs`
+- `src/adapters/websocket/mod.rs`
+- `src/adapters/websocket/server.rs`
+- `src/adapters/websocket/server_message.rs`
+- `src/adapters/websocket/websocket_config.rs`
+- `src/lib.rs`
+- `src/modules/ai/application/mod.rs`
 
 ## Quick Start
 
@@ -39,21 +95,24 @@ cargo test -p wcanvas-native-rust
 cargo run -p wcanvas-native-rust
 ```
 
-## Dependencies
+### Lint
 
-| Name | Version |
+```bash
+cargo clippy -p wcanvas-native-rust
+```
+
+### Documentation
+
+```bash
+cargo doc -p wcanvas-native-rust --no-deps
+```
+
+## Environment
+
+| Field | Value |
 | --- | --- |
-| serde | `workspace` |
-| serde_json | `workspace` |
-| thiserror | `workspace` |
-| tracing | `workspace` |
-| tokio | `workspace` |
-
-## Dev Dependencies
-
-| Name | Version |
-| --- | --- |
-| tokio-test | `0.4.5` |
+| Edition | `2021` |
+| Rust Version | `>= 1.80` |
 
 ## README
 
@@ -264,3 +323,9 @@ Each feature module follows vertical slice architecture:
 ## License
 
 MIT License - see LICENSE.md for details
+
+## Links
+
+- Repository: <https://github.com/wrikka/wpackages>
+- Homepage: <https://github.com/wrikka/wpackages>
+- Source: <https://github.com/wrikka/wpackages/blob/main/apps/wasm/canvas/native-rust/Cargo.toml>

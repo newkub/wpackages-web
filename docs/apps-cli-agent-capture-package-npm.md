@@ -1,5 +1,9 @@
 # @wrikka/agent-capture
 
+## Overview
+
+Multi-platform agent capture CLI for browser, terminal, code snippets, and component previews
+
 ## Metadata
 
 | Field | Value |
@@ -9,10 +13,77 @@
 | Path | `apps/cli/agent-capture/package.json` |
 | Version | `0.1.0` |
 | License | `MIT` |
+| Main | `index.js` |
+| Types | `index.d.ts` |
 
-## Description
+## Directory Structure
 
-Multi-platform agent capture CLI for browser, terminal, code snippets, and component previews
+- 📁 `bin`
+- 📄 `bin/agent-capture`
+- 📄 `bin/agent-capture.cmd`
+- 📄 `Cargo.lock`
+- 📄 `Cargo.toml`
+- 📁 `examples`
+- 📄 `examples/browser.rs`
+- 📄 `examples/code_snippet.rs`
+- 📄 `examples/react_component.rs`
+- 📄 `examples/terminal.rs`
+- 📄 `examples/vue_component.rs`
+- 📄 `moon.yml`
+- 📄 `package.json`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📁 `src/application`
+- 📁 `src/infrastructure`
+- 📄 `src/lib.rs`
+- 📄 `src/main.rs`
+- 📁 `src/modules`
+- 📁 `src/presentation`
+- 📁 `src/shared`
+
+## Source Files
+
+- `src/adapters/browser/chrome_helpers.rs`
+- `src/adapters/browser/headless_chrome_service/mod.rs`
+- `src/adapters/browser/headless_chrome_service/screenshots.rs`
+- `src/adapters/browser/headless_chrome_service/session.rs`
+- `src/adapters/browser/mod.rs`
+- `src/adapters/cli/args.rs`
+- `src/adapters/cli/commands/browser_terminal.rs`
+- `src/adapters/cli/commands/code_snippet.rs`
+- `src/adapters/cli/commands/components.rs`
+- `src/adapters/cli/commands/mod.rs`
+- `src/adapters/cli/mod.rs`
+- `src/adapters/code_snippet/mod.rs`
+- `src/adapters/code_snippet/renderer/mock_renderer.rs`
+- `src/adapters/code_snippet/renderer/mod.rs`
+- `src/adapters/code_snippet/renderer/real_renderer.rs`
+- `src/adapters/code_snippet/repository.rs`
+- `src/adapters/code_snippet/storage.rs`
+- `src/adapters/component_preview/mod.rs`
+- `src/adapters/component_preview/renderer/mod.rs`
+- `src/adapters/component_preview/renderer/render.rs`
+- `src/adapters/component_preview/renderer/tests.rs`
+- `src/adapters/component_preview/renderer/types.rs`
+- `src/adapters/component_preview/repository.rs`
+- `src/adapters/component_preview/storage.rs`
+- `src/adapters/config/app_config.rs`
+- `src/adapters/config/mod.rs`
+- `src/adapters/mod.rs`
+- `src/adapters/terminal/mod.rs`
+- `src/adapters/terminal/process.rs`
+- `src/adapters/terminal/session.rs`
+- `src/adapters/terminal/storage.rs`
+- `src/application/browser/commands/mod.rs`
+- `src/application/browser/mod.rs`
+- `src/application/browser/use_cases/execute_script.rs`
+- `src/application/browser/use_cases/find_element.rs`
+- `src/application/browser/use_cases/interact.rs`
+- `src/application/browser/use_cases/mod.rs`
+- `src/application/browser/use_cases/navigate.rs`
+- `src/application/browser/use_cases/screenshot.rs`
+- `src/application/commands/capture_browser.rs`
 
 ## Quick Start
 
@@ -40,6 +111,12 @@ bun run dev
 bun run test
 ```
 
+### Lint
+
+```bash
+bun run lint
+```
+
 ## Scripts
 
 | Script | Command |
@@ -58,11 +135,21 @@ bun run test
 | fmt | `cargo fmt` |
 | examples | `node examples/run-all.js` |
 
+## Binaries
+
+- `agent-capture`: `./bin/agent-capture`
+
 ## Dev Dependencies
 
 | Name | Version |
 | --- | --- |
 | @napi-rs/cli | `^3.8.6` |
+
+## Environment
+
+| Runtime | Version |
+| --- | --- |
+| node | `>= 16` |
 
 ## README
 

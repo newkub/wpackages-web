@@ -1,5 +1,9 @@
 # wrikka-lsp
 
+## Overview
+
+LSP integration - completion, diagnostics, and go-to-definition
+
 ## Metadata
 
 | Field | Value |
@@ -9,9 +13,67 @@
 | Path | `packages/lib/tools/lsp/Cargo.toml` |
 | Keywords | lsp, language-server, completion, diagnostics, ide |
 
-## Description
+## Directory Structure
 
-LSP integration - completion, diagnostics, and go-to-definition
+- 📄 `Cargo.toml`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📁 `src/application`
+- 📁 `src/domain`
+- 📁 `src/infrastructure`
+- 📄 `src/lib.rs`
+- 📁 `src/lsp`
+- 📁 `src/presentation`
+- 📁 `src/shared`
+- 📁 `tests`
+- 📁 `tests/integration`
+- 📄 `tests/mod.rs`
+- 📁 `tests/unit`
+- 📄 `TODO.md`
+
+## Source Files
+
+- `src/adapters/cli/mod.rs`
+- `src/adapters/mod.rs`
+- `src/adapters/rest/mod.rs`
+- `src/application/commands/mod.rs`
+- `src/application/mod.rs`
+- `src/application/ports/lsp_client.rs`
+- `src/application/ports/mod.rs`
+- `src/application/queries/mod.rs`
+- `src/application/use_cases/completion.rs`
+- `src/application/use_cases/mod.rs`
+- `src/domain/collections/completion_list.rs`
+- `src/domain/collections/diagnostic_collection.rs`
+- `src/domain/collections/mod.rs`
+- `src/domain/collections/symbol_collection.rs`
+- `src/domain/entities/diagnostic.rs`
+- `src/domain/entities/document_symbol.rs`
+- `src/domain/entities/mod.rs`
+- `src/domain/entities/workspace_symbol.rs`
+- `src/domain/mod.rs`
+- `src/domain/value_objects/completion_item.rs`
+- `src/domain/value_objects/diagnostic_severity.rs`
+- `src/domain/value_objects/location.rs`
+- `src/domain/value_objects/mod.rs`
+- `src/domain/value_objects/position.rs`
+- `src/domain/value_objects/range.rs`
+- `src/domain/value_objects/symbol_kind.rs`
+- `src/infrastructure/lsp_client_impl.rs`
+- `src/infrastructure/lsp_client_registry.rs`
+- `src/infrastructure/mod.rs`
+- `src/lib.rs`
+- `src/lsp/mod.rs`
+- `src/presentation/cli/mod.rs`
+- `src/presentation/events/default_handler.rs`
+- `src/presentation/events/event_dispatcher.rs`
+- `src/presentation/events/event_handler.rs`
+- `src/presentation/events/event_tests.rs`
+- `src/presentation/events/event_types.rs`
+- `src/presentation/events/mod.rs`
+- `src/presentation/http/mod.rs`
+- `src/presentation/mod.rs`
 
 ## Quick Start
 
@@ -33,19 +95,17 @@ cargo test -p wrikka-lsp
 cargo run -p wrikka-lsp
 ```
 
-## Dependencies
+### Lint
 
-| Name | Version |
-| --- | --- |
-| serde_json | `workspace` |
-| serde | `workspace` |
-| thiserror | `workspace` |
-| async-trait | `workspace` |
-| tokio | `workspace` |
-| tracing | `workspace` |
-| tokio-tungstenite | `0.29.0` |
-| futures-util | `workspace` |
-| url | `2.5.8` |
+```bash
+cargo clippy -p wrikka-lsp
+```
+
+### Documentation
+
+```bash
+cargo doc -p wrikka-lsp --no-deps
+```
 
 ## README
 

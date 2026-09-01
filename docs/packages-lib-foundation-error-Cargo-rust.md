@@ -1,5 +1,9 @@
 # wrikka-foundation-error
 
+## Overview
+
+Error handling library with Clean Architecture and functional programming principles
+
 ## Metadata
 
 | Field | Value |
@@ -9,14 +13,53 @@
 | Path | `packages/lib/foundation/error/Cargo.toml` |
 | Version | `0.1.0` |
 | Edition | `2021` |
+| Rust Version | `>= 1.75` |
 | License | `MIT OR Apache-2.0` |
 | Repository | <https://github.com/wrikka/rust-packages> |
 | Authors | Wrikka Team <team@wrikka.dev> |
 | Keywords | error, error-handling, clean-architecture, functional, monad |
 
-## Description
+## Directory Structure
 
-Error handling library with Clean Architecture and functional programming principles
+- 📄 `Cargo.toml`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📄 `src/lib.rs`
+- 📁 `src/modules`
+- 📁 `src/presentation`
+- 📁 `src/shared`
+- 📁 `tests`
+- 📄 `tests/integration_test.rs`
+- 📄 `TODO.md`
+
+## Source Files
+
+- `src/adapters/external.rs`
+- `src/adapters/mod.rs`
+- `src/lib.rs`
+- `src/modules/core/application/mod.rs`
+- `src/modules/core/application/usecases.rs`
+- `src/modules/core/application/workflows.rs`
+- `src/modules/core/domain/events.rs`
+- `src/modules/core/domain/mod.rs`
+- `src/modules/core/domain/models.rs`
+- `src/modules/core/domain/operations.rs`
+- `src/modules/core/domain/validators.rs`
+- `src/modules/core/index.rs`
+- `src/modules/core/mod.rs`
+- `src/modules/core/ports/error_handler.rs`
+- `src/modules/core/ports/error_reporter.rs`
+- `src/modules/core/ports/error_transformer.rs`
+- `src/modules/core/ports/mod.rs`
+- `src/modules/core/types/mod.rs`
+- `src/modules/core/types/models.rs`
+- `src/modules/mod.rs`
+- `src/presentation/mod.rs`
+- `src/shared/mod.rs`
+- `src/shared/prelude.rs`
+- `src/shared/types.rs`
+- `src/shared/utils.rs`
 
 ## Quick Start
 
@@ -38,18 +81,24 @@ cargo test -p wrikka-foundation-error
 cargo run -p wrikka-foundation-error
 ```
 
-## Dependencies
+### Lint
 
-| Name | Version |
+```bash
+cargo clippy -p wrikka-foundation-error
+```
+
+### Documentation
+
+```bash
+cargo doc -p wrikka-foundation-error --no-deps
+```
+
+## Environment
+
+| Field | Value |
 | --- | --- |
-| thiserror | `workspace` |
-| validator | `workspace` |
-
-## Dev Dependencies
-
-| Name | Version |
-| --- | --- |
-| tokio-test | `0.4` |
+| Edition | `2021` |
+| Rust Version | `>= 1.75` |
 
 ## README
 
@@ -187,3 +236,8 @@ wrikka-foundation-error = { version = "0.1.0", features = ["full"] }
 | `tracing` | Integrate with tracing crate | none | disabled |
 | `tokio` | Async error handling support | none | disabled |
 | `full` | Enable all features | none | disabled |
+
+## Links
+
+- Repository: <https://github.com/wrikka/rust-packages>
+- Source: <https://github.com/wrikka/rust-packages/blob/main/packages/lib/foundation/error/Cargo.toml>

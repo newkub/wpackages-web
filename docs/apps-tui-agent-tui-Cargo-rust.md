@@ -1,5 +1,9 @@
 # agent-tui
 
+## Overview
+
+Terminal-based AI assistant interface with clean architecture
+
 ## Metadata
 
 | Field | Value |
@@ -9,15 +13,92 @@
 | Path | `apps/tui/agent-tui/Cargo.toml` |
 | Version | `0.1.0` |
 | Edition | `2021` |
+| Rust Version | `>= 1.70` |
 | License | `MIT` |
 | Repository | <https://github.com/newkub/agent-tui> |
 | Homepage | <https://github.com/newkub/agent-tui> |
 | Authors | Wrikka Team |
 | Keywords | tui, terminal, ai, assistant, cli |
 
-## Description
+## Directory Structure
 
-Terminal-based AI assistant interface with clean architecture
+- 📄 `AGENTS.md`
+- 📄 `Cargo.lock`
+- 📄 `Cargo.toml`
+- 📁 `docs`
+- 📁 `docs/api`
+- 📁 `docs/examples`
+- 📁 `docs/getting-started`
+- 📁 `docs/guides`
+- 📁 `docs/project`
+- 📁 `docs/reference`
+- 📄 `LICENSE.md`
+- 📄 `moon.yml`
+- 📄 `README.md`
+- 📁 `spec`
+- 📄 `spec/audit.spec.md`
+- 📄 `spec/automation.spec.md`
+- 📄 `spec/collaboration.spec.md`
+- 📄 `spec/config.spec.md`
+- 📄 `spec/diff.spec.md`
+- 📄 `spec/guardrails.spec.md`
+- 📄 `spec/headless.spec.md`
+- 📄 `spec/index.md`
+- 📄 `spec/macro.spec.md`
+- 📄 `spec/metrics.spec.md`
+- 📄 `spec/onboarding.spec.md`
+- 📄 `spec/performance.spec.md`
+- 📄 `spec/sandbox.spec.md`
+- 📄 `spec/session.spec.md`
+- 📄 `spec/share.spec.md`
+- 📄 `spec/snippet.spec.md`
+
+## Source Files
+
+- `src/adapters/config/loader.rs`
+- `src/adapters/config/mod.rs`
+- `src/adapters/config/settings.rs`
+- `src/adapters/db/encrypted_sqlite_repository.rs`
+- `src/adapters/db/mod.rs`
+- `src/adapters/db/share_link_repository.rs`
+- `src/adapters/db/share_repository.rs`
+- `src/adapters/external/dependency_parser.rs`
+- `src/adapters/external/file_scanner.rs`
+- `src/adapters/external/github_client.rs`
+- `src/adapters/external/github_parser.rs`
+- `src/adapters/external/git_operations.rs`
+- `src/adapters/external/guardrail_checker.rs`
+- `src/adapters/external/guardrail_manager.rs`
+- `src/adapters/external/headless_command_executor.rs`
+- `src/adapters/external/headless_session_manager.rs`
+- `src/adapters/external/metrics_collector.rs`
+- `src/adapters/external/mod.rs`
+- `src/adapters/external/optimization_manager.rs`
+- `src/adapters/external/response_cache.rs`
+- `src/adapters/external/share_link_notifier.rs`
+- `src/adapters/external/share_link_url_generator.rs`
+- `src/adapters/external/snapshot_manager.rs`
+- `src/adapters/external/subagent_manager.rs`
+- `src/adapters/external/subagent_task_executor/mod.rs`
+- `src/adapters/external/subagent_task_executor/prompts.rs`
+- `src/adapters/external/subagent_task_executor/tests.rs`
+- `src/adapters/external/subagent_task_queue.rs`
+- `src/adapters/input/crossterm_handler.rs`
+- `src/adapters/input/mod.rs`
+- `src/adapters/mod.rs`
+- `src/adapters/ui/mod.rs`
+- `src/adapters/ui/ratatui_adapter/adapter.rs`
+- `src/adapters/ui/ratatui_adapter/mod.rs`
+- `src/adapters/ui/ratatui_adapter/tests.rs`
+- `src/adapters/ui/ratatui_adapter/types.rs`
+- `src/adapters/ui/renderer.rs`
+- `src/adapters/ui/screen_reader.rs`
+- `src/lib.rs`
+- `src/main.rs`
+
+## Binaries
+
+- `agent-tui`
 
 ## Quick Start
 
@@ -38,6 +119,25 @@ cargo test -p agent-tui
 ```bash
 cargo run -p agent-tui
 ```
+
+### Lint
+
+```bash
+cargo clippy -p agent-tui
+```
+
+### Documentation
+
+```bash
+cargo doc -p agent-tui --no-deps
+```
+
+## Environment
+
+| Field | Value |
+| --- | --- |
+| Edition | `2021` |
+| Rust Version | `>= 1.70` |
 
 ## README
 
@@ -165,3 +265,9 @@ let response = send_message.execute(session_id, message).await?;
 ## License
 
 This project is licensed under the MIT License - see [LICENSE](../../LICENSE) for details.
+
+## Links
+
+- Repository: <https://github.com/newkub/agent-tui>
+- Homepage: <https://github.com/newkub/agent-tui>
+- Source: <https://github.com/newkub/agent-tui/blob/main/apps/tui/agent-tui/Cargo.toml>

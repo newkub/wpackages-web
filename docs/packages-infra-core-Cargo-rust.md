@@ -1,5 +1,9 @@
 # wrikka-core
 
+## Overview
+
+Core infrastructure - shared kernel, HTTP client, config, git integration
+
 ## Metadata
 
 | Field | Value |
@@ -9,15 +13,53 @@
 | Path | `packages/infra/core/Cargo.toml` |
 | Version | `0.1.0` |
 | Edition | `2021` |
+| Rust Version | `>= 1.70` |
 | License | `MIT` |
 | Repository | <https://github.com/wrikka/wpackages> |
 | Homepage | <https://github.com/wrikka/wpackages> |
 | Authors | Wrikka Team |
 | Keywords | infrastructure, errors, types, utilities |
 
-## Description
+## Directory Structure
 
-Core infrastructure - shared kernel, HTTP client, config, git integration
+- 📄 `Cargo.toml`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/domain`
+- 📁 `src/git`
+- 📄 `src/lib.rs`
+- 📁 `src/shared_kernel`
+
+## Source Files
+
+- `src/domain/constants/mod.rs`
+- `src/domain/errors/directory_errors.rs`
+- `src/domain/errors/errors.rs`
+- `src/domain/errors/file_errors.rs`
+- `src/domain/errors/io_errors.rs`
+- `src/domain/errors/mod.rs`
+- `src/domain/errors/path_errors.rs`
+- `src/domain/mod.rs`
+- `src/domain/types/mod.rs`
+- `src/domain/utils/directory.rs`
+- `src/domain/utils/file_ops.rs`
+- `src/domain/utils/mod.rs`
+- `src/domain/utils/walker.rs`
+- `src/domain/utils/walker_config.rs`
+- `src/domain/utils/walker_functions.rs`
+- `src/git/git/mod.rs`
+- `src/git/mod.rs`
+- `src/lib.rs`
+- `src/shared_kernel/adapters/config/mod.rs`
+- `src/shared_kernel/adapters/external/mod.rs`
+- `src/shared_kernel/adapters/http/mod.rs`
+- `src/shared_kernel/adapters/mod.rs`
+- `src/shared_kernel/mod.rs`
+- `src/shared_kernel/shared/constants/mod.rs`
+- `src/shared_kernel/shared/errors/mod.rs`
+- `src/shared_kernel/shared/mod.rs`
+- `src/shared_kernel/shared/types/mod.rs`
+- `src/shared_kernel/shared/utils/mod.rs`
 
 ## Quick Start
 
@@ -39,17 +81,24 @@ cargo test -p wrikka-core
 cargo run -p wrikka-core
 ```
 
-## Dependencies
+### Lint
 
-| Name | Version |
+```bash
+cargo clippy -p wrikka-core
+```
+
+### Documentation
+
+```bash
+cargo doc -p wrikka-core --no-deps
+```
+
+## Environment
+
+| Field | Value |
 | --- | --- |
-| reqwest | `workspace` |
-
-## Dev Dependencies
-
-| Name | Version |
-| --- | --- |
-| tokio-test | `workspace` |
+| Edition | `2021` |
+| Rust Version | `>= 1.70` |
 
 ## README
 
@@ -204,3 +253,9 @@ let blame = adapter.blame("src/lib.rs").await?;
 │    +pub use git::{GitAdapter, GitBlame, GitDiff, GitStatus}; │
 └──────────────────────────────────────────────────────────────┘
 ```
+
+## Links
+
+- Repository: <https://github.com/wrikka/wpackages>
+- Homepage: <https://github.com/wrikka/wpackages>
+- Source: <https://github.com/wrikka/wpackages/blob/main/packages/infra/core/Cargo.toml>

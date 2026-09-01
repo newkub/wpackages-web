@@ -1,5 +1,9 @@
 # @wrikka/rust-packages
 
+## Overview
+
+No description available.
+
 ## Metadata
 
 | Field | Value |
@@ -9,9 +13,44 @@
 | Path | `package.json` |
 | Version | `0.1.0` |
 
-## Description
+## Directory Structure
 
-No description available.
+- 📄 `AGENTS.md`
+- 📁 `apps`
+- 📁 `apps/cli`
+- 📁 `apps/desktop`
+- 📁 `apps/tui`
+- 📁 `apps/wasm`
+- 📁 `apps/web`
+- 📄 `biome.jsonc`
+- 📄 `bun.lock`
+- 📄 `Cargo.lock`
+- 📄 `Cargo.toml`
+- 📄 `clippy.toml`
+- 📄 `package.json`
+- 📁 `packages`
+- 📁 `packages/domain`
+- 📁 `packages/infra`
+- 📁 `packages/lib`
+- 📄 `README.md`
+- 📁 `scripts`
+- 📄 `scripts/analyze-project.ts`
+- 📄 `scripts/analyze-rust-files.ps1`
+- 📄 `scripts/analyze-srp-bun.ts`
+- 📄 `scripts/analyze-srp.ps1`
+- 📄 `scripts/check-file-sizes.ps1`
+- 📄 `scripts/check-long-files.ps1`
+- 📄 `scripts/count-lines.ps1`
+- 📄 `scripts/count_lines.ps1`
+- 📄 `scripts/count_lines2.ps1`
+- 📄 `scripts/filter-srp.ts`
+- 📄 `scripts/find-long-files.ps1`
+
+## Workspace Members
+
+- `apps/*/*`
+- `apps/wasm/canvas/web`
+- `packages/*/*/*`
 
 ## Quick Start
 

@@ -1,5 +1,9 @@
 # agent-sdk-security
 
+## Overview
+
+Security module for agent-sdk: audit log, crypto, RBAC, rate limiting
+
 ## Metadata
 
 | Field | Value |
@@ -13,9 +17,42 @@
 | Repository | <https://github.com/newkub/wpackages> |
 | Keywords | security, rbac, audit, crypto, rate-limiting |
 
-## Description
+## Directory Structure
 
-Security module for agent-sdk: audit log, crypto, RBAC, rate limiting
+- 📄 `Cargo.toml`
+- 📁 `src`
+- 📄 `src/audit.rs`
+- 📄 `src/crypto.rs`
+- 📄 `src/lib.rs`
+- 📄 `src/rate_limit.rs`
+- 📁 `src/rbac`
+
+## Source Files
+
+- `src/audit.rs`
+- `src/crypto.rs`
+- `src/lib.rs`
+- `src/rate_limit.rs`
+- `src/rbac/application/mod.rs`
+- `src/rbac/application/usecases/mod.rs`
+- `src/rbac/application/workflows/mod.rs`
+- `src/rbac/domain/events/mod.rs`
+- `src/rbac/domain/mod.rs`
+- `src/rbac/domain/models/access_control.rs`
+- `src/rbac/domain/models/context.rs`
+- `src/rbac/domain/models/mod.rs`
+- `src/rbac/domain/models/permission.rs`
+- `src/rbac/domain/models/resource.rs`
+- `src/rbac/domain/models/role.rs`
+- `src/rbac/domain/models/system_role.rs`
+- `src/rbac/domain/operations/mod.rs`
+- `src/rbac/domain/validators/mod.rs`
+- `src/rbac/middleware.rs`
+- `src/rbac/mod.rs`
+- `src/rbac/ports/mod.rs`
+- `src/rbac/types/access.rs`
+- `src/rbac/types/ids.rs`
+- `src/rbac/types/mod.rs`
 
 ## Quick Start
 
@@ -37,26 +74,29 @@ cargo test -p agent-sdk-security
 cargo run -p agent-sdk-security
 ```
 
-## Dependencies
+### Lint
 
-| Name | Version |
+```bash
+cargo clippy -p agent-sdk-security
+```
+
+### Documentation
+
+```bash
+cargo doc -p agent-sdk-security --no-deps
+```
+
+## Environment
+
+| Field | Value |
 | --- | --- |
-| agent-sdk-core | `workspace` |
-| async-trait | `workspace` |
-| serde | `workspace` |
-| serde_json | `workspace` |
-| chrono | `workspace` |
-| uuid | `workspace` |
-| parking_lot | `workspace` |
-| tokio | `workspace` |
-| base64 | `workspace` |
-| sha2 | `workspace` |
-| hmac | `workspace` |
-| aes-gcm | `workspace` |
-| rand | `workspace` |
-| validator | `workspace` |
-| axum | `workspace` |
+| Edition | `2021` |
 
 ## README
 
 > This workspace does not have a `README.md` yet. Consider adding one to improve documentation.
+
+## Links
+
+- Repository: <https://github.com/newkub/wpackages>
+- Source: <https://github.com/newkub/wpackages/blob/main/packages/domain/agent-sdk/security/Cargo.toml>

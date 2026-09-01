@@ -1,3 +1,5 @@
+import doc_0 from "../docs/root-package-json.md?raw";
+import doc_1 from "../docs/root-cargo.md?raw";
 import doc_2 from "../docs/apps-cli-agent-browser-Cargo-rust.md?raw";
 import doc_3 from "../docs/apps-cli-agent-capture-Cargo-rust.md?raw";
 import doc_4 from "../docs/apps-cli-agent-capture-package-npm.md?raw";
@@ -61,8 +63,6 @@ import doc_61 from "../docs/packages-lib-tools-rules-engine-Cargo-rust.md?raw";
 import doc_62 from "../docs/packages-lib-tools-search-engine-Cargo-rust.md?raw";
 import doc_63 from "../docs/packages-lib-tools-template-engine-Cargo-rust.md?raw";
 import doc_64 from "../docs/packages-lib-tools-template-engine-package-npm.md?raw";
-import doc_1 from "../docs/root-cargo.md?raw";
-import doc_0 from "../docs/root-package-json.md?raw";
 
 export const docs: Record<string, string> = {
 	"root-package-json": doc_0,

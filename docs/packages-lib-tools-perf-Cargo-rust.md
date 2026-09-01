@@ -1,5 +1,9 @@
 # wrikka-perf
 
+## Overview
+
+Performance monitoring and benchmarking tools
+
 ## Metadata
 
 | Field | Value |
@@ -9,9 +13,69 @@
 | Path | `packages/lib/tools/perf/Cargo.toml` |
 | Keywords | performance, benchmarking, monitoring, profiling, metrics |
 
-## Description
+## Directory Structure
 
-Performance monitoring and benchmarking tools
+- 📁 `benches`
+- 📄 `benches/benchmark.rs`
+- 📄 `Cargo.toml`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📁 `src/bench`
+- 📄 `src/lib.rs`
+- 📁 `src/modules`
+- 📁 `src/presentation`
+- 📁 `src/shared`
+- 📁 `tests`
+- 📄 `tests/benchmark_test.rs`
+- 📁 `tests/integration`
+- 📄 `tests/integration_test.rs`
+- 📄 `tests/mod.rs`
+- 📁 `tests/unit`
+- 📄 `TODO.md`
+
+## Source Files
+
+- `src/adapters/db/in_memory_benchmark_repository.rs`
+- `src/adapters/db/mod.rs`
+- `src/adapters/external/criterion_benchmark_service.rs`
+- `src/adapters/external/mod.rs`
+- `src/adapters/mod.rs`
+- `src/bench/adapters/cli.rs`
+- `src/bench/adapters/controllers/mod.rs`
+- `src/bench/adapters/handlers/mod.rs`
+- `src/bench/adapters/mod.rs`
+- `src/bench/domain/errors/mod.rs`
+- `src/bench/domain/mod.rs`
+- `src/bench/domain/repositories/mod.rs`
+- `src/bench/domain/services/mod.rs`
+- `src/bench/domain/services/regression/analysis.rs`
+- `src/bench/domain/services/regression/detector.rs`
+- `src/bench/domain/services/regression/mod.rs`
+- `src/bench/domain/services/regression/types.rs`
+- `src/bench/domain/services/regression.rs`
+- `src/bench/domain/services/statistics.rs`
+- `src/bench/domain/types/entities.rs`
+- `src/bench/domain/types/history.rs`
+- `src/bench/domain/types/mod.rs`
+- `src/bench/domain/types/value_objects/benchmark_types.rs`
+- `src/bench/domain/types/value_objects/config_types.rs`
+- `src/bench/domain/types/value_objects/mod.rs`
+- `src/bench/domain/types/value_objects/query_types.rs`
+- `src/bench/domain/types/value_objects/threshold_types.rs`
+- `src/bench/infrastructure/ci.rs`
+- `src/bench/infrastructure/ci_tests.rs`
+- `src/bench/infrastructure/ci_types.rs`
+- `src/bench/infrastructure/comparison/mod.rs`
+- `src/bench/infrastructure/comparison/services/analysis_service.rs`
+- `src/bench/infrastructure/comparison/services/mod.rs`
+- `src/bench/infrastructure/comparison/use_cases/compare_benchmarks.rs`
+- `src/bench/infrastructure/comparison/use_cases/mod.rs`
+- `src/bench/infrastructure/execution/mod.rs`
+- `src/bench/infrastructure/execution/runners/benchmark_runner/environment.rs`
+- `src/bench/infrastructure/execution/runners/benchmark_runner/mod.rs`
+- `src/bench/infrastructure/execution/runners/benchmark_runner/runner.rs`
+- `src/bench/infrastructure/execution/runners/benchmark_runner/tests.rs`
 
 ## Quick Start
 
@@ -33,25 +97,17 @@ cargo test -p wrikka-perf
 cargo run -p wrikka-perf
 ```
 
-## Dependencies
+### Lint
 
-| Name | Version |
-| --- | --- |
-| indicatif | `0.17` |
-| colored | `2.1` |
-| num_cpus | `1.16` |
-| rand | `0.8` |
-| serde | `workspace` |
-| serde_json | `workspace` |
-| anyhow | `workspace` |
-| thiserror | `workspace` |
-| tokio | `workspace` |
-| async-trait | `workspace` |
-| chrono | `workspace` |
-| uuid | `workspace` |
-| clap | `workspace` |
-| criterion | `0.5` |
-| statrs | `0.16` |
+```bash
+cargo clippy -p wrikka-perf
+```
+
+### Documentation
+
+```bash
+cargo doc -p wrikka-perf --no-deps
+```
 
 ## README
 

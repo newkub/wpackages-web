@@ -1,5 +1,9 @@
 # wrikka-foundation-fp
 
+## Overview
+
+Functional Programming library with Clean Architecture
+
 ## Metadata
 
 | Field | Value |
@@ -9,14 +13,69 @@
 | Path | `packages/lib/foundation/fp/Cargo.toml` |
 | Version | `0.1.0` |
 | Edition | `2021` |
+| Rust Version | `>= 1.75` |
 | License | `MIT OR Apache-2.0` |
 | Repository | <https://github.com/wrikka/rust-packages> |
 | Authors | Wrikka Team <team@wrikka.dev> |
 | Keywords | functional, programming, fp, monad, functor |
 
-## Description
+## Directory Structure
 
-Functional Programming library with Clean Architecture
+- 📁 `benches`
+- 📄 `benches/fp_bench.rs`
+- 📄 `Cargo.toml`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📄 `src/lib.rs`
+- 📁 `src/modules`
+- 📄 `src/prelude.rs`
+- 📁 `src/presentation`
+- 📁 `src/shared`
+- 📄 `TODO.md`
+
+## Source Files
+
+- `src/adapters/config/mod.rs`
+- `src/adapters/mod.rs`
+- `src/lib.rs`
+- `src/modules/applicative/application/mod.rs`
+- `src/modules/applicative/application/usecases/apply_operations/mod.rs`
+- `src/modules/applicative/application/usecases/mod.rs`
+- `src/modules/applicative/domain/mod.rs`
+- `src/modules/applicative/domain/models/applicative/mod.rs`
+- `src/modules/applicative/domain/models/mod.rs`
+- `src/modules/applicative/mod.rs`
+- `src/modules/applicative/ports/mod.rs`
+- `src/modules/applicative/types/mod.rs`
+- `src/modules/foldable/application/mod.rs`
+- `src/modules/foldable/application/usecases/fold_operations.rs`
+- `src/modules/foldable/application/usecases/mod.rs`
+- `src/modules/foldable/domain/mod.rs`
+- `src/modules/foldable/domain/models/foldable.rs`
+- `src/modules/foldable/domain/models/mod.rs`
+- `src/modules/foldable/mod.rs`
+- `src/modules/foldable/ports/mod.rs`
+- `src/modules/foldable/types/mod.rs`
+- `src/modules/functor/application/mod.rs`
+- `src/modules/functor/application/usecases/map_operations.rs`
+- `src/modules/functor/application/usecases/mod.rs`
+- `src/modules/functor/domain/mod.rs`
+- `src/modules/functor/domain/models/functor.rs`
+- `src/modules/functor/domain/models/mod.rs`
+- `src/modules/functor/mod.rs`
+- `src/modules/functor/ports/mod.rs`
+- `src/modules/functor/types/mod.rs`
+- `src/modules/mod.rs`
+- `src/modules/monad/application/mod.rs`
+- `src/modules/monad/application/usecases/bind_operations/control.rs`
+- `src/modules/monad/application/usecases/bind_operations/core.rs`
+- `src/modules/monad/application/usecases/bind_operations/effects.rs`
+- `src/modules/monad/application/usecases/bind_operations/mod.rs`
+- `src/modules/monad/application/usecases/bind_operations/tests.rs`
+- `src/modules/monad/application/usecases/mod.rs`
+- `src/modules/monad/domain/mod.rs`
+- `src/modules/monad/domain/models/mod.rs`
 
 ## Quick Start
 
@@ -38,11 +97,24 @@ cargo test -p wrikka-foundation-fp
 cargo run -p wrikka-foundation-fp
 ```
 
-## Dev Dependencies
+### Lint
 
-| Name | Version |
+```bash
+cargo clippy -p wrikka-foundation-fp
+```
+
+### Documentation
+
+```bash
+cargo doc -p wrikka-foundation-fp --no-deps
+```
+
+## Environment
+
+| Field | Value |
 | --- | --- |
-| tokio-test | `0.4` |
+| Edition | `2021` |
+| Rust Version | `>= 1.75` |
 
 ## README
 
@@ -184,3 +256,8 @@ wrikka-foundation-fp = { version = "0.1.0", features = ["serde"] }
 | feature | description | options | default |
 |---------|-------------|---------|---------|
 | `serde` | Serialize/deserialize Either, Id, Const | none | disabled |
+
+## Links
+
+- Repository: <https://github.com/wrikka/rust-packages>
+- Source: <https://github.com/wrikka/rust-packages/blob/main/packages/lib/foundation/fp/Cargo.toml>

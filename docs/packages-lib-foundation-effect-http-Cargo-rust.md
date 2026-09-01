@@ -1,5 +1,9 @@
 # wrikka-foundation-effect-http
 
+## Overview
+
+HTTP effect executor
+
 ## Metadata
 
 | Field | Value |
@@ -10,9 +14,33 @@
 | Version | `0.1.0` |
 | Edition | `2021` |
 
-## Description
+## Directory Structure
 
-HTTP effect executor
+- 📄 `Cargo.toml`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📁 `src/infrastructure`
+- 📄 `src/lib.rs`
+
+## Source Files
+
+- `src/adapters/http_executor.rs`
+- `src/adapters/mod.rs`
+- `src/infrastructure/caching/mod.rs`
+- `src/infrastructure/config/mod.rs`
+- `src/infrastructure/executors/database.rs`
+- `src/infrastructure/executors/http.rs`
+- `src/infrastructure/executors/mod.rs`
+- `src/infrastructure/executors/registry.rs`
+- `src/infrastructure/logging/mod.rs`
+- `src/infrastructure/metrics/mod.rs`
+- `src/infrastructure/mod.rs`
+- `src/infrastructure/repositories/batch_repository.rs`
+- `src/infrastructure/repositories/configuration_repository.rs`
+- `src/infrastructure/repositories/metrics_repository.rs`
+- `src/infrastructure/repositories/mod.rs`
+- `src/infrastructure/repositories/result_repository.rs`
+- `src/lib.rs`
 
 ## Quick Start
 
@@ -34,17 +62,23 @@ cargo test -p wrikka-foundation-effect-http
 cargo run -p wrikka-foundation-effect-http
 ```
 
-## Dependencies
+### Lint
 
-| Name | Version |
+```bash
+cargo clippy -p wrikka-foundation-effect-http
+```
+
+### Documentation
+
+```bash
+cargo doc -p wrikka-foundation-effect-http --no-deps
+```
+
+## Environment
+
+| Field | Value |
 | --- | --- |
-| wrikka-foundation-effect-core | `workspace` |
-| reqwest | `workspace` |
-| serde | `workspace` |
-| serde_json | `workspace` |
-| async-trait | `workspace` |
-| tokio | `workspace` |
-| anyhow | `workspace` |
+| Edition | `2021` |
 
 ## README
 

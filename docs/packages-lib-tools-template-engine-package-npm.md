@@ -1,5 +1,9 @@
 # @wrikka/rust-template-engine
 
+## Overview
+
+Template engine with Clean Architecture
+
 ## Metadata
 
 | Field | Value |
@@ -11,9 +15,58 @@
 | License | `MIT` |
 | Repository | <https://github.com/wrikka/wpackages> |
 
-## Description
+## Directory Structure
 
-Template engine with Clean Architecture
+- 📄 `biome.jsonc`
+- 📄 `Cargo.toml`
+- 📄 `moon.yml`
+- 📄 `package.json`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/application`
+- 📁 `src/domain`
+- 📁 `src/infrastructure`
+- 📄 `src/lib.rs`
+- 📄 `TODO.md`
+
+## Source Files
+
+- `src/application/mod.rs`
+- `src/application/services.rs`
+- `src/application/template_export.rs`
+- `src/application/template_service.rs`
+- `src/application/tests.rs`
+- `src/application/use_cases/create_template.rs`
+- `src/application/use_cases/delete_template.rs`
+- `src/application/use_cases/generate_project.rs`
+- `src/application/use_cases/list_templates.rs`
+- `src/application/use_cases/tests.rs`
+- `src/application/use_cases/types.rs`
+- `src/application/use_cases/update_template.rs`
+- `src/application/use_cases.rs`
+- `src/domain/condition_evaluator.rs`
+- `src/domain/errors.rs`
+- `src/domain/file.rs`
+- `src/domain/generation.rs`
+- `src/domain/mod.rs`
+- `src/domain/repositories.rs`
+- `src/domain/services.rs`
+- `src/domain/template.rs`
+- `src/domain/types.rs`
+- `src/domain/validation_service.rs`
+- `src/domain/variable.rs`
+- `src/domain/variable_validator.rs`
+- `src/infrastructure/filesystem.rs`
+- `src/infrastructure/filesystem_repository.rs`
+- `src/infrastructure/in_memory_repository/mod.rs`
+- `src/infrastructure/in_memory_repository/repo.rs`
+- `src/infrastructure/in_memory_repository/tests.rs`
+- `src/infrastructure/in_memory_repository/types.rs`
+- `src/infrastructure/mod.rs`
+- `src/infrastructure/repositories.rs`
+- `src/infrastructure/repository_types.rs`
+- `src/infrastructure/template_engines.rs`
+- `src/lib.rs`
 
 ## Quick Start
 
@@ -39,6 +92,12 @@ bun run dev
 
 ```bash
 bun run test
+```
+
+### Lint
+
+```bash
+bun run lint
 ```
 
 ## Scripts
@@ -249,3 +308,8 @@ Contributions are welcome! Please read our contributing guidelines before submit
 3. Make your changes
 4. Add tests
 5. Submit a pull request
+
+## Links
+
+- Repository: <https://github.com/wrikka/wpackages>
+- Source: <https://github.com/wrikka/wpackages/blob/main/packages/lib/tools/template-engine/package.json>

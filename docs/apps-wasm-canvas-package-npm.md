@@ -1,5 +1,9 @@
 # @wrikka/wwhiteboard
 
+## Overview
+
+Whiteboard application with Rust WASM and SolidJS
+
 ## Metadata
 
 | Field | Value |
@@ -11,9 +15,32 @@
 | License | `MIT` |
 | Repository | <https://github.com/wrikka/wpackages> |
 
-## Description
+## Directory Structure
 
-Whiteboard application with Rust WASM and SolidJS
+- 📄 `Cargo.lock`
+- 📄 `Cargo.toml`
+- 📁 `docs`
+- 📄 `docs/architecture-diagram.md`
+- 📄 `docs/comparison.md`
+- 📄 `docs/features.md`
+- 📁 `native-rust`
+- 📄 `native-rust/Cargo.toml`
+- 📄 `native-rust/README.md`
+- 📁 `native-rust/src`
+- 📄 `native-rust/TODO.md`
+- 📄 `package.json`
+- 📄 `README.md`
+- 📁 `web`
+- 📄 `web/biome.jsonc`
+- 📄 `web/bun.lock`
+- 📄 `web/index.html`
+- 📄 `web/moon.yml`
+- 📄 `web/package.json`
+- 📁 `web/src`
+- 📄 `web/tsconfig.json`
+- 📄 `web/tsconfig.tsbuildinfo`
+- 📄 `web/uno.config.ts`
+- 📄 `web/vite.config.ts`
 
 ## Quick Start
 
@@ -39,6 +66,12 @@ bun run dev
 
 ```bash
 bun run test
+```
+
+### Lint
+
+```bash
+bun run lint
 ```
 
 ## Scripts
@@ -262,3 +295,8 @@ Contributions are welcome! Please read our contributing guidelines before submit
 3. Make your changes
 4. Add tests
 5. Submit a pull request
+
+## Links
+
+- Repository: <https://github.com/wrikka/wpackages>
+- Source: <https://github.com/wrikka/wpackages/blob/main/apps/wasm/canvas/package.json>

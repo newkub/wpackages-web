@@ -1,5 +1,9 @@
 # agent-capture
 
+## Overview
+
+Multi-platform agent capture CLI for browser, terminal, code snippets, and component previews
+
 ## Metadata
 
 | Field | Value |
@@ -13,9 +17,78 @@
 | Repository | <https://github.com/wrikka/agent-capture> |
 | Authors | Wrikka Team |
 
-## Description
+## Directory Structure
 
-Multi-platform agent capture CLI for browser, terminal, code snippets, and component previews
+- 📁 `bin`
+- 📄 `bin/agent-capture`
+- 📄 `bin/agent-capture.cmd`
+- 📄 `Cargo.lock`
+- 📄 `Cargo.toml`
+- 📁 `examples`
+- 📄 `examples/browser.rs`
+- 📄 `examples/code_snippet.rs`
+- 📄 `examples/react_component.rs`
+- 📄 `examples/terminal.rs`
+- 📄 `examples/vue_component.rs`
+- 📄 `moon.yml`
+- 📄 `package.json`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📁 `src/application`
+- 📁 `src/infrastructure`
+- 📄 `src/lib.rs`
+- 📄 `src/main.rs`
+- 📁 `src/modules`
+- 📁 `src/presentation`
+- 📁 `src/shared`
+
+## Source Files
+
+- `src/adapters/browser/chrome_helpers.rs`
+- `src/adapters/browser/headless_chrome_service/mod.rs`
+- `src/adapters/browser/headless_chrome_service/screenshots.rs`
+- `src/adapters/browser/headless_chrome_service/session.rs`
+- `src/adapters/browser/mod.rs`
+- `src/adapters/cli/args.rs`
+- `src/adapters/cli/commands/browser_terminal.rs`
+- `src/adapters/cli/commands/code_snippet.rs`
+- `src/adapters/cli/commands/components.rs`
+- `src/adapters/cli/commands/mod.rs`
+- `src/adapters/cli/mod.rs`
+- `src/adapters/code_snippet/mod.rs`
+- `src/adapters/code_snippet/renderer/mock_renderer.rs`
+- `src/adapters/code_snippet/renderer/mod.rs`
+- `src/adapters/code_snippet/renderer/real_renderer.rs`
+- `src/adapters/code_snippet/repository.rs`
+- `src/adapters/code_snippet/storage.rs`
+- `src/adapters/component_preview/mod.rs`
+- `src/adapters/component_preview/renderer/mod.rs`
+- `src/adapters/component_preview/renderer/render.rs`
+- `src/adapters/component_preview/renderer/tests.rs`
+- `src/adapters/component_preview/renderer/types.rs`
+- `src/adapters/component_preview/repository.rs`
+- `src/adapters/component_preview/storage.rs`
+- `src/adapters/config/app_config.rs`
+- `src/adapters/config/mod.rs`
+- `src/adapters/mod.rs`
+- `src/adapters/terminal/mod.rs`
+- `src/adapters/terminal/process.rs`
+- `src/adapters/terminal/session.rs`
+- `src/adapters/terminal/storage.rs`
+- `src/application/browser/commands/mod.rs`
+- `src/application/browser/mod.rs`
+- `src/application/browser/use_cases/execute_script.rs`
+- `src/application/browser/use_cases/find_element.rs`
+- `src/application/browser/use_cases/interact.rs`
+- `src/application/browser/use_cases/mod.rs`
+- `src/application/browser/use_cases/navigate.rs`
+- `src/application/browser/use_cases/screenshot.rs`
+- `src/application/commands/capture_browser.rs`
+
+## Binaries
+
+- `agent-capture`
 
 ## Quick Start
 
@@ -37,12 +110,23 @@ cargo test -p agent-capture
 cargo run -p agent-capture
 ```
 
-## Dev Dependencies
+### Lint
 
-| Name | Version |
+```bash
+cargo clippy -p agent-capture
+```
+
+### Documentation
+
+```bash
+cargo doc -p agent-capture --no-deps
+```
+
+## Environment
+
+| Field | Value |
 | --- | --- |
-| tempfile | `3.27.0` |
-| mockall | `0.14.0` |
+| Edition | `2021` |
 
 ## README
 
@@ -160,3 +244,8 @@ const codeResult = await captureCodeSnippet('const x = 1;', 'javascript', JSON.s
 | `terminal` | Capture terminal output | `command`, `duration`, `format`, `output` | `10s`, `png` |
 | `snippet` | Render code snippet | `code`, `file`, `url`, `language`, `theme`, `output` | `rust`, `github-dark` |
 | `component` | Render component preview | `code`, `file`, `framework`, `props`, `width`, `height` | `vue`, `1200x800` |
+
+## Links
+
+- Repository: <https://github.com/wrikka/agent-capture>
+- Source: <https://github.com/wrikka/agent-capture/blob/main/apps/cli/agent-capture/Cargo.toml>

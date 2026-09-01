@@ -1,5 +1,9 @@
 # agent-browser
 
+## Overview
+
+Browser automation agent with Clean Architecture - supports Chrome, Firefox, Safari, Edge
+
 ## Metadata
 
 | Field | Value |
@@ -9,9 +13,72 @@
 | Path | `apps/cli/agent-browser/Cargo.toml` |
 | Keywords | automation, browser, playwright, chrome, selenium |
 
-## Description
+## Directory Structure
 
-Browser automation agent with Clean Architecture - supports Chrome, Firefox, Safari, Edge
+- 📄 `Cargo.toml`
+- 📁 `migrations`
+- 📄 `migrations/001_create_initial_schema.sql`
+- 📄 `migrations/002_seed_data.sql`
+- 📄 `moon.yml`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📄 `src/lib.rs`
+- 📄 `src/main.rs`
+- 📁 `src/modules`
+- 📄 `src/prelude.rs`
+- 📁 `src/presentation`
+- 📁 `src/shared`
+- 📁 `tests`
+- 📁 `tests/integration`
+- 📄 `TODO.md`
+
+## Source Files
+
+- `src/adapters/browser/mod.rs`
+- `src/adapters/browser/playwright_accessibility.rs`
+- `src/adapters/browser/playwright_browser.rs`
+- `src/adapters/browser/playwright_content.rs`
+- `src/adapters/browser/playwright_element.rs`
+- `src/adapters/browser/playwright_screenshot.rs`
+- `src/adapters/browser/playwright_service.rs`
+- `src/adapters/browser/playwright_service_impl.rs`
+- `src/adapters/browser/playwright_storage.rs`
+- `src/adapters/config/mod.rs`
+- `src/adapters/db/connections/mod.rs`
+- `src/adapters/db/migrations/mod.rs`
+- `src/adapters/db/migrations/runner.rs`
+- `src/adapters/db/mod.rs`
+- `src/adapters/db/repositories/backup_repository.rs`
+- `src/adapters/db/repositories/browser_repository.rs`
+- `src/adapters/db/repositories/mod.rs`
+- `src/adapters/db/repositories/navigation_repository/mod.rs`
+- `src/adapters/db/repositories/navigation_repository/repo.rs`
+- `src/adapters/db/repositories/navigation_repository/tests.rs`
+- `src/adapters/db/repositories/navigation_repository/types.rs`
+- `src/adapters/db/repositories/page_html_types.rs`
+- `src/adapters/db/repositories/page_repository.rs`
+- `src/adapters/db/repositories/page_repository_core.rs`
+- `src/adapters/db/repositories/page_repository_html.rs`
+- `src/adapters/db/repositories/page_repository_impl.rs`
+- `src/adapters/db/repositories/page_repository_playwright.rs`
+- `src/adapters/db/repositories/session_repository/mod.rs`
+- `src/adapters/db/repositories/session_repository/mutations.rs`
+- `src/adapters/db/repositories/session_repository/queries.rs`
+- `src/adapters/external/ai_service.rs`
+- `src/adapters/external/mod.rs`
+- `src/adapters/http/client.rs`
+- `src/adapters/http/mod.rs`
+- `src/adapters/mod.rs`
+- `src/lib.rs`
+- `src/main.rs`
+- `src/modules/browser/application/mod.rs`
+- `src/modules/browser/application/usecases/accessibility_element_actions.rs`
+- `src/modules/browser/application/usecases/accessibility_element_queries.rs`
+
+## Binaries
+
+- `agent-browser`
 
 ## Quick Start
 
@@ -33,27 +100,17 @@ cargo test -p agent-browser
 cargo run -p agent-browser
 ```
 
-## Dependencies
+### Lint
 
-| Name | Version |
-| --- | --- |
-| thiserror | `workspace` |
-| anyhow | `workspace` |
-| tokio | `workspace` |
-| serde | `workspace` |
-| serde_json | `workspace` |
-| tracing | `workspace` |
-| tracing-subscriber | `workspace` |
-| chrono | `workspace` |
-| async-trait | `workspace` |
-| futures | `0.3.32` |
+```bash
+cargo clippy -p agent-browser
+```
 
-## Dev Dependencies
+### Documentation
 
-| Name | Version |
-| --- | --- |
-| mockall | `0.14.0` |
-| pretty_assertions | `1.4.1` |
+```bash
+cargo doc -p agent-browser --no-deps
+```
 
 ## README
 

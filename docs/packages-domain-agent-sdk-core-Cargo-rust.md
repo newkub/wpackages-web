@@ -1,5 +1,9 @@
 # wrikka-agent-core
 
+## Overview
+
+AI agent core runtime - conversation, provider, memory, workspace
+
 ## Metadata
 
 | Field | Value |
@@ -13,9 +17,76 @@
 | Repository | <https://github.com/newkub/wpackages> |
 | Keywords | ai, agent, llm, sdk, runtime |
 
-## Description
+## Directory Structure
 
-AI agent core runtime - conversation, provider, memory, workspace
+- 📄 `Cargo.toml`
+- 📁 `examples`
+- 📄 `examples/cost_tracking.rs`
+- 📄 `examples/document_readers.rs`
+- 📄 `examples/guardrails.rs`
+- 📄 `examples/metadata_transformers.rs`
+- 📄 `examples/quickstart.rs`
+- 📄 `examples/rag_pipeline.rs`
+- 📄 `examples/structured_output.rs`
+- 📄 `fix_validators.mjs`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📁 `src/bin`
+- 📁 `src/channels`
+- 📄 `src/lib.rs`
+- 📁 `src/modules`
+- 📁 `src/presentation`
+- 📁 `src/shared`
+- 📁 `src/testing`
+- 📁 `src/tools`
+
+## Source Files
+
+- `src/adapters/acp.rs`
+- `src/adapters/auth/auth_middleware.rs`
+- `src/adapters/auth/mod.rs`
+- `src/adapters/cache/conversation_memory.rs`
+- `src/adapters/cache/mod.rs`
+- `src/adapters/cache/prompt_cache.rs`
+- `src/adapters/cache/response_cache/backend.rs`
+- `src/adapters/cache/response_cache/cache.rs`
+- `src/adapters/cache/response_cache/mod.rs`
+- `src/adapters/cache/response_cache/tests.rs`
+- `src/adapters/cache/response_cache/types.rs`
+- `src/adapters/config/mod.rs`
+- `src/adapters/custom_tools.rs`
+- `src/adapters/db/agent_repository.rs`
+- `src/adapters/db/chromadb_store/mod.rs`
+- `src/adapters/db/chromadb_store/operations.rs`
+- `src/adapters/db/chromadb_store/queries.rs`
+- `src/adapters/db/chromadb_store/tests.rs`
+- `src/adapters/db/chromadb_store/types.rs`
+- `src/adapters/db/conversation_repository.rs`
+- `src/adapters/db/faiss_store.rs`
+- `src/adapters/db/in_memory_vector_store/helpers.rs`
+- `src/adapters/db/in_memory_vector_store/mod.rs`
+- `src/adapters/db/in_memory_vector_store/operations.rs`
+- `src/adapters/db/in_memory_vector_store/tests.rs`
+- `src/adapters/db/lancedb_store/mod.rs`
+- `src/adapters/db/lancedb_store/read_ops.rs`
+- `src/adapters/db/lancedb_store/store_impl.rs`
+- `src/adapters/db/lancedb_store/trait_impl.rs`
+- `src/adapters/db/lancedb_store/types.rs`
+- `src/adapters/db/lancedb_store/write_ops.rs`
+- `src/adapters/db/milvus_store/mod.rs`
+- `src/adapters/db/milvus_store/store.rs`
+- `src/adapters/db/milvus_store/tests.rs`
+- `src/adapters/db/milvus_store/types.rs`
+- `src/adapters/db/milvus_store/vector_store_impl.rs`
+- `src/adapters/db/mod.rs`
+- `src/adapters/db/mongodb_store/mod.rs`
+- `src/adapters/db/mongodb_store/read_ops.rs`
+- `src/adapters/db/mongodb_store/store_impl.rs`
+
+## Binaries
+
+- `wrikka_agent`
 
 ## Quick Start
 
@@ -37,23 +108,23 @@ cargo test -p wrikka-agent-core
 cargo run -p wrikka-agent-core
 ```
 
-## Dependencies
+### Lint
 
-| Name | Version |
+```bash
+cargo clippy -p wrikka-agent-core
+```
+
+### Documentation
+
+```bash
+cargo doc -p wrikka-agent-core --no-deps
+```
+
+## Environment
+
+| Field | Value |
 | --- | --- |
-| tokio | `workspace` |
-| async-trait | `workspace` |
-| futures-util | `workspace` |
-| serde | `workspace` |
-| serde_json | `workspace` |
-| anyhow | `workspace` |
-| thiserror | `workspace` |
-| validator | `workspace` |
-| sea-orm | `workspace` |
-| uuid | `workspace` |
-| chrono | `workspace` |
-| dashmap | `workspace` |
-| parking_lot | `workspace` |
+| Edition | `2021` |
 
 ## README
 
@@ -213,3 +284,8 @@ cargo run -p wrikka-agent-core -- grpc --port 50051
 ```bash
 cargo run -p wrikka-agent-core -- mcp serve
 ```
+
+## Links
+
+- Repository: <https://github.com/newkub/wpackages>
+- Source: <https://github.com/newkub/wpackages/blob/main/packages/domain/agent-sdk/core/Cargo.toml>

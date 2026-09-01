@@ -1,5 +1,9 @@
 # wrikka-cli-builder
 
+## Overview
+
+A clean architecture CLI builder library
+
 ## Metadata
 
 | Field | Value |
@@ -13,9 +17,73 @@
 | Repository | <https://github.com/wrikka/wpackages> |
 | Authors | Wrikka Team |
 
-## Description
+## Directory Structure
 
-A clean architecture CLI builder library
+- 📄 `Cargo.lock`
+- 📄 `Cargo.toml`
+- 📄 `package.json`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📁 `src/application`
+- 📄 `src/config.rs`
+- 📁 `src/domain`
+- 📁 `src/infrastructure`
+- 📁 `src/interface`
+- 📄 `src/lib.rs`
+- 📄 `src/lib_tests.rs`
+- 📄 `src/main.rs`
+- 📄 `src/main_helpers.rs`
+- 📁 `src/modules`
+- 📁 `src/presentation`
+- 📁 `src/shared`
+
+## Source Files
+
+- `src/adapters/cli/app_controller.rs`
+- `src/adapters/cli/cli_controller.rs`
+- `src/adapters/cli/http_controller.rs`
+- `src/adapters/cli/mod.rs`
+- `src/adapters/config/conversions.rs`
+- `src/adapters/config/json_config.rs`
+- `src/adapters/config/json_importer.rs`
+- `src/adapters/config/json_validation/mod.rs`
+- `src/adapters/config/json_validation/schema_validation.rs`
+- `src/adapters/config/json_validation/tests.rs`
+- `src/adapters/config/json_validation/types.rs`
+- `src/adapters/config/json_validation/validator.rs`
+- `src/adapters/config/mod.rs`
+- `src/adapters/config/toml_config.rs`
+- `src/adapters/config/types.rs`
+- `src/adapters/config/yaml_config/filesystem.rs`
+- `src/adapters/config/yaml_config/mod.rs`
+- `src/adapters/config/yaml_config/parser.rs`
+- `src/adapters/config/yaml_config/tests.rs`
+- `src/adapters/config/yaml_config/types.rs`
+- `src/adapters/config/yaml_config/validation.rs`
+- `src/adapters/db/cli_app_repository.rs`
+- `src/adapters/db/command_repository.rs`
+- `src/adapters/db/in_memory/mod.rs`
+- `src/adapters/db/in_memory/repo.rs`
+- `src/adapters/db/in_memory/tests.rs`
+- `src/adapters/db/in_memory/types.rs`
+- `src/adapters/db/mod.rs`
+- `src/adapters/external/event_publisher.rs`
+- `src/adapters/external/logger.rs`
+- `src/adapters/external/mod.rs`
+- `src/adapters/http/github_client.rs`
+- `src/adapters/http/mod.rs`
+- `src/adapters/http/rest_client.rs`
+- `src/adapters/mod.rs`
+- `src/application/cli_commands/command.rs`
+- `src/application/cli_commands/command_builder.rs`
+- `src/application/cli_commands/mod.rs`
+- `src/application/cli_commands/subcommand.rs`
+- `src/application/cli_interactive/menu.rs`
+
+## Binaries
+
+- `wrikka-cli-builder`
 
 ## Quick Start
 
@@ -37,18 +105,23 @@ cargo test -p wrikka-cli-builder
 cargo run -p wrikka-cli-builder
 ```
 
-## Dependencies
+### Lint
 
-| Name | Version |
+```bash
+cargo clippy -p wrikka-cli-builder
+```
+
+### Documentation
+
+```bash
+cargo doc -p wrikka-cli-builder --no-deps
+```
+
+## Environment
+
+| Field | Value |
 | --- | --- |
-| async-trait | `workspace` |
-| thiserror | `workspace` |
-
-## Dev Dependencies
-
-| Name | Version |
-| --- | --- |
-| tokio-test | `0.4` |
+| Edition | `2021` |
 
 ## README
 
@@ -226,3 +299,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ## License
 
 MIT License - See [LICENSE](./LICENSE)
+
+## Links
+
+- Repository: <https://github.com/wrikka/wpackages>
+- Source: <https://github.com/wrikka/wpackages/blob/main/packages/lib/tools/cli-builder/Cargo.toml>

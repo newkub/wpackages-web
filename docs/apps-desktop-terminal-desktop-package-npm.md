@@ -1,5 +1,9 @@
 # @wrikka/terminal
 
+## Overview
+
+Wrikka Terminal - GPU-accelerated terminal emulator
+
 ## Metadata
 
 | Field | Value |
@@ -9,9 +13,55 @@
 | Path | `apps/desktop/terminal-desktop/package.json` |
 | Version | `0.1.0` |
 
-## Description
+## Directory Structure
 
-Wrikka Terminal - GPU-accelerated terminal emulator
+- 📄 `bun.lock`
+- 📄 `Cargo.lock`
+- 📄 `Cargo.toml`
+- 📄 `create_icon.ps1`
+- 📁 `docs`
+- 📄 `docs/configuration.md`
+- 📄 `docs/development.md`
+- 📄 `docs/getting-started.md`
+- 📄 `docs/gpu-rendering.md`
+- 📄 `docs/settings-reference.md`
+- 📄 `docs/testing.md`
+- 📄 `docs/usage-examples.md`
+- 📄 `moon.yml`
+- 📄 `package.json`
+- 📄 `README.md`
+- 📁 `scripts`
+- 📄 `scripts/build-frontend.cmd`
+- 📄 `scripts/dev-frontend.cmd`
+- 📄 `scripts/tauri-build.cmd`
+- 📁 `src`
+- 📄 `src/App.tsx`
+- 📁 `src/components`
+- 📄 `src/index.html`
+- 📁 `src/lib`
+- 📄 `src/main.tsx`
+- 📁 `src/stores`
+- 📄 `src/styles.css`
+- 📁 `src/types`
+- 📁 `src-tauri`
+- 📄 `src-tauri/build.rs`
+
+## Source Files
+
+- `src/App.tsx`
+- `src/components/CommandPalette.tsx`
+- `src/components/PaneView.tsx`
+- `src/components/SettingsPanel.tsx`
+- `src/components/Terminal.tsx`
+- `src/lib/hyperlinks.ts`
+- `src/lib/search.ts`
+- `src/lib/selection.ts`
+- `src/main.tsx`
+- `src/stores/panes.ts`
+- `src/stores/settings.ts`
+- `src/stores/tabs.ts`
+- `src/stores/terminal.ts`
+- `src/types/terminal.ts`
 
 ## Quick Start
 
@@ -31,6 +81,12 @@ bun run build
 
 ```bash
 bun run dev
+```
+
+### Preview
+
+```bash
+bun run preview
 ```
 
 ## Scripts

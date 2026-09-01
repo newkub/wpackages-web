@@ -1,5 +1,9 @@
 # wrikka-rules-engine
 
+## Overview
+
+Flexible and customizable rules engine for code analysis, linting, and rewriting - Clean Architecture
+
 ## Metadata
 
 | Field | Value |
@@ -15,9 +19,69 @@
 | Authors | wrikka contributors |
 | Keywords | rules, linter, code-analysis, ast, clean-architecture |
 
-## Description
+## Directory Structure
 
-Flexible and customizable rules engine for code analysis, linting, and rewriting - Clean Architecture
+- 📄 `Cargo.toml`
+- 📁 `examples`
+- 📄 `examples/basic_usage.rs`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📄 `src/lib.rs`
+- 📁 `src/modules`
+- 📁 `src/shared`
+- 📁 `tests`
+- 📄 `tests/domain_tests.rs`
+- 📄 `tests/integration_test.rs`
+- 📄 `tests/integration_tests.rs`
+- 📄 `TODO.md`
+
+## Source Files
+
+- `src/adapters/cli/main.rs`
+- `src/adapters/cli/mod.rs`
+- `src/adapters/entities/mod.rs`
+- `src/adapters/entities/rule_entity.rs`
+- `src/adapters/infrastructure/file_scanner.rs`
+- `src/adapters/infrastructure/json_report_generator.rs`
+- `src/adapters/infrastructure/markdown_report_generator.rs`
+- `src/adapters/infrastructure/mod.rs`
+- `src/adapters/infrastructure/yaml_rule_loader.rs`
+- `src/adapters/lib/convenience.rs`
+- `src/adapters/lib/mod.rs`
+- `src/adapters/lib/rules_engine.rs`
+- `src/adapters/mod.rs`
+- `src/lib.rs`
+- `src/modules/mod.rs`
+- `src/modules/rules/application/mod.rs`
+- `src/modules/rules/application/use_cases/evaluate_rules.rs`
+- `src/modules/rules/application/use_cases/generate_report.rs`
+- `src/modules/rules/application/use_cases/load_rules.rs`
+- `src/modules/rules/application/use_cases/mod.rs`
+- `src/modules/rules/domain/mod.rs`
+- `src/modules/rules/domain/models/location.rs`
+- `src/modules/rules/domain/models/match_result.rs`
+- `src/modules/rules/domain/models/mod.rs`
+- `src/modules/rules/domain/models/pattern.rs`
+- `src/modules/rules/domain/models/rule.rs`
+- `src/modules/rules/domain/models/severity.rs`
+- `src/modules/rules/domain/operations/mod.rs`
+- `src/modules/rules/domain/operations/pattern_matching.rs`
+- `src/modules/rules/domain/operations/rule_evaluation.rs`
+- `src/modules/rules/domain/operations/rule_validation.rs`
+- `src/modules/rules/mod.rs`
+- `src/modules/rules/ports/mod.rs`
+- `src/modules/rules/ports/report_generator.rs`
+- `src/modules/rules/ports/rule_evaluator.rs`
+- `src/modules/rules/ports/rule_loader.rs`
+- `src/modules/rules/types/mod.rs`
+- `src/shared/constants/mod.rs`
+- `src/shared/kernel/error.rs`
+- `src/shared/kernel/mod.rs`
+
+## Binaries
+
+- `rules-engine`
 
 ## Quick Start
 
@@ -39,20 +103,23 @@ cargo test -p wrikka-rules-engine
 cargo run -p wrikka-rules-engine
 ```
 
-## Dependencies
+### Lint
 
-| Name | Version |
+```bash
+cargo clippy -p wrikka-rules-engine
+```
+
+### Documentation
+
+```bash
+cargo doc -p wrikka-rules-engine --no-deps
+```
+
+## Environment
+
+| Field | Value |
 | --- | --- |
-| anyhow | `workspace` |
-| thiserror | `workspace` |
-| validator | `workspace` |
-| sea-orm | `workspace` |
-
-## Dev Dependencies
-
-| Name | Version |
-| --- | --- |
-| tempfile | `3` |
+| Edition | `2021` |
 
 ## README
 
@@ -209,3 +276,9 @@ let contents = scanner.read_files(&files).await?;
 ## License
 
 MIT License - see [LICENSE](../../../LICENSE) for details.
+
+## Links
+
+- Repository: <https://github.com/wrikka/wpackages>
+- Homepage: <https://github.com/wrikka/wpackages>
+- Source: <https://github.com/wrikka/wpackages/blob/main/packages/lib/tools/rules-engine/Cargo.toml>

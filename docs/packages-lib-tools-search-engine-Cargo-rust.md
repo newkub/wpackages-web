@@ -1,5 +1,9 @@
 # wrikka-search-engine
 
+## Overview
+
+AI-friendly semantic search engine with AST parsing, following Clean Architecture principles
+
 ## Metadata
 
 | Field | Value |
@@ -12,9 +16,25 @@
 | License | `MIT` |
 | Repository | <https://github.com/wrikka/wpackages> |
 
-## Description
+## Directory Structure
 
-AI-friendly semantic search engine with AST parsing, following Clean Architecture principles
+- 📄 `Cargo.toml`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/application`
+- 📁 `src/domain`
+- 📄 `src/lib.rs`
+
+## Source Files
+
+- `src/application/mod.rs`
+- `src/domain/entities.rs`
+- `src/domain/errors.rs`
+- `src/domain/interfaces.rs`
+- `src/domain/mod.rs`
+- `src/domain/services.rs`
+- `src/domain/types.rs`
+- `src/lib.rs`
 
 ## Quick Start
 
@@ -36,53 +56,23 @@ cargo test -p wrikka-search-engine
 cargo run -p wrikka-search-engine
 ```
 
-## Dependencies
+### Lint
 
-| Name | Version |
+```bash
+cargo clippy -p wrikka-search-engine
+```
+
+### Documentation
+
+```bash
+cargo doc -p wrikka-search-engine --no-deps
+```
+
+## Environment
+
+| Field | Value |
 | --- | --- |
-| tokio | `workspace` |
-| async-trait | `workspace` |
-| serde | `workspace` |
-| serde_json | `workspace` |
-| anyhow | `workspace` |
-| thiserror | `workspace` |
-| validator | `workspace` |
-| uuid | `workspace` |
-| chrono | `workspace` |
-| dashmap | `workspace` |
-| parking_lot | `workspace` |
-| tracing | `workspace` |
-| regex | `workspace` |
-| ripgrep | `0.3` |
-| ignore | `0.4` |
-| walkdir | `2.5` |
-| memchr | `2.8` |
-| aho-corasick | `1.1` |
-| tree-sitter | `0.26` |
-| tree-sitter-rust | `0.24` |
-| tree-sitter-javascript | `0.25` |
-| tree-sitter-typescript | `0.23` |
-| tree-sitter-python | `0.25` |
-| tree-sitter-go | `0.25` |
-| tree-sitter-java | `0.23` |
-| tree-sitter-c | `0.23` |
-| tree-sitter-cpp | `0.23` |
-| fst | `0.4` |
-| levenshtein | `1.0` |
-| ngrams | `0.1` |
-| rayon | `1.12` |
-| crossbeam | `0.8` |
-| num_cpus | `1.17` |
-| notify | `6.1` |
-| memmap2 | `0.9` |
-
-## Dev Dependencies
-
-| Name | Version |
-| --- | --- |
-| tokio-test | `0.4` |
-| criterion | `0.5` |
-| tempfile | `3.27` |
+| Edition | `2021` |
 
 ## README
 
@@ -279,3 +269,8 @@ Contributions are welcome! Please read our contributing guidelines before submit
 3. Make your changes
 4. Add tests
 5. Submit a pull request
+
+## Links
+
+- Repository: <https://github.com/wrikka/wpackages>
+- Source: <https://github.com/wrikka/wpackages/blob/main/packages/lib/tools/search-engine/Cargo.toml>

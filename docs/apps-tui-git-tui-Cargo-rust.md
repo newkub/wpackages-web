@@ -1,5 +1,9 @@
 # git-tui
 
+## Overview
+
+Git manager TUI app with clean architecture
+
 ## Metadata
 
 | Field | Value |
@@ -9,15 +13,72 @@
 | Path | `apps/tui/git-tui/Cargo.toml` |
 | Version | `0.1.0` |
 | Edition | `2021` |
+| Rust Version | `>= 1.70` |
 | License | `MIT` |
 | Repository | <https://github.com/newkub/git-tui> |
 | Homepage | <https://github.com/newkub/git-tui> |
 | Authors | Wrikka Team |
 | Keywords | tui, git, vcs, manager |
 
-## Description
+## Directory Structure
 
-Git manager TUI app with clean architecture
+- 📄 `Cargo.toml`
+- 📄 `moon.yml`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📄 `src/lib.rs`
+- 📄 `src/main.rs`
+- 📁 `src/modules`
+- 📁 `src/presentation`
+- 📁 `src/shared`
+
+## Source Files
+
+- `src/adapters/git_cli/blame_commands.rs`
+- `src/adapters/git_cli/branch_commands.rs`
+- `src/adapters/git_cli/commit_commands.rs`
+- `src/adapters/git_cli/diff_commands.rs`
+- `src/adapters/git_cli/discard_commands.rs`
+- `src/adapters/git_cli/log_commands.rs`
+- `src/adapters/git_cli/mod.rs`
+- `src/adapters/git_cli/parser.rs`
+- `src/adapters/git_cli/remote_commands.rs`
+- `src/adapters/git_cli/stage_commands.rs`
+- `src/adapters/git_cli/status_commands.rs`
+- `src/adapters/git_cli/tag_commands.rs`
+- `src/adapters/git_cli/tests.rs`
+- `src/adapters/git_cli/types.rs`
+- `src/adapters/git_cli/worktree_commands.rs`
+- `src/adapters/git_operations.rs`
+- `src/adapters/mod.rs`
+- `src/lib.rs`
+- `src/main.rs`
+- `src/modules/git/application/mod.rs`
+- `src/modules/git/application/usecase/branches.rs`
+- `src/modules/git/application/usecase/command_palette.rs`
+- `src/modules/git/application/usecase/commit.rs`
+- `src/modules/git/application/usecase/confirm.rs`
+- `src/modules/git/application/usecase/hunks.rs`
+- `src/modules/git/application/usecase/mod.rs`
+- `src/modules/git/application/usecase/navigation.rs`
+- `src/modules/git/application/usecase/remotes.rs`
+- `src/modules/git/application/usecase/staging.rs`
+- `src/modules/git/application/usecase/stash.rs`
+- `src/modules/git/application/usecase/sync.rs`
+- `src/modules/git/application/usecase/tags.rs`
+- `src/modules/git/application/usecase/tests.rs`
+- `src/modules/git/application/usecase/worktrees.rs`
+- `src/modules/git/domain/mod.rs`
+- `src/modules/git/domain/models/git/mod.rs`
+- `src/modules/git/domain/models/git/models.rs`
+- `src/modules/git/domain/models/git/types.rs`
+- `src/modules/git/domain/models/mod.rs`
+- `src/modules/git/mod.rs`
+
+## Binaries
+
+- `git-tui`
 
 ## Quick Start
 
@@ -39,16 +100,24 @@ cargo test -p git-tui
 cargo run -p git-tui
 ```
 
-## Dependencies
+### Lint
 
-| Name | Version |
+```bash
+cargo clippy -p git-tui
+```
+
+### Documentation
+
+```bash
+cargo doc -p git-tui --no-deps
+```
+
+## Environment
+
+| Field | Value |
 | --- | --- |
-| anyhow | `1.0.102` |
-| thiserror | `2.0.18` |
-| ratatui | `0.30.2` |
-| crossterm | `0.29.0` |
-| unicode-width | `0.2.0` |
-| ratatui-ui | `workspace` |
+| Edition | `2021` |
+| Rust Version | `>= 1.70` |
 
 ## README
 
@@ -315,3 +384,9 @@ src/
 | test | `cargo test` | Run unit and integration tests |
 | verify | `cargo clippy --all-targets --all-features && cargo check && cargo test` | Full verification pipeline |
 </details>
+
+## Links
+
+- Repository: <https://github.com/newkub/git-tui>
+- Homepage: <https://github.com/newkub/git-tui>
+- Source: <https://github.com/newkub/git-tui/blob/main/apps/tui/git-tui/Cargo.toml>

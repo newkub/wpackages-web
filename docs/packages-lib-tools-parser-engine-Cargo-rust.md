@@ -1,5 +1,9 @@
 # wrikka-parser-engine
 
+## Overview
+
+Advanced parser utilities with multiple language support and Clean Architecture
+
 ## Metadata
 
 | Field | Value |
@@ -11,9 +15,64 @@
 | Edition | `2021` |
 | License | `MIT` |
 
-## Description
+## Directory Structure
 
-Advanced parser utilities with multiple language support and Clean Architecture
+- 📄 `biome.jsonc`
+- 📄 `Cargo.toml`
+- 📄 `package.json`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/application`
+- 📁 `src/domain`
+- 📁 `src/infrastructure`
+- 📁 `src/interface`
+- 📄 `src/lib.rs`
+- 📄 `src/lib_core.rs`
+- 📄 `src/lib_parser.rs`
+- 📄 `src/lib_tests.rs`
+
+## Source Files
+
+- `src/application/errors/mod.rs`
+- `src/application/mod.rs`
+- `src/application/services/coordination/types.rs`
+- `src/application/services/coordination.rs`
+- `src/application/services/mod.rs`
+- `src/application/services/orchestration.rs`
+- `src/application/services/workflow.rs`
+- `src/application/services/workflow_context.rs`
+- `src/application/services/workflow_manager.rs`
+- `src/application/services/workflow_step_executor.rs`
+- `src/application/services/workflow_types.rs`
+- `src/application/types/commands.rs`
+- `src/application/types/dtos/metadata.rs`
+- `src/application/types/dtos/module.rs`
+- `src/application/types/dtos.rs`
+- `src/application/types/mod.rs`
+- `src/application/types/queries.rs`
+- `src/application/types/responses.rs`
+- `src/application/use_cases/analyze_code.rs`
+- `src/application/use_cases/extract_dependencies.rs`
+- `src/application/use_cases/extract_dependencies_core.rs`
+- `src/application/use_cases/extract_dependencies_types.rs`
+- `src/application/use_cases/generate_code.rs`
+- `src/application/use_cases/mod.rs`
+- `src/application/use_cases/parse_file.rs`
+- `src/application/use_cases/transform_ast.rs`
+- `src/domain/errors/mod.rs`
+- `src/domain/interfaces/mod.rs`
+- `src/domain/mod.rs`
+- `src/domain/services/mod.rs`
+- `src/domain/types/ast.rs`
+- `src/domain/types/dependency.rs`
+- `src/domain/types/entities.rs`
+- `src/domain/types/language.rs`
+- `src/domain/types/mod.rs`
+- `src/domain/types/module.rs`
+- `src/domain/types/position.rs`
+- `src/domain/types/token.rs`
+- `src/domain/types/value_objects/ast_query.rs`
+- `src/domain/types/value_objects/file_path.rs`
 
 ## Quick Start
 
@@ -35,11 +94,23 @@ cargo test -p wrikka-parser-engine
 cargo run -p wrikka-parser-engine
 ```
 
-## Dev Dependencies
+### Lint
 
-| Name | Version |
+```bash
+cargo clippy -p wrikka-parser-engine
+```
+
+### Documentation
+
+```bash
+cargo doc -p wrikka-parser-engine --no-deps
+```
+
+## Environment
+
+| Field | Value |
 | --- | --- |
-| tokio-test | `0.4` |
+| Edition | `2021` |
 
 ## README
 

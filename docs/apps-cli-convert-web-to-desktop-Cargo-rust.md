@@ -1,5 +1,9 @@
 # wrikka-convert-web-to-desktop
 
+## Overview
+
+CLI tool to convert web applications to desktop using Tauri + WebView
+
 ## Metadata
 
 | Field | Value |
@@ -13,9 +17,79 @@
 | Repository | <https://github.com/wrikka/wpackages> |
 | Authors | Veerapong <veerapong@example.com> |
 
-## Description
+## Directory Structure
 
-CLI tool to convert web applications to desktop using Tauri + WebView
+- 📄 `Cargo.toml`
+- 📁 `docs`
+- 📄 `docs/architecture-diagram.md`
+- 📄 `docs/cli.md`
+- 📄 `docs/comparison.md`
+- 📄 `docs/features.md`
+- 📁 `examples`
+- 📄 `examples/README.md`
+- 📄 `examples/test-google.ps1`
+- 📄 `examples/test-google.sh`
+- 📄 `moon.yml`
+- 📄 `package.json`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📁 `src/application`
+- 📄 `src/container.rs`
+- 📁 `src/domain`
+- 📄 `src/handlers.rs`
+- 📁 `src/infrastructure`
+- 📁 `src/interactive`
+- 📄 `src/lib.rs`
+- 📄 `src/main.rs`
+
+## Source Files
+
+- `src/adapters/controllers/cli.rs`
+- `src/adapters/controllers/mod.rs`
+- `src/adapters/mod.rs`
+- `src/application/mod.rs`
+- `src/application/ports/mod.rs`
+- `src/application/ports/repositories.rs`
+- `src/application/ports/services.rs`
+- `src/application/types/commands.rs`
+- `src/application/types/mod.rs`
+- `src/application/use_cases/mod.rs`
+- `src/container.rs`
+- `src/domain/constants/defaults.rs`
+- `src/domain/constants/limits.rs`
+- `src/domain/constants/mod.rs`
+- `src/domain/events/build_events.rs`
+- `src/domain/events/mod.rs`
+- `src/domain/events/project_events.rs`
+- `src/domain/functions/bundle_id_generator.rs`
+- `src/domain/functions/config_helpers.rs`
+- `src/domain/functions/mod.rs`
+- `src/domain/functions/url_validation.rs`
+- `src/domain/mod.rs`
+- `src/domain/services/mod.rs`
+- `src/domain/types/entities.rs`
+- `src/domain/types/mod.rs`
+- `src/domain/value_objects/bundle_identifier.rs`
+- `src/domain/value_objects/mod.rs`
+- `src/domain/value_objects/security_policy.rs`
+- `src/domain/value_objects/window_dimensions.rs`
+- `src/handlers.rs`
+- `src/infrastructure/file_system/file_repository.rs`
+- `src/infrastructure/file_system/memory_repository.rs`
+- `src/infrastructure/file_system/mod.rs`
+- `src/infrastructure/icon/mod.rs`
+- `src/infrastructure/mod.rs`
+- `src/infrastructure/tauri/mod.rs`
+- `src/infrastructure/tauri/webview_service/mod.rs`
+- `src/infrastructure/tauri/webview_service/service.rs`
+- `src/infrastructure/tauri/webview_service/tests.rs`
+- `src/infrastructure/tauri/webview_service/types.rs`
+
+## Binaries
+
+- `wrikka-convert-web-to-desktop`
+- `wrikka-convert-web`
 
 ## Quick Start
 
@@ -34,17 +108,29 @@ cargo test -p wrikka-convert-web-to-desktop
 ### Run
 
 ```bash
-cargo run -p wrikka-convert-web-to-desktop
+cargo run -p wrikka-convert-web-to-desktop --bin wrikka-convert-web-to-desktop
+```
+```bash
+cargo run -p wrikka-convert-web-to-desktop --bin wrikka-convert-web
 ```
 
-## Dependencies
+### Lint
 
-| Name | Version |
+```bash
+cargo clippy -p wrikka-convert-web-to-desktop
+```
+
+### Documentation
+
+```bash
+cargo doc -p wrikka-convert-web-to-desktop --no-deps
+```
+
+## Environment
+
+| Field | Value |
 | --- | --- |
-| clap | `workspace` |
-| anyhow | `workspace` |
-| thiserror | `workspace` |
-| tokio | `workspace` |
+| Edition | `2021` |
 
 ## README
 
@@ -153,3 +239,8 @@ wrikka-convert-web interactive
 | `build` | Build desktop application | `id`, `output`, `platform`, `bundle_id`, `version`, `icon` | `all`, `1.0.0` |
 | `run` | Run in development mode | `id`, `devtools` | — |
 | `interactive` | Guided project setup | — | — |
+
+## Links
+
+- Repository: <https://github.com/wrikka/wpackages>
+- Source: <https://github.com/wrikka/wpackages/blob/main/apps/cli/convert-web-to-desktop/Cargo.toml>

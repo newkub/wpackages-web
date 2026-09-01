@@ -1,5 +1,9 @@
 # wrikka-file-ops
 
+## Overview
+
+wrikka-file-ops Rust workspace at packages/lib/file-ops/Cargo.toml
+
 ## Metadata
 
 | Field | Value |
@@ -13,9 +17,76 @@
 | Repository | <https://github.com/veerapong/file-ops> |
 | Authors | Veerapong |
 
-## Description
+## Directory Structure
 
-wrikka-file-ops Rust workspace at packages/lib/file-ops/Cargo.toml
+- 📄 `bench-features.md`
+- 📄 `Cargo.lock`
+- 📄 `Cargo.toml`
+- 📄 `deny.toml`
+- 📄 `LICENSE`
+- 📄 `README.md`
+- 📄 `rust-toolchain.toml`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📄 `src/lib.rs`
+- 📄 `src/main.rs`
+- 📁 `src/modules`
+- 📁 `src/presentation`
+- 📁 `src/shared`
+- 📁 `tests`
+- 📁 `tests/adapters`
+- 📁 `tests/common`
+- 📁 `tests/e2e`
+- 📄 `tests/integration.rs`
+- 📁 `tests/modules`
+
+## Source Files
+
+- `src/adapters/config/env.rs`
+- `src/adapters/config/mod.rs`
+- `src/adapters/filesystem/archive/archive.rs`
+- `src/adapters/filesystem/archive/compress.rs`
+- `src/adapters/filesystem/archive/convert.rs`
+- `src/adapters/filesystem/archive/mod.rs`
+- `src/adapters/filesystem/basic/copy.rs`
+- `src/adapters/filesystem/basic/link.rs`
+- `src/adapters/filesystem/basic/mod.rs`
+- `src/adapters/filesystem/basic/owner.rs`
+- `src/adapters/filesystem/basic/quota.rs`
+- `src/adapters/filesystem/basic/touch.rs`
+- `src/adapters/filesystem/basic/validate.rs`
+- `src/adapters/filesystem/compare/compare.rs`
+- `src/adapters/filesystem/compare/dir_diff.rs`
+- `src/adapters/filesystem/compare/mod.rs`
+- `src/adapters/filesystem/compare/patch.rs`
+- `src/adapters/filesystem/crypto/crypto.rs`
+- `src/adapters/filesystem/crypto/mod.rs`
+- `src/adapters/filesystem/metadata/acl.rs`
+- `src/adapters/filesystem/metadata/baseline.rs`
+- `src/adapters/filesystem/metadata/manifest.rs`
+- `src/adapters/filesystem/metadata/mod.rs`
+- `src/adapters/filesystem/metadata/snapshot.rs`
+- `src/adapters/filesystem/metadata/xattr.rs`
+- `src/adapters/filesystem/mod.rs`
+- `src/adapters/filesystem/read/hash.rs`
+- `src/adapters/filesystem/read/helpers.rs`
+- `src/adapters/filesystem/read/line_reader.rs`
+- `src/adapters/filesystem/read/mod.rs`
+- `src/adapters/filesystem/read/type_detect.rs`
+- `src/adapters/filesystem/repository/mod.rs`
+- `src/adapters/filesystem/repository/repository.rs`
+- `src/adapters/filesystem/search/dedup.rs`
+- `src/adapters/filesystem/search/du.rs`
+- `src/adapters/filesystem/search/mod.rs`
+- `src/adapters/filesystem/search/search.rs`
+- `src/adapters/filesystem/search/tree.rs`
+- `src/adapters/filesystem/sync/backup.rs`
+- `src/adapters/filesystem/sync/mod.rs`
+
+## Binaries
+
+- `wrikka-file-ops`
+- `file-ops`
 
 ## Quick Start
 
@@ -34,8 +105,29 @@ cargo test -p wrikka-file-ops
 ### Run
 
 ```bash
-cargo run -p wrikka-file-ops
+cargo run -p wrikka-file-ops --bin wrikka-file-ops
 ```
+```bash
+cargo run -p wrikka-file-ops --bin file-ops
+```
+
+### Lint
+
+```bash
+cargo clippy -p wrikka-file-ops
+```
+
+### Documentation
+
+```bash
+cargo doc -p wrikka-file-ops --no-deps
+```
+
+## Environment
+
+| Field | Value |
+| --- | --- |
+| Edition | `2021` |
 
 ## README
 
@@ -162,3 +254,8 @@ let path = FilePath::new("notes.md")?;
 │  test result: ok. 64 passed; 0 failed                        │
 └──────────────────────────────────────────────────────────────┘
 ```
+
+## Links
+
+- Repository: <https://github.com/veerapong/file-ops>
+- Source: <https://github.com/veerapong/file-ops/blob/main/packages/lib/file-ops/Cargo.toml>

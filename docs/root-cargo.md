@@ -1,5 +1,9 @@
 # rust-packages
 
+## Overview
+
+Cargo workspace root for rust-packages
+
 ## Metadata
 
 | Field | Value |
@@ -9,14 +13,85 @@
 | Path | `Cargo.toml` |
 | Version | `0.1.0` |
 | Edition | `2021` |
+| Rust Version | `>= 1.70` |
 | License | `MIT` |
 | Repository | <https://github.com/wrikka/rust-packages> |
 | Homepage | <https://github.com/wrikka/rust-packages> |
 | Authors | Wrikka Team |
 
-## Description
+## Directory Structure
 
-Cargo workspace root for rust-packages
+- 📄 `AGENTS.md`
+- 📁 `apps`
+- 📁 `apps/cli`
+- 📁 `apps/desktop`
+- 📁 `apps/tui`
+- 📁 `apps/wasm`
+- 📁 `apps/web`
+- 📄 `biome.jsonc`
+- 📄 `bun.lock`
+- 📄 `Cargo.lock`
+- 📄 `Cargo.toml`
+- 📄 `clippy.toml`
+- 📄 `package.json`
+- 📁 `packages`
+- 📁 `packages/domain`
+- 📁 `packages/infra`
+- 📁 `packages/lib`
+- 📄 `README.md`
+- 📁 `scripts`
+- 📄 `scripts/analyze-project.ts`
+- 📄 `scripts/analyze-rust-files.ps1`
+- 📄 `scripts/analyze-srp-bun.ts`
+- 📄 `scripts/analyze-srp.ps1`
+- 📄 `scripts/check-file-sizes.ps1`
+- 📄 `scripts/check-long-files.ps1`
+- 📄 `scripts/count-lines.ps1`
+- 📄 `scripts/count_lines.ps1`
+- 📄 `scripts/count_lines2.ps1`
+- 📄 `scripts/filter-srp.ts`
+- 📄 `scripts/find-long-files.ps1`
+
+## Workspace Members
+
+- `packages/lib/tools/code-metrics`
+- `packages/lib/tools/repo-mapping`
+- `packages/lib/tools/code-translation`
+- `packages/lib/foundation/effect-cli`
+- `packages/lib/foundation/effect-http`
+- `packages/lib/foundation/effect-core`
+- `packages/lib/tools/search-engine`
+- `apps/cli/agent-browser`
+- `apps/cli/agent-computer`
+- `apps/cli/agent-capture`
+- `# "apps/tui/agent-tui`
+- `# git submodule
+    # "packages/ui`
+- `# TODO: Add UI package
+    "packages/lib/tools/reporter`
+- `packages/lib/tools/rules-engine`
+- `packages/lib/foundation/fp`
+- `packages/lib/foundation/error`
+- `packages/lib/foundation/utils`
+- `packages/infra/core`
+- `packages/infra/caching`
+- `packages/infra/filesystem`
+- `packages/infra/networking`
+- `packages/infra/observability`
+- `packages/infra/storage`
+- `packages/lib/tools/parser-engine`
+- `packages/lib/tools/template-engine`
+- `packages/lib/file-ops`
+- `packages/lib/ratatui-ui`
+- `packages/domain/terminal-sdk`
+- `# Agent SDK packages
+    "packages/domain/agent-sdk/core`
+- `packages/domain/agent-sdk/security`
+- `packages/domain/agent-sdk/integrations`
+- `packages/domain/agent-sdk/channels`
+- `packages/domain/agent-sdk/tools`
+- `apps/desktop/files-desktop/src-tauri`
+- `apps/tui/files-tui`
 
 ## Quick Start
 
@@ -31,6 +106,13 @@ cargo build
 ```bash
 cargo test
 ```
+
+## Environment
+
+| Field | Value |
+| --- | --- |
+| Edition | `2021` |
+| Rust Version | `>= 1.70` |
 
 ## README
 
@@ -95,3 +177,9 @@ Rust packages monorepo for Wrikka — Agent SDK, TUI apps, CLI tools, infrastruc
 | [`packages/lib/tauri-plugin-wrikka-fs`](./packages/lib/tauri-plugin-wrikka-fs) | Tauri filesystem plugin for Wrikka Desktop |
 | [`packages/domain/terminal-sdk`](./packages/domain/terminal-sdk) | Shared terminal SDK — core domain, ports, adapters |
 | [`packages/lib/ratatui-ui`](./packages/lib/ratatui-ui) | Shared TUI component library for Ratatui — 20 reusable widgets |
+
+## Links
+
+- Repository: <https://github.com/wrikka/rust-packages>
+- Homepage: <https://github.com/wrikka/rust-packages>
+- Source: <https://github.com/wrikka/rust-packages/blob/main/Cargo.toml>

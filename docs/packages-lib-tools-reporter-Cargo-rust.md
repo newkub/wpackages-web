@@ -1,5 +1,9 @@
 # wrikka-reporting
 
+## Overview
+
+Generic reporting library with multiple formats, exporters, and Clean Architecture
+
 ## Metadata
 
 | Field | Value |
@@ -9,9 +13,51 @@
 | Path | `packages/lib/tools/reporter/Cargo.toml` |
 | Keywords | reporting, benchmark, metrics, export, visualization, clean-architecture |
 
-## Description
+## Directory Structure
 
-Generic reporting library with multiple formats, exporters, and Clean Architecture
+- 📄 `Cargo.toml`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📄 `src/lib.rs`
+- 📁 `src/modules`
+- 📁 `src/shared`
+
+## Source Files
+
+- `src/adapters/entities/mod.rs`
+- `src/adapters/entities/report_entity.rs`
+- `src/adapters/exporters/file.rs`
+- `src/adapters/exporters/http.rs`
+- `src/adapters/exporters/mod.rs`
+- `src/adapters/formatters/console.rs`
+- `src/adapters/formatters/csv.rs`
+- `src/adapters/formatters/html.rs`
+- `src/adapters/formatters/json.rs`
+- `src/adapters/formatters/markdown.rs`
+- `src/adapters/formatters/mod.rs`
+- `src/adapters/mod.rs`
+- `src/lib.rs`
+- `src/modules/reporting/application/mod.rs`
+- `src/modules/reporting/application/usecases/export_report.rs`
+- `src/modules/reporting/application/usecases/generate_report.rs`
+- `src/modules/reporting/application/usecases/mod.rs`
+- `src/modules/reporting/application/workflows/mod.rs`
+- `src/modules/reporting/domain/events/mod.rs`
+- `src/modules/reporting/domain/mod.rs`
+- `src/modules/reporting/domain/models/mod.rs`
+- `src/modules/reporting/domain/models/report.rs`
+- `src/modules/reporting/domain/models/statistics.rs`
+- `src/modules/reporting/domain/operations/mod.rs`
+- `src/modules/reporting/domain/validators/mod.rs`
+- `src/modules/reporting/mod.rs`
+- `src/modules/reporting/ports/mod.rs`
+- `src/modules/reporting/types/index.rs`
+- `src/shared/constants/index.rs`
+- `src/shared/errors/index.rs`
+- `src/shared/mod.rs`
+- `src/shared/types/index.rs`
+- `src/shared/utils/index.rs`
 
 ## Quick Start
 
@@ -33,19 +79,17 @@ cargo test -p wrikka-reporting
 cargo run -p wrikka-reporting
 ```
 
-## Dependencies
+### Lint
 
-| Name | Version |
-| --- | --- |
-| serde | `workspace` |
-| serde_json | `workspace` |
-| anyhow | `workspace` |
-| thiserror | `workspace` |
-| validator | `workspace` |
-| sea-orm | `workspace` |
-| tracing | `workspace` |
-| tokio | `workspace` |
-| async-trait | `workspace` |
+```bash
+cargo clippy -p wrikka-reporting
+```
+
+### Documentation
+
+```bash
+cargo doc -p wrikka-reporting --no-deps
+```
 
 ## README
 

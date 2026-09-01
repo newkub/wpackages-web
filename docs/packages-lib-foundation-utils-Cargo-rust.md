@@ -1,5 +1,9 @@
 # wrikka-foundation-utils
 
+## Overview
+
+Utility library with Clean Architecture and functional programming principles
+
 ## Metadata
 
 | Field | Value |
@@ -9,14 +13,63 @@
 | Path | `packages/lib/foundation/utils/Cargo.toml` |
 | Version | `0.1.0` |
 | Edition | `2021` |
+| Rust Version | `>= 1.75` |
 | License | `MIT OR Apache-2.0` |
 | Repository | <https://github.com/wrikka/rust-packages> |
 | Authors | Wrikka Team <team@wrikka.dev> |
 | Keywords | utils, utilities, clean-architecture, functional, helpers |
 
-## Description
+## Directory Structure
 
-Utility library with Clean Architecture and functional programming principles
+- 📄 `Cargo.toml`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📁 `src/application`
+- 📁 `src/domain`
+- 📁 `src/infrastructure`
+- 📄 `src/lib.rs`
+- 📁 `src/ports`
+- 📁 `src/presentation`
+- 📁 `src/shared`
+- 📄 `TODO.md`
+
+## Source Files
+
+- `src/adapters/mod.rs`
+- `src/application/config.rs`
+- `src/application/mod.rs`
+- `src/application/use_cases.rs`
+- `src/application/workflows/mod.rs`
+- `src/domain/events/mod.rs`
+- `src/domain/mod.rs`
+- `src/domain/models/mod.rs`
+- `src/domain/modules/encoding_utils.rs`
+- `src/domain/modules/format_utils.rs`
+- `src/domain/modules/hash_utils.rs`
+- `src/domain/modules/mod.rs`
+- `src/domain/modules/path_utils.rs`
+- `src/domain/modules/string_utils.rs`
+- `src/domain/modules.rs`
+- `src/domain/operations/collection_utils.rs`
+- `src/domain/operations/math_utils.rs`
+- `src/domain/operations/mod.rs`
+- `src/domain/operations/type_conversion.rs`
+- `src/domain/types/index.rs`
+- `src/domain/validators/mod.rs`
+- `src/domain/validators/validation.rs`
+- `src/infrastructure/async_utils.rs`
+- `src/infrastructure/id_utils.rs`
+- `src/infrastructure/mod.rs`
+- `src/infrastructure/time_utils.rs`
+- `src/lib.rs`
+- `src/ports/mod.rs`
+- `src/presentation/mod.rs`
+- `src/shared/constants.rs`
+- `src/shared/errors.rs`
+- `src/shared/mod.rs`
+- `src/shared/types.rs`
+- `src/shared/utils.rs`
 
 ## Quick Start
 
@@ -38,18 +91,24 @@ cargo test -p wrikka-foundation-utils
 cargo run -p wrikka-foundation-utils
 ```
 
-## Dependencies
+### Lint
 
-| Name | Version |
+```bash
+cargo clippy -p wrikka-foundation-utils
+```
+
+### Documentation
+
+```bash
+cargo doc -p wrikka-foundation-utils --no-deps
+```
+
+## Environment
+
+| Field | Value |
 | --- | --- |
-| thiserror | `workspace` |
-| validator | `workspace` |
-
-## Dev Dependencies
-
-| Name | Version |
-| --- | --- |
-| tokio-test | `0.4` |
+| Edition | `2021` |
+| Rust Version | `>= 1.75` |
 
 ## README
 
@@ -191,3 +250,8 @@ wrikka-foundation-utils = { version = "0.1.0", features = ["full"] }
 | `async` | Async utilities with retry/backoff | none | disabled |
 | `serde` | Serialization support | none | disabled |
 | `full` | Enable all features | none | disabled |
+
+## Links
+
+- Repository: <https://github.com/wrikka/rust-packages>
+- Source: <https://github.com/wrikka/rust-packages/blob/main/packages/lib/foundation/utils/Cargo.toml>

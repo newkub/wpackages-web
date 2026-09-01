@@ -1,5 +1,9 @@
 # @wrikka/rust-agent-computer
 
+## Overview
+
+Computer automation agent with Clean Architecture
+
 ## Metadata
 
 | Field | Value |
@@ -11,9 +15,78 @@
 | License | `MIT` |
 | Repository | <https://github.com/wrikka/wpackages> |
 
-## Description
+## Directory Structure
 
-Computer automation agent with Clean Architecture
+- 📁 `benches`
+- 📄 `benches/action_benchmarks.rs`
+- 📄 `benches/config_benchmarks.rs`
+- 📄 `benches/error_benchmarks.rs`
+- 📄 `benches/mod.rs`
+- 📄 `benches/performance_benchmarks.rs`
+- 📄 `Cargo.lock`
+- 📄 `Cargo.toml`
+- 📄 `Cargo_old.toml`
+- 📄 `Config.toml`
+- 📄 `moon.yml`
+- 📄 `package.json`
+- 📄 `README.md`
+- 📁 `src`
+- 📁 `src/adapters`
+- 📄 `src/lib.rs`
+- 📄 `src/main.rs`
+- 📁 `src/modules`
+- 📄 `src/prelude.rs`
+- 📁 `src/presentation`
+- 📁 `src/shared`
+- 📄 `summary.md`
+- 📁 `tests`
+- 📄 `tests/domain_tests.rs`
+- 📄 `tests/infrastructure_tests.rs`
+- 📄 `tests/integration_tests.rs`
+- 📄 `TODO.md`
+
+## Source Files
+
+- `src/adapters/cli/commands/cli.rs`
+- `src/adapters/cli/commands/command_handlers/audio.rs`
+- `src/adapters/cli/commands/command_handlers/clipboard.rs`
+- `src/adapters/cli/commands/command_handlers/file.rs`
+- `src/adapters/cli/commands/command_handlers/keyboard.rs`
+- `src/adapters/cli/commands/command_handlers/mod.rs`
+- `src/adapters/cli/commands/command_handlers/mouse.rs`
+- `src/adapters/cli/commands/command_handlers/system.rs`
+- `src/adapters/cli/commands/command_handlers/utils.rs`
+- `src/adapters/cli/commands/command_handlers/window.rs`
+- `src/adapters/cli/commands/command_types.rs`
+- `src/adapters/cli/commands/mod.rs`
+- `src/adapters/cli/commands/recording_commands.rs`
+- `src/adapters/cli/commands/system_commands.rs`
+- `src/adapters/cli/commands/ui_commands.rs`
+- `src/adapters/cli/handler/command_preparation.rs`
+- `src/adapters/cli/handler/connection.rs`
+- `src/adapters/cli/handler/main.rs`
+- `src/adapters/cli/handler/mod.rs`
+- `src/adapters/cli/handler/response_handling/core.rs`
+- `src/adapters/cli/handler/response_handling/formatters/core.rs`
+- `src/adapters/cli/handler/response_handling/formatters/csv_formatters.rs`
+- `src/adapters/cli/handler/response_handling/formatters/file_formatters.rs`
+- `src/adapters/cli/handler/response_handling/formatters/formatters.rs`
+- `src/adapters/cli/handler/response_handling/formatters/formatters_main.rs`
+- `src/adapters/cli/handler/response_handling/formatters/json_formatters.rs`
+- `src/adapters/cli/handler/response_handling/formatters/plain_formatters.rs`
+- `src/adapters/cli/handler/response_handling/formatters/system_formatters.rs`
+- `src/adapters/cli/handler/response_handling/formatters/table.rs`
+- `src/adapters/cli/handler/response_handling/formatters/table_formatters.rs`
+- `src/adapters/cli/handler/response_handling/formatters.rs`
+- `src/adapters/cli/handler/response_handling/mod.rs`
+- `src/adapters/cli/mod.rs`
+- `src/adapters/computer_control/in_memory/mod.rs`
+- `src/adapters/computer_control/mod.rs`
+- `src/adapters/config/mod.rs`
+- `src/adapters/controllers/mod.rs`
+- `src/adapters/daemon/daemon_config.rs`
+- `src/adapters/daemon/daemon_service.rs`
+- `src/adapters/daemon/mod.rs`
 
 ## Quick Start
 
@@ -39,6 +112,12 @@ bun run dev
 
 ```bash
 bun run test
+```
+
+### Lint
+
+```bash
+bun run lint
 ```
 
 ## Scripts
@@ -170,3 +249,8 @@ async fn main() -> anyhow::Result<()> {
 | `--config` | Specify config file path | TOML file path | — |
 | `AGENT_TIMEOUT` | Operation timeout in seconds | env var | `60` |
 | `AGENT_DEBUG` | Enable debug logging | env var | `false` |
+
+## Links
+
+- Repository: <https://github.com/wrikka/wpackages>
+- Source: <https://github.com/wrikka/wpackages/blob/main/apps/cli/agent-computer/package.json>

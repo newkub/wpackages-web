@@ -409,7 +409,7 @@ export const workspaces: Workspace[] = [
 	{
 		id: "packages-lib-ratatui-ui-Cargo-rust",
 		label: "ratatui-ui",
-		category: "Libraries",
+		category: "TUI Lib",
 		description: "A shadcn/ui-style design system for ratatui TUI apps",
 		path: "packages/lib/ratatui-ui/Cargo.toml",
 		type: "rust",

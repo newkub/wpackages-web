@@ -1,5 +1,9 @@
 # app
 
+## Overview
+
+app npm workspace at packages/lib/tauri-plugin-wrikka-fs/examples/vanilla/package.json
+
 ## Metadata
 
 | Field | Value |
@@ -9,10 +13,21 @@
 | Path | `packages/lib/tauri-plugin-wrikka-fs/examples/vanilla/package.json` |
 | Version | `1.0.0` |
 | License | `MIT` |
+| Main | `index.js` |
 
-## Description
+## Directory Structure
 
-app npm workspace at packages/lib/tauri-plugin-wrikka-fs/examples/vanilla/package.json
+- 📄 `package.json`
+- 📁 `public`
+- 📄 `public/index.html`
+- 📁 `src-tauri`
+- 📄 `src-tauri/build.rs`
+- 📁 `src-tauri/capabilities`
+- 📄 `src-tauri/Cargo.toml`
+- 📁 `src-tauri/icons`
+- 📄 `src-tauri/rustfmt.toml`
+- 📁 `src-tauri/src`
+- 📄 `src-tauri/tauri.conf.json`
 
 ## Quick Start
 

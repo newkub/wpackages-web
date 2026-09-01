@@ -1,5 +1,9 @@
 # wrikka-repo-mapping
 
+## Overview
+
+Repository map generation and analysis
+
 ## Metadata
 
 | Field | Value |
@@ -10,9 +14,24 @@
 | Version | `0.1.0` |
 | Edition | `2021` |
 
-## Description
+## Directory Structure
 
-Repository map generation and analysis
+- 📄 `Cargo.toml`
+- 📁 `src`
+- 📁 `src/infrastructure`
+- 📄 `src/lib.rs`
+- 📁 `src/modules`
+
+## Source Files
+
+- `src/infrastructure/entities/mod.rs`
+- `src/infrastructure/entities/repo_map_entity.rs`
+- `src/infrastructure/mod.rs`
+- `src/lib.rs`
+- `src/modules/repo_mapping/mod.rs`
+- `src/modules/repo_mapping/models/mod.rs`
+- `src/modules/repo_mapping/operations/mod.rs`
+- `src/modules/repo_mapping/scanners/mod.rs`
 
 ## Quick Start
 
@@ -34,22 +53,23 @@ cargo test -p wrikka-repo-mapping
 cargo run -p wrikka-repo-mapping
 ```
 
-## Dependencies
+### Lint
 
-| Name | Version |
+```bash
+cargo clippy -p wrikka-repo-mapping
+```
+
+### Documentation
+
+```bash
+cargo doc -p wrikka-repo-mapping --no-deps
+```
+
+## Environment
+
+| Field | Value |
 | --- | --- |
-| tokio | `workspace` |
-| serde | `workspace` |
-| serde_json | `workspace` |
-| anyhow | `workspace` |
-| thiserror | `workspace` |
-| validator | `workspace` |
-| sea-orm | `workspace` |
-| walkdir | `2.5` |
-| ignore | `0.4` |
-| petgraph | `0.6` |
-| regex | `workspace` |
-| tracing | `workspace` |
+| Edition | `2021` |
 
 ## README
 
