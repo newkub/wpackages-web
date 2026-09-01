@@ -1,12 +1,33 @@
 # @wrikka/rust-packages
 
-- **Type:** NPM
-- **Category:** Root
-- **Path:** `package.json`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | NPM |
+| Category | Root |
+| Path | `package.json` |
+| Version | `0.1.0` |
 
 ## Description
 
-npm workspace root for rust-packages
+No description available.
+
+## Quick Start
+
+### Install
+
+```bash
+bun install
+```
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| @biomejs/biome | `^2.5.11` |
+| @moonrepo/cli | `^2.5.3` |
+| turbo | `^2.10.12` |
 
 ## README
 

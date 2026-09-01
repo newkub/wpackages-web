@@ -1,12 +1,55 @@
 # wrikka-core
 
-- **Type:** RUST
-- **Category:** Infra
-- **Path:** `packages/infra/core/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | Infra |
+| Path | `packages/infra/core/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2021` |
+| License | `MIT` |
+| Repository | <https://github.com/wrikka/wpackages> |
+| Homepage | <https://github.com/wrikka/wpackages> |
+| Authors | Wrikka Team |
+| Keywords | infrastructure, errors, types, utilities |
 
 ## Description
 
 Core infrastructure - shared kernel, HTTP client, config, git integration
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p wrikka-core
+```
+
+### Test
+
+```bash
+cargo test -p wrikka-core
+```
+
+### Run
+
+```bash
+cargo run -p wrikka-core
+```
+
+## Dependencies
+
+| Name | Version |
+| --- | --- |
+| reqwest | `workspace` |
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| tokio-test | `workspace` |
 
 ## README
 

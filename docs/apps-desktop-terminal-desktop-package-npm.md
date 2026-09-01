@@ -1,12 +1,76 @@
 # @wrikka/terminal
 
-- **Type:** NPM
-- **Category:** Desktop Apps
-- **Path:** `apps/desktop/terminal-desktop/package.json`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | NPM |
+| Category | Desktop Apps |
+| Path | `apps/desktop/terminal-desktop/package.json` |
+| Version | `0.1.0` |
 
 ## Description
 
 Wrikka Terminal - GPU-accelerated terminal emulator
+
+## Quick Start
+
+### Install
+
+```bash
+bun install
+```
+
+### Build
+
+```bash
+bun run build
+```
+
+### Develop
+
+```bash
+bun run dev
+```
+
+## Scripts
+
+| Script | Command |
+| --- | --- |
+| dev | `bunx --bun vite` |
+| build | `tsc && bunx --bun vite build` |
+| preview | `bunx --bun vite preview` |
+| tauri | `tauri` |
+| tauri:dev | `tauri dev` |
+| tauri:build | `scripts\tauri-build.cmd` |
+| typecheck:rs | `cargo check` |
+| lint:rs | `cargo clippy -- -D warnings` |
+| format:rs | `cargo fmt` |
+| test:rs | `cargo test` |
+| tui | `cargo run --bin wrikka-terminal-tui` |
+| tui:build | `cargo build --bin wrikka-terminal-tui` |
+| verify:rs | `cargo clippy -p wrikka-terminal -- -D warnings && cargo test -p wrikka-terminal` |
+| clean:rs | `cargo clean` |
+
+## Dependencies
+
+| Name | Version |
+| --- | --- |
+| @tauri-apps/api | `^2.2.0` |
+| @tauri-apps/plugin-shell | `^2.2.0` |
+| @tauri-apps/plugin-store | `^2.2.0` |
+| @tauri-apps/plugin-clipboard-manager | `^2.2.0` |
+| solid-js | `^1.9.5` |
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| @tauri-apps/cli | `^2.5.0` |
+| @types/node | `^22.13.0` |
+| typescript | `^5.7.3` |
+| vite | `^6.0.11` |
+| vite-plugin-solid | `^2.11.2` |
 
 ## README
 

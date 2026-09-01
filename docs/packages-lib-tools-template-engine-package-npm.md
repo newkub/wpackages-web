@@ -1,12 +1,60 @@
 # @wrikka/rust-template-engine
 
-- **Type:** NPM
-- **Category:** Tools
-- **Path:** `packages/lib/tools/template-engine/package.json`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | NPM |
+| Category | Tools |
+| Path | `packages/lib/tools/template-engine/package.json` |
+| Version | `0.1.0` |
+| License | `MIT` |
+| Repository | <https://github.com/wrikka/wpackages> |
 
 ## Description
 
 Template engine with Clean Architecture
+
+## Quick Start
+
+### Install
+
+```bash
+bun install
+```
+
+### Build
+
+```bash
+bun run build
+```
+
+### Develop
+
+```bash
+bun run dev
+```
+
+### Test
+
+```bash
+bun run test
+```
+
+## Scripts
+
+| Script | Command |
+| --- | --- |
+| dev | `bun run src/index.ts` |
+| build | `bun build` |
+| typecheck | `tsc --noEmit` |
+| lint | `biome lint` |
+| lint:fix | `biome lint --write` |
+| format | `biome format --write` |
+| test | `vitest run` |
+| verify | `bun run lint && bun run typecheck && bun run test` |
+| ci | `bun run verify && bun run build` |
+| clean | `cargo clean` |
 
 ## README
 

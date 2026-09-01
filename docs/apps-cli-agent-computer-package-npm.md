@@ -1,12 +1,67 @@
 # @wrikka/rust-agent-computer
 
-- **Type:** NPM
-- **Category:** CLI Apps
-- **Path:** `apps/cli/agent-computer/package.json`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | NPM |
+| Category | CLI Apps |
+| Path | `apps/cli/agent-computer/package.json` |
+| Version | `0.1.0` |
+| License | `MIT` |
+| Repository | <https://github.com/wrikka/wpackages> |
 
 ## Description
 
 Computer automation agent with Clean Architecture
+
+## Quick Start
+
+### Install
+
+```bash
+bun install
+```
+
+### Build
+
+```bash
+bun run build
+```
+
+### Develop
+
+```bash
+bun run dev
+```
+
+### Test
+
+```bash
+bun run test
+```
+
+## Scripts
+
+| Script | Command |
+| --- | --- |
+| dev | `cargo run --bin agent-computer` |
+| build | `cargo build --release` |
+| typecheck | `cargo check` |
+| lint | `cargo clippy -- -D warnings` |
+| format | `cargo fmt` |
+| format:check | `cargo fmt --check` |
+| lint:fix | `cargo clippy --fix --allow-dirty --allow-staged` |
+| test | `cargo test` |
+| test:unit | `cargo test --lib` |
+| test:integration | `cargo test --test '*'` |
+| verify | `cargo check && cargo clippy -- -D warnings && cargo test` |
+| verify:full | `cargo check && cargo clippy -- -D warnings && cargo test --lib && cargo test --test '*' && cargo build --release` |
+| ci | `cargo check && cargo clippy -- -D warnings && cargo test && cargo build --release` |
+| clean | `cargo clean` |
+| bench | `cargo bench` |
+| docs | `cargo doc --no-deps` |
+| update-deps | `cargo update` |
 
 ## README
 

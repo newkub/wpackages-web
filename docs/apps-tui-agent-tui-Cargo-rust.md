@@ -1,12 +1,43 @@
 # agent-tui
 
-- **Type:** RUST
-- **Category:** TUI Apps
-- **Path:** `apps/tui/agent-tui/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | TUI Apps |
+| Path | `apps/tui/agent-tui/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2021` |
+| License | `MIT` |
+| Repository | <https://github.com/newkub/agent-tui> |
+| Homepage | <https://github.com/newkub/agent-tui> |
+| Authors | Wrikka Team |
+| Keywords | tui, terminal, ai, assistant, cli |
 
 ## Description
 
 Terminal-based AI assistant interface with clean architecture
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p agent-tui
+```
+
+### Test
+
+```bash
+cargo test -p agent-tui
+```
+
+### Run
+
+```bash
+cargo run -p agent-tui
+```
 
 ## README
 

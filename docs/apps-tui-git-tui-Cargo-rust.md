@@ -1,12 +1,54 @@
 # git-tui
 
-- **Type:** RUST
-- **Category:** TUI Apps
-- **Path:** `apps/tui/git-tui/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | TUI Apps |
+| Path | `apps/tui/git-tui/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2021` |
+| License | `MIT` |
+| Repository | <https://github.com/newkub/git-tui> |
+| Homepage | <https://github.com/newkub/git-tui> |
+| Authors | Wrikka Team |
+| Keywords | tui, git, vcs, manager |
 
 ## Description
 
 Git manager TUI app with clean architecture
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p git-tui
+```
+
+### Test
+
+```bash
+cargo test -p git-tui
+```
+
+### Run
+
+```bash
+cargo run -p git-tui
+```
+
+## Dependencies
+
+| Name | Version |
+| --- | --- |
+| anyhow | `1.0.102` |
+| thiserror | `2.0.18` |
+| ratatui | `0.30.2` |
+| crossterm | `0.29.0` |
+| unicode-width | `0.2.0` |
+| ratatui-ui | `workspace` |
 
 ## README
 

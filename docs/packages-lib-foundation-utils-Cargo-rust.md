@@ -1,12 +1,55 @@
 # wrikka-foundation-utils
 
-- **Type:** RUST
-- **Category:** Foundation
-- **Path:** `packages/lib/foundation/utils/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | Foundation |
+| Path | `packages/lib/foundation/utils/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2021` |
+| License | `MIT OR Apache-2.0` |
+| Repository | <https://github.com/wrikka/rust-packages> |
+| Authors | Wrikka Team <team@wrikka.dev> |
+| Keywords | utils, utilities, clean-architecture, functional, helpers |
 
 ## Description
 
 Utility library with Clean Architecture and functional programming principles
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p wrikka-foundation-utils
+```
+
+### Test
+
+```bash
+cargo test -p wrikka-foundation-utils
+```
+
+### Run
+
+```bash
+cargo run -p wrikka-foundation-utils
+```
+
+## Dependencies
+
+| Name | Version |
+| --- | --- |
+| thiserror | `workspace` |
+| validator | `workspace` |
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| tokio-test | `0.4` |
 
 ## README
 

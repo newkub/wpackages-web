@@ -1,12 +1,48 @@
 # wrikka-foundation-fp
 
-- **Type:** RUST
-- **Category:** Foundation
-- **Path:** `packages/lib/foundation/fp/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | Foundation |
+| Path | `packages/lib/foundation/fp/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2021` |
+| License | `MIT OR Apache-2.0` |
+| Repository | <https://github.com/wrikka/rust-packages> |
+| Authors | Wrikka Team <team@wrikka.dev> |
+| Keywords | functional, programming, fp, monad, functor |
 
 ## Description
 
 Functional Programming library with Clean Architecture
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p wrikka-foundation-fp
+```
+
+### Test
+
+```bash
+cargo test -p wrikka-foundation-fp
+```
+
+### Run
+
+```bash
+cargo run -p wrikka-foundation-fp
+```
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| tokio-test | `0.4` |
 
 ## README
 

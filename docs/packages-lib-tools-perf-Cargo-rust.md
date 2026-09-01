@@ -1,12 +1,57 @@
 # wrikka-perf
 
-- **Type:** RUST
-- **Category:** Tools
-- **Path:** `packages/lib/tools/perf/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | Tools |
+| Path | `packages/lib/tools/perf/Cargo.toml` |
+| Keywords | performance, benchmarking, monitoring, profiling, metrics |
 
 ## Description
 
 Performance monitoring and benchmarking tools
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p wrikka-perf
+```
+
+### Test
+
+```bash
+cargo test -p wrikka-perf
+```
+
+### Run
+
+```bash
+cargo run -p wrikka-perf
+```
+
+## Dependencies
+
+| Name | Version |
+| --- | --- |
+| indicatif | `0.17` |
+| colored | `2.1` |
+| num_cpus | `1.16` |
+| rand | `0.8` |
+| serde | `workspace` |
+| serde_json | `workspace` |
+| anyhow | `workspace` |
+| thiserror | `workspace` |
+| tokio | `workspace` |
+| async-trait | `workspace` |
+| chrono | `workspace` |
+| uuid | `workspace` |
+| clap | `workspace` |
+| criterion | `0.5` |
+| statrs | `0.16` |
 
 ## README
 

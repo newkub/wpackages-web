@@ -1,12 +1,59 @@
 # wrikka-agent-core
 
-- **Type:** RUST
-- **Category:** Domain
-- **Path:** `packages/domain/agent-sdk/core/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | Domain |
+| Path | `packages/domain/agent-sdk/core/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2021` |
+| License | `MIT` |
+| Repository | <https://github.com/newkub/wpackages> |
+| Keywords | ai, agent, llm, sdk, runtime |
 
 ## Description
 
 AI agent core runtime - conversation, provider, memory, workspace
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p wrikka-agent-core
+```
+
+### Test
+
+```bash
+cargo test -p wrikka-agent-core
+```
+
+### Run
+
+```bash
+cargo run -p wrikka-agent-core
+```
+
+## Dependencies
+
+| Name | Version |
+| --- | --- |
+| tokio | `workspace` |
+| async-trait | `workspace` |
+| futures-util | `workspace` |
+| serde | `workspace` |
+| serde_json | `workspace` |
+| anyhow | `workspace` |
+| thiserror | `workspace` |
+| validator | `workspace` |
+| sea-orm | `workspace` |
+| uuid | `workspace` |
+| chrono | `workspace` |
+| dashmap | `workspace` |
+| parking_lot | `workspace` |
 
 ## README
 

@@ -1,12 +1,50 @@
 # wmonorepo
 
-- **Type:** RUST
-- **Category:** CLI Apps
-- **Path:** `apps/cli/monorepo/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | CLI Apps |
+| Path | `apps/cli/monorepo/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2024` |
+| License | `MIT OR Apache-2.0` |
+| Repository | <https://github.com/wrikka/wpackages> |
+| Authors | Wrikka Team |
+| Keywords | monorepo, build-system, task-runner, workspace |
 
 ## Description
 
 Advanced monorepo management tool - Better than Moonrepo and Turborepo
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p wmonorepo
+```
+
+### Test
+
+```bash
+cargo test -p wmonorepo
+```
+
+### Run
+
+```bash
+cargo run -p wmonorepo
+```
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| tempfile | `3.27.0` |
+| assert_cmd | `2.2.2` |
+| predicates | `3.1.4` |
 
 ## README
 

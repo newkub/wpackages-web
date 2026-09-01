@@ -12,7 +12,7 @@ export const workspaces: Workspace[] = [
 		id: "root-package-json",
 		label: "@wrikka/rust-packages",
 		category: "Root",
-		description: "npm workspace root for rust-packages",
+		description: "",
 		path: "package.json",
 		type: "npm",
 	},

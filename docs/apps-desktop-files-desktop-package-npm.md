@@ -1,12 +1,84 @@
 # @wrikka/files-desktop
 
-- **Type:** NPM
-- **Category:** Desktop Apps
-- **Path:** `apps/desktop/files-desktop/package.json`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | NPM |
+| Category | Desktop Apps |
+| Path | `apps/desktop/files-desktop/package.json` |
+| Version | `0.1.0` |
+| License | `MIT` |
 
 ## Description
 
 Wrikka Desktop Explorer — custom-column, agent-driven file explorer
+
+## Quick Start
+
+### Install
+
+```bash
+bun install
+```
+
+### Build
+
+```bash
+bun run build
+```
+
+### Develop
+
+```bash
+bun run dev
+```
+
+## Scripts
+
+| Script | Command |
+| --- | --- |
+| start | `vite` |
+| dev | `vite` |
+| build | `vite build` |
+| serve | `vite preview` |
+| tauri | `tauri` |
+| typecheck | `tsc --noEmit` |
+| lint | `oxlint .` |
+| format | `biome format .` |
+
+## Dependencies
+
+| Name | Version |
+| --- | --- |
+| @iconify-json/mdi | `^1.2.3` |
+| @tanstack/solid-virtual | `^3.13.37` |
+| @tauri-apps/api | `^2.11.1` |
+| @tauri-apps/plugin-dialog | `^2.7.3` |
+| @tauri-apps/plugin-opener | `^2.5.5` |
+| @tauri-apps/plugin-store | `^2.4.4` |
+| @unocss/preset-icons | `66.6.8` |
+| @unocss/preset-wind | `^0.65.4` |
+| @unocss/transformer-directives | `66.6.8` |
+| @unocss/vite | `66.6.8` |
+| dompurify | `^3.4.14` |
+| highlight.js | `^11.12.0` |
+| marked | `^18.0.11` |
+| solid-js | `^1.9.15` |
+| unocss | `66.6.8` |
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| @tauri-apps/cli | `^2.11.4` |
+| @types/dompurify | `^3.2.0` |
+| @unocss/preset-wind4 | `66.6.8` |
+| @unocss/transformer-variant-group | `66.6.8` |
+| oxlint | `^1.80.0` |
+| typescript | `~5.6.3` |
+| vite | `^6.4.3` |
+| vite-plugin-solid | `^2.11.14` |
 
 ## README
 

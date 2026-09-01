@@ -1,12 +1,36 @@
 # rust-packages
 
-- **Type:** RUST
-- **Category:** Root
-- **Path:** `Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | Root |
+| Path | `Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2021` |
+| License | `MIT` |
+| Repository | <https://github.com/wrikka/rust-packages> |
+| Homepage | <https://github.com/wrikka/rust-packages> |
+| Authors | Wrikka Team |
 
 ## Description
 
 Cargo workspace root for rust-packages
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build
+```
+
+### Test
+
+```bash
+cargo test
+```
 
 ## README
 

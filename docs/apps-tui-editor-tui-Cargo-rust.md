@@ -1,12 +1,50 @@
 # wrikka-editor-tui
 
-- **Type:** RUST
-- **Category:** TUI Apps
-- **Path:** `apps/tui/editor-tui/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | TUI Apps |
+| Path | `apps/tui/editor-tui/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2021` |
+| License | `MIT` |
+| Repository | <https://github.com/wrikka/wpackages> |
+| Homepage | <https://github.com/wrikka/wpackages> |
+| Authors | Wrikka Team |
+| Keywords | tui, terminal, editor, vim, modal |
 
 ## Description
 
 Modal TUI text editor with clean architecture
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p wrikka-editor-tui
+```
+
+### Test
+
+```bash
+cargo test -p wrikka-editor-tui
+```
+
+### Run
+
+```bash
+cargo run -p wrikka-editor-tui
+```
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| tokio-test | `0.4.5` |
+| tempfile | `3.10.1` |
 
 ## README
 

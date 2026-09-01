@@ -1,12 +1,49 @@
 # wrikka-template-engine
 
-- **Type:** RUST
-- **Category:** Tools
-- **Path:** `packages/lib/tools/template-engine/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | Tools |
+| Path | `packages/lib/tools/template-engine/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2024` |
+| License | `MIT OR Apache-2.0` |
+| Repository | <https://github.com/wrikka/wpackages> |
+| Authors | Wrikka Team |
+| Keywords | template, code-generation, scaffolding |
 
 ## Description
 
 General-purpose template engine for project generation
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p wrikka-template-engine
+```
+
+### Test
+
+```bash
+cargo test -p wrikka-template-engine
+```
+
+### Run
+
+```bash
+cargo run -p wrikka-template-engine
+```
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| tempfile | `3.27` |
+| insta | `1.48` |
 
 ## README
 

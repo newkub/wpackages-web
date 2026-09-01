@@ -1,12 +1,59 @@
 # wcanvas-native-rust
 
-- **Type:** RUST
-- **Category:** WASM Apps
-- **Path:** `apps/wasm/canvas/native-rust/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | WASM Apps |
+| Path | `apps/wasm/canvas/native-rust/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2021` |
+| License | `MIT` |
+| Repository | <https://github.com/wrikka/wpackages> |
+| Homepage | <https://github.com/wrikka/wpackages> |
+| Authors | Wrikka Team |
+| Keywords | canvas, storage, ai, native, graphics |
 
 ## Description
 
 Native Rust implementation for wcanvas with storage, AI, and canvas core features
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p wcanvas-native-rust
+```
+
+### Test
+
+```bash
+cargo test -p wcanvas-native-rust
+```
+
+### Run
+
+```bash
+cargo run -p wcanvas-native-rust
+```
+
+## Dependencies
+
+| Name | Version |
+| --- | --- |
+| serde | `workspace` |
+| serde_json | `workspace` |
+| thiserror | `workspace` |
+| tracing | `workspace` |
+| tokio | `workspace` |
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| tokio-test | `0.4.5` |
 
 ## README
 

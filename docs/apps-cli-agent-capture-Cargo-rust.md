@@ -1,12 +1,48 @@
 # agent-capture
 
-- **Type:** RUST
-- **Category:** CLI Apps
-- **Path:** `apps/cli/agent-capture/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | CLI Apps |
+| Path | `apps/cli/agent-capture/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2021` |
+| License | `MIT` |
+| Repository | <https://github.com/wrikka/agent-capture> |
+| Authors | Wrikka Team |
 
 ## Description
 
 Multi-platform agent capture CLI for browser, terminal, code snippets, and component previews
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p agent-capture
+```
+
+### Test
+
+```bash
+cargo test -p agent-capture
+```
+
+### Run
+
+```bash
+cargo run -p agent-capture
+```
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| tempfile | `3.27.0` |
+| mockall | `0.14.0` |
 
 ## README
 

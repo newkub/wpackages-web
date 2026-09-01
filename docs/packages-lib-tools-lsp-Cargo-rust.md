@@ -1,12 +1,51 @@
 # wrikka-lsp
 
-- **Type:** RUST
-- **Category:** Tools
-- **Path:** `packages/lib/tools/lsp/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | Tools |
+| Path | `packages/lib/tools/lsp/Cargo.toml` |
+| Keywords | lsp, language-server, completion, diagnostics, ide |
 
 ## Description
 
 LSP integration - completion, diagnostics, and go-to-definition
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p wrikka-lsp
+```
+
+### Test
+
+```bash
+cargo test -p wrikka-lsp
+```
+
+### Run
+
+```bash
+cargo run -p wrikka-lsp
+```
+
+## Dependencies
+
+| Name | Version |
+| --- | --- |
+| serde_json | `workspace` |
+| serde | `workspace` |
+| thiserror | `workspace` |
+| async-trait | `workspace` |
+| tokio | `workspace` |
+| tracing | `workspace` |
+| tokio-tungstenite | `0.29.0` |
+| futures-util | `workspace` |
+| url | `2.5.8` |
 
 ## README
 

@@ -1,12 +1,58 @@
 # wrikka-rules-engine
 
-- **Type:** RUST
-- **Category:** Tools
-- **Path:** `packages/lib/tools/rules-engine/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | Tools |
+| Path | `packages/lib/tools/rules-engine/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2021` |
+| License | `MIT` |
+| Repository | <https://github.com/wrikka/wpackages> |
+| Homepage | <https://github.com/wrikka/wpackages> |
+| Authors | wrikka contributors |
+| Keywords | rules, linter, code-analysis, ast, clean-architecture |
 
 ## Description
 
 Flexible and customizable rules engine for code analysis, linting, and rewriting - Clean Architecture
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p wrikka-rules-engine
+```
+
+### Test
+
+```bash
+cargo test -p wrikka-rules-engine
+```
+
+### Run
+
+```bash
+cargo run -p wrikka-rules-engine
+```
+
+## Dependencies
+
+| Name | Version |
+| --- | --- |
+| anyhow | `workspace` |
+| thiserror | `workspace` |
+| validator | `workspace` |
+| sea-orm | `workspace` |
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| tempfile | `3` |
 
 ## README
 

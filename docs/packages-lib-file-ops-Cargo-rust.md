@@ -1,12 +1,41 @@
 # wrikka-file-ops
 
-- **Type:** RUST
-- **Category:** Libraries
-- **Path:** `packages/lib/file-ops/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | Libraries |
+| Path | `packages/lib/file-ops/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2021` |
+| License | `MIT` |
+| Repository | <https://github.com/veerapong/file-ops> |
+| Authors | Veerapong |
 
 ## Description
 
 wrikka-file-ops Rust workspace at packages/lib/file-ops/Cargo.toml
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p wrikka-file-ops
+```
+
+### Test
+
+```bash
+cargo test -p wrikka-file-ops
+```
+
+### Run
+
+```bash
+cargo run -p wrikka-file-ops
+```
 
 ## README
 

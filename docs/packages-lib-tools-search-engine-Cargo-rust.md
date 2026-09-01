@@ -1,12 +1,88 @@
 # wrikka-search-engine
 
-- **Type:** RUST
-- **Category:** Tools
-- **Path:** `packages/lib/tools/search-engine/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | Tools |
+| Path | `packages/lib/tools/search-engine/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2021` |
+| License | `MIT` |
+| Repository | <https://github.com/wrikka/wpackages> |
 
 ## Description
 
 AI-friendly semantic search engine with AST parsing, following Clean Architecture principles
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p wrikka-search-engine
+```
+
+### Test
+
+```bash
+cargo test -p wrikka-search-engine
+```
+
+### Run
+
+```bash
+cargo run -p wrikka-search-engine
+```
+
+## Dependencies
+
+| Name | Version |
+| --- | --- |
+| tokio | `workspace` |
+| async-trait | `workspace` |
+| serde | `workspace` |
+| serde_json | `workspace` |
+| anyhow | `workspace` |
+| thiserror | `workspace` |
+| validator | `workspace` |
+| uuid | `workspace` |
+| chrono | `workspace` |
+| dashmap | `workspace` |
+| parking_lot | `workspace` |
+| tracing | `workspace` |
+| regex | `workspace` |
+| ripgrep | `0.3` |
+| ignore | `0.4` |
+| walkdir | `2.5` |
+| memchr | `2.8` |
+| aho-corasick | `1.1` |
+| tree-sitter | `0.26` |
+| tree-sitter-rust | `0.24` |
+| tree-sitter-javascript | `0.25` |
+| tree-sitter-typescript | `0.23` |
+| tree-sitter-python | `0.25` |
+| tree-sitter-go | `0.25` |
+| tree-sitter-java | `0.23` |
+| tree-sitter-c | `0.23` |
+| tree-sitter-cpp | `0.23` |
+| fst | `0.4` |
+| levenshtein | `1.0` |
+| ngrams | `0.1` |
+| rayon | `1.12` |
+| crossbeam | `0.8` |
+| num_cpus | `1.17` |
+| notify | `6.1` |
+| memmap2 | `0.9` |
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| tokio-test | `0.4` |
+| criterion | `0.5` |
+| tempfile | `3.27` |
 
 ## README
 

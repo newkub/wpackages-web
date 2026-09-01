@@ -1,12 +1,66 @@
 # @wrikka/rust-parser
 
-- **Type:** NPM
-- **Category:** Tools
-- **Path:** `packages/lib/tools/parser-engine/package.json`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | NPM |
+| Category | Tools |
+| Path | `packages/lib/tools/parser-engine/package.json` |
+| Version | `0.1.0` |
+| License | `MIT` |
+| Repository | <https://github.com/wrikka/wpackages> |
 
 ## Description
 
 Advanced parser utilities with multiple language support and Clean Architecture
+
+## Quick Start
+
+### Install
+
+```bash
+bun install
+```
+
+### Build
+
+```bash
+bun run build
+```
+
+### Develop
+
+```bash
+bun run dev
+```
+
+### Test
+
+```bash
+bun run test
+```
+
+## Scripts
+
+| Script | Command |
+| --- | --- |
+| dev | `bun run src/index.ts` |
+| build | `bun build` |
+| typecheck | `tsc --noEmit` |
+| lint | `biome lint` |
+| lint:fix | `biome lint --write` |
+| format | `biome format --write` |
+| test | `vitest run` |
+| verify | `bun run lint && bun run typecheck && bun run test` |
+| ci | `bun run verify && bun run build` |
+| clean | `cargo clean` |
+| format:check | `cargo fmt -- --check` |
+| clippy:fix | `cargo clippy --fix` |
+| test:unit | `cargo test --lib` |
+| test:integration | `cargo test --test integration` |
+| test:e2e | `cargo test --features e2e` |
+| verify:full | `cargo check && cargo clippy && cargo test --lib && cargo test --test integration && cargo test --features e2e && cargo build --release` |
 
 ## README
 

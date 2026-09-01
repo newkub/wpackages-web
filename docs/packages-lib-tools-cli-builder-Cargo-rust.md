@@ -1,12 +1,54 @@
 # wrikka-cli-builder
 
-- **Type:** RUST
-- **Category:** Tools
-- **Path:** `packages/lib/tools/cli-builder/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | Tools |
+| Path | `packages/lib/tools/cli-builder/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2021` |
+| License | `MIT` |
+| Repository | <https://github.com/wrikka/wpackages> |
+| Authors | Wrikka Team |
 
 ## Description
 
 A clean architecture CLI builder library
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p wrikka-cli-builder
+```
+
+### Test
+
+```bash
+cargo test -p wrikka-cli-builder
+```
+
+### Run
+
+```bash
+cargo run -p wrikka-cli-builder
+```
+
+## Dependencies
+
+| Name | Version |
+| --- | --- |
+| async-trait | `workspace` |
+| thiserror | `workspace` |
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| tokio-test | `0.4` |
 
 ## README
 

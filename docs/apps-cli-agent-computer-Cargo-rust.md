@@ -1,12 +1,56 @@
 # agent-computer
 
-- **Type:** RUST
-- **Category:** CLI Apps
-- **Path:** `apps/cli/agent-computer/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | CLI Apps |
+| Path | `apps/cli/agent-computer/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2021` |
+| License | `MIT` |
+| Repository | <https://github.com/newkub/wai> |
+| Authors | WAI Team |
+| Keywords | automation, orchestration, computer, clean-architecture |
 
 ## Description
 
 Main orchestration for computer automation with Clean Architecture
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p agent-computer
+```
+
+### Test
+
+```bash
+cargo test -p agent-computer
+```
+
+### Run
+
+```bash
+cargo run -p agent-computer
+```
+
+## Dependencies
+
+| Name | Version |
+| --- | --- |
+| thiserror | `2.0.20` |
+| anyhow | `1.0.104` |
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| mockall | `0.14.0` |
+| pretty_assertions | `1.4.1` |
 
 ## README
 

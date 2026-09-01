@@ -1,12 +1,59 @@
 # agent-browser
 
-- **Type:** RUST
-- **Category:** CLI Apps
-- **Path:** `apps/cli/agent-browser/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | CLI Apps |
+| Path | `apps/cli/agent-browser/Cargo.toml` |
+| Keywords | automation, browser, playwright, chrome, selenium |
 
 ## Description
 
 Browser automation agent with Clean Architecture - supports Chrome, Firefox, Safari, Edge
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p agent-browser
+```
+
+### Test
+
+```bash
+cargo test -p agent-browser
+```
+
+### Run
+
+```bash
+cargo run -p agent-browser
+```
+
+## Dependencies
+
+| Name | Version |
+| --- | --- |
+| thiserror | `workspace` |
+| anyhow | `workspace` |
+| tokio | `workspace` |
+| serde | `workspace` |
+| serde_json | `workspace` |
+| tracing | `workspace` |
+| tracing-subscriber | `workspace` |
+| chrono | `workspace` |
+| async-trait | `workspace` |
+| futures | `0.3.32` |
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| mockall | `0.14.0` |
+| pretty_assertions | `1.4.1` |
 
 ## README
 

@@ -1,12 +1,50 @@
 # wrikka-convert-web-to-desktop
 
-- **Type:** RUST
-- **Category:** CLI Apps
-- **Path:** `apps/cli/convert-web-to-desktop/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | CLI Apps |
+| Path | `apps/cli/convert-web-to-desktop/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2021` |
+| License | `MIT` |
+| Repository | <https://github.com/wrikka/wpackages> |
+| Authors | Veerapong <veerapong@example.com> |
 
 ## Description
 
 CLI tool to convert web applications to desktop using Tauri + WebView
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p wrikka-convert-web-to-desktop
+```
+
+### Test
+
+```bash
+cargo test -p wrikka-convert-web-to-desktop
+```
+
+### Run
+
+```bash
+cargo run -p wrikka-convert-web-to-desktop
+```
+
+## Dependencies
+
+| Name | Version |
+| --- | --- |
+| clap | `workspace` |
+| anyhow | `workspace` |
+| thiserror | `workspace` |
+| tokio | `workspace` |
 
 ## README
 

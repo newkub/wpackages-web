@@ -1,12 +1,68 @@
 # @wrikka/agent-capture
 
-- **Type:** NPM
-- **Category:** CLI Apps
-- **Path:** `apps/cli/agent-capture/package.json`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | NPM |
+| Category | CLI Apps |
+| Path | `apps/cli/agent-capture/package.json` |
+| Version | `0.1.0` |
+| License | `MIT` |
 
 ## Description
 
 Multi-platform agent capture CLI for browser, terminal, code snippets, and component previews
+
+## Quick Start
+
+### Install
+
+```bash
+bun install
+```
+
+### Build
+
+```bash
+bun run build
+```
+
+### Develop
+
+```bash
+bun run dev
+```
+
+### Test
+
+```bash
+bun run test
+```
+
+## Scripts
+
+| Script | Command |
+| --- | --- |
+| dev | `bun run src/index.ts` |
+| build | `bun build` |
+| typecheck | `tsc --noEmit` |
+| lint | `biome check` |
+| format | `biome check --write` |
+| test | `vitest run` |
+| verify | `bun run lint && bun run typecheck && bun run test` |
+| ci | `bun run verify && bun run build` |
+| build:napi | `napi build --platform --release` |
+| build:debug | `cargo build && npm run build:napi:debug` |
+| build:napi:debug | `napi build --platform` |
+| fmt | `cargo fmt` |
+| examples | `node examples/run-all.js` |
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| @napi-rs/cli | `^3.8.6` |
 
 ## README
 

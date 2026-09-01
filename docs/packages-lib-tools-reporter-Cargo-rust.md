@@ -1,12 +1,51 @@
 # wrikka-reporting
 
-- **Type:** RUST
-- **Category:** Tools
-- **Path:** `packages/lib/tools/reporter/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | Tools |
+| Path | `packages/lib/tools/reporter/Cargo.toml` |
+| Keywords | reporting, benchmark, metrics, export, visualization, clean-architecture |
 
 ## Description
 
 Generic reporting library with multiple formats, exporters, and Clean Architecture
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p wrikka-reporting
+```
+
+### Test
+
+```bash
+cargo test -p wrikka-reporting
+```
+
+### Run
+
+```bash
+cargo run -p wrikka-reporting
+```
+
+## Dependencies
+
+| Name | Version |
+| --- | --- |
+| serde | `workspace` |
+| serde_json | `workspace` |
+| anyhow | `workspace` |
+| thiserror | `workspace` |
+| validator | `workspace` |
+| sea-orm | `workspace` |
+| tracing | `workspace` |
+| tokio | `workspace` |
+| async-trait | `workspace` |
 
 ## README
 

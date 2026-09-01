@@ -1,12 +1,45 @@
 # wrikka-parser-engine
 
-- **Type:** RUST
-- **Category:** Tools
-- **Path:** `packages/lib/tools/parser-engine/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | Tools |
+| Path | `packages/lib/tools/parser-engine/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2021` |
+| License | `MIT` |
 
 ## Description
 
 Advanced parser utilities with multiple language support and Clean Architecture
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p wrikka-parser-engine
+```
+
+### Test
+
+```bash
+cargo test -p wrikka-parser-engine
+```
+
+### Run
+
+```bash
+cargo run -p wrikka-parser-engine
+```
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| tokio-test | `0.4` |
 
 ## README
 

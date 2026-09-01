@@ -1,12 +1,55 @@
 # wrikka-foundation-error
 
-- **Type:** RUST
-- **Category:** Foundation
-- **Path:** `packages/lib/foundation/error/Cargo.toml`
+## Metadata
+
+| Field | Value |
+| --- | --- |
+| Type | RUST |
+| Category | Foundation |
+| Path | `packages/lib/foundation/error/Cargo.toml` |
+| Version | `0.1.0` |
+| Edition | `2021` |
+| License | `MIT OR Apache-2.0` |
+| Repository | <https://github.com/wrikka/rust-packages> |
+| Authors | Wrikka Team <team@wrikka.dev> |
+| Keywords | error, error-handling, clean-architecture, functional, monad |
 
 ## Description
 
 Error handling library with Clean Architecture and functional programming principles
+
+## Quick Start
+
+### Build
+
+```bash
+cargo build -p wrikka-foundation-error
+```
+
+### Test
+
+```bash
+cargo test -p wrikka-foundation-error
+```
+
+### Run
+
+```bash
+cargo run -p wrikka-foundation-error
+```
+
+## Dependencies
+
+| Name | Version |
+| --- | --- |
+| thiserror | `workspace` |
+| validator | `workspace` |
+
+## Dev Dependencies
+
+| Name | Version |
+| --- | --- |
+| tokio-test | `0.4` |
 
 ## README
 
