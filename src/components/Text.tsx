@@ -1,4 +1,5 @@
 import type { JSX } from "solid-js";
+import { Dynamic } from "solid-js/web";
 import "./text.css";
 
 export type TextVariant =
@@ -26,8 +27,10 @@ const variantClass: Record<TextVariant, string> = {
 
 /** Text renders styled inline/block text similar to ratatui Span/Line styling. */
 export function Text(props: TextProps) {
-	const Tag = (props.as ?? "p") as "p";
+	const tag = props.as ?? "p";
 	return (
-		<Tag class={variantClass[props.variant ?? "default"]}>{props.children}</Tag>
+		<Dynamic component={tag} class={variantClass[props.variant ?? "default"]}>
+			{props.children}
+		</Dynamic>
 	);
 }
