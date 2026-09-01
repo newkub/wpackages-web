@@ -1,0 +1,22 @@
+.rt-footer {
+	display: flex;
+	gap: 16px;
+	padding: 8px 16px;
+	background: var(--rt-bg-alt);
+	border-top: 1px solid var(--rt-border);
+	font-size: 13px;
+	color: var(--rt-fg-dim);
+}
+
+.rt-footer-item {
+	display: inline-flex;
+	gap: 4px;
+}
+
+.rt-footer-key {
+	color: var(--rt-accent);
+}
+
+.rt-footer-sep {
+	color: var(--rt-fg-dim);
+}

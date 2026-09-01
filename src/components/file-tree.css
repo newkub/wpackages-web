@@ -1,0 +1,59 @@
+.rt-file-tree {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 1px solid var(--rt-border);
+	border-radius: var(--rt-radius);
+	background: var(--rt-panel);
+	overflow: auto;
+	max-height: 320px;
+}
+
+.rt-file-tree-node {
+	margin: 0;
+}
+
+.rt-file-tree-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	width: 100%;
+	background: transparent;
+	border: none;
+	color: var(--rt-fg-dim);
+	padding: 6px 12px;
+	font-family: var(--rt-font-mono);
+	font-size: 13px;
+	cursor: pointer;
+	text-align: left;
+}
+
+.rt-file-tree-row:hover {
+	background: rgba(126, 231, 135, 0.08);
+	color: var(--rt-fg);
+}
+
+.rt-file-tree-icon {
+	display: inline-block;
+	width: 14px;
+	color: var(--rt-accent);
+}
+
+.rt-file-tree-icon--file {
+	color: var(--rt-fg-dim);
+	opacity: 0.5;
+}
+
+.rt-file-tree-icon--dir {
+	color: var(--rt-warn);
+}
+
+.rt-file-tree-icon--open {
+	color: var(--rt-accent);
+}
+
+.rt-file-tree-children {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}

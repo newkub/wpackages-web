@@ -1,0 +1,15 @@
+.rt-text-dim {
+	color: var(--rt-fg-dim);
+}
+.rt-text-accent {
+	color: var(--rt-accent);
+}
+.rt-text-warn {
+	color: var(--rt-warn);
+}
+.rt-text-danger {
+	color: var(--rt-danger);
+}
+.rt-text-bold {
+	font-weight: 700;
+}

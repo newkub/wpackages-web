@@ -1,0 +1,62 @@
+.rt-command-palette-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.7);
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	padding-top: 100px;
+	z-index: 300;
+}
+
+.rt-command-palette {
+	background: var(--rt-panel);
+	border: 1px solid var(--rt-border);
+	width: 560px;
+	max-width: 90vw;
+	border-radius: var(--rt-radius);
+	overflow: hidden;
+	box-shadow: var(--rt-shadow);
+}
+
+.rt-command-palette-input {
+	width: 100%;
+	background: var(--rt-bg);
+	border: none;
+	border-bottom: 1px solid var(--rt-border);
+	color: var(--rt-fg);
+	padding: 10px 14px;
+	font-family: var(--rt-font-mono);
+	font-size: 14px;
+}
+
+.rt-command-palette-input:focus {
+	outline: none;
+	border-color: var(--rt-accent);
+}
+
+.rt-command-palette-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	max-height: 320px;
+	overflow-y: auto;
+}
+
+.rt-command-palette-item {
+	padding: 8px 14px;
+	cursor: pointer;
+	color: var(--rt-fg-dim);
+	font-size: 13px;
+}
+
+.rt-command-palette-item:hover {
+	background: rgba(126, 231, 135, 0.12);
+	color: var(--rt-fg);
+}
+
+.rt-command-palette-empty {
+	padding: 12px 14px;
+	color: var(--rt-fg-dim);
+	font-size: 13px;
+}

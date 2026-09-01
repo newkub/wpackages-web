@@ -1,0 +1,17 @@
+.rt-hover-tooltip {
+	position: relative;
+	display: inline-block;
+	cursor: help;
+}
+
+.rt-hover-tooltip-popup {
+	position: fixed;
+	z-index: 400;
+	background: var(--rt-panel);
+	border: 1px solid var(--rt-border);
+	border-radius: var(--rt-radius);
+	padding: 8px 10px;
+	color: var(--rt-fg);
+	font-size: 13px;
+	box-shadow: var(--rt-shadow);
+}

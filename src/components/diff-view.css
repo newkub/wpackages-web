@@ -1,0 +1,81 @@
+.rt-diff-view {
+	display: flex;
+	gap: 8px;
+	background: var(--rt-panel);
+	border: 1px solid var(--rt-border);
+	border-radius: var(--rt-radius);
+	overflow: hidden;
+	max-height: 320px;
+}
+
+.rt-diff-minimap {
+	flex-shrink: 0;
+	width: 8px;
+	display: flex;
+	flex-direction: column;
+	padding: 8px 4px;
+	gap: 1px;
+	border-right: 1px solid var(--rt-border);
+}
+
+.rt-diff-minimap-bar {
+	width: 100%;
+	height: 3px;
+	border-radius: 1px;
+	background: var(--rt-fg-dim);
+	opacity: 0.4;
+}
+
+.rt-diff-minimap-bar--add {
+	background: var(--rt-accent);
+}
+
+.rt-diff-minimap-bar--del {
+	background: var(--rt-danger);
+}
+
+.rt-diff-minimap-bar--meta {
+	background: var(--rt-warn);
+}
+
+.rt-diff-body {
+	flex: 1;
+	overflow: auto;
+	font-family: var(--rt-font-mono);
+	font-size: 13px;
+	line-height: 1.5;
+	padding: 8px 0;
+}
+
+.rt-diff-line {
+	display: flex;
+	gap: 12px;
+	padding: 1px 12px;
+	white-space: pre;
+}
+
+.rt-diff-line-number {
+	min-width: 32px;
+	color: var(--rt-fg-dim);
+	text-align: right;
+	opacity: 0.5;
+	user-select: none;
+}
+
+.rt-diff-line--add {
+	background: rgba(126, 231, 135, 0.08);
+	color: var(--rt-accent);
+}
+
+.rt-diff-line--del {
+	background: rgba(255, 107, 107, 0.08);
+	color: var(--rt-danger);
+}
+
+.rt-diff-line--meta {
+	color: var(--rt-warn);
+}
+
+.rt-diff-line--ctx {
+	color: var(--rt-fg-dim);
+}

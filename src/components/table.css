@@ -1,0 +1,23 @@
+.rt-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 14px;
+	border: 1px solid var(--rt-border);
+}
+
+.rt-table th,
+.rt-table td {
+	padding: 8px 12px;
+	border-bottom: 1px solid var(--rt-border);
+	text-align: left;
+}
+
+.rt-table th {
+	background: var(--rt-accent);
+	color: var(--rt-bg);
+	font-weight: bold;
+}
+
+.rt-table tr:hover td {
+	background: rgba(126, 231, 135, 0.08);
+}

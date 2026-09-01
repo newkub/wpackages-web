@@ -1,0 +1,38 @@
+.rt-btn {
+	background: var(--rt-accent);
+	color: var(--rt-bg);
+	border: none;
+	padding: 8px 16px;
+	font-family: var(--rt-font-mono);
+	font-size: 14px;
+	cursor: pointer;
+	border-radius: var(--rt-radius);
+	transition:
+		filter 0.15s ease,
+		transform 0.05s ease;
+}
+
+.rt-btn:hover {
+	filter: brightness(1.15);
+}
+
+.rt-btn:active {
+	transform: translateY(1px);
+}
+
+.rt-nav-link--active {
+	color: var(--rt-accent);
+	border-left-color: var(--rt-accent);
+	background: rgba(126, 231, 135, 0.1);
+}
+
+.rt-section {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	background: var(--rt-panel);
+	border: 1px solid var(--rt-border);
+	border-radius: var(--rt-radius);
+	padding: 20px;
+	box-shadow: var(--rt-shadow);
+}

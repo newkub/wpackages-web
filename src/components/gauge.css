@@ -1,0 +1,36 @@
+.rt-gauge {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.rt-gauge-track {
+	height: 12px;
+	background: var(--rt-bg-alt);
+	border: 1px solid var(--rt-border);
+	overflow: hidden;
+}
+
+.rt-gauge-fill {
+	height: 100%;
+	background: var(--rt-accent);
+	transition: width 0.2s ease;
+}
+
+.rt-gauge-fill--success {
+	background: var(--rt-accent);
+}
+.rt-gauge-fill--warning {
+	background: var(--rt-warn);
+}
+.rt-gauge-fill--danger {
+	background: var(--rt-danger);
+}
+.rt-gauge-fill--primary {
+	background: var(--rt-accent-2);
+}
+
+.rt-gauge-label {
+	font-size: 13px;
+	color: var(--rt-fg-dim);
+}

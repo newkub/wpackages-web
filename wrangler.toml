@@ -1,0 +1,9 @@
+name = "wpackages"
+main = "src/worker.js"
+compatibility_date = "2026-08-30"
+
+# Serve static files from the Vite build output using Workers Assets
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"

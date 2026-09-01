@@ -1,0 +1,30 @@
+.rt-empty-state {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 32px 24px;
+	text-align: center;
+	color: var(--rt-fg-dim);
+	border: 1px dashed var(--rt-border);
+	border-radius: var(--rt-radius);
+	background: var(--rt-bg-alt);
+}
+
+.rt-empty-state__icon {
+	font-size: 24px;
+	margin-bottom: 12px;
+	color: var(--rt-fg-dim);
+}
+
+.rt-empty-state__title {
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--rt-fg);
+	margin-bottom: 4px;
+}
+
+.rt-empty-state__message {
+	font-size: 13px;
+	line-height: 1.5;
+}

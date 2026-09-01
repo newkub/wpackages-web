@@ -1,0 +1,34 @@
+.rt-status-line {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px;
+	padding: 6px 16px;
+	background: var(--rt-bg);
+	border: 1px solid var(--rt-border);
+	font-size: 13px;
+	color: var(--rt-fg);
+}
+
+.rt-status-line-left,
+.rt-status-line-right {
+	flex: 1;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.rt-status-line-left {
+	text-align: left;
+}
+
+.rt-status-line-right {
+	text-align: right;
+}
+
+.rt-status-line-center {
+	flex: 0 1 auto;
+	color: var(--rt-fg-dim);
+	white-space: nowrap;
+}

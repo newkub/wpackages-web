@@ -1,0 +1,51 @@
+.rt-peek-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.7);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+}
+
+.rt-peek {
+	background: var(--rt-panel);
+	border: 1px solid var(--rt-border);
+	width: 720px;
+	max-width: 90vw;
+	max-height: 80vh;
+	display: flex;
+	flex-direction: column;
+	border-radius: var(--rt-radius);
+	box-shadow: var(--rt-shadow);
+}
+
+.rt-peek-title {
+	padding: 14px 16px;
+	font-weight: bold;
+	color: var(--rt-accent);
+	border-bottom: 1px solid var(--rt-border);
+}
+
+.rt-peek-body {
+	flex: 1;
+	overflow: auto;
+	padding: 16px;
+	min-height: 0;
+}
+
+.rt-peek-pre {
+	margin: 0;
+	font-family: var(--rt-font-mono);
+	font-size: 13px;
+	line-height: 1.6;
+	color: var(--rt-fg);
+	white-space: pre;
+}
+
+.rt-peek-actions {
+	display: flex;
+	justify-content: flex-end;
+	padding: 12px 16px;
+	border-top: 1px solid var(--rt-border);
+}

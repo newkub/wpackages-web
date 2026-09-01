@@ -1,0 +1,24 @@
+.rt-input-label {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.rt-input-title {
+	font-size: 13px;
+	color: var(--rt-fg-dim);
+}
+
+.rt-input {
+	background: var(--rt-bg);
+	border: 1px solid var(--rt-border);
+	color: var(--rt-fg);
+	padding: 8px 12px;
+	font-family: var(--rt-font-mono);
+	font-size: 14px;
+}
+
+.rt-input:focus {
+	border-color: var(--rt-accent);
+	outline: none;
+}

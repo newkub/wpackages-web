@@ -1,0 +1,33 @@
+.rt-toast-container {
+	position: fixed;
+	top: 16px;
+	right: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	z-index: 200;
+}
+
+.rt-toast {
+	padding: 10px 16px;
+	border: 1px solid var(--rt-border);
+	color: var(--rt-bg);
+	font-weight: bold;
+	min-width: 220px;
+}
+
+.rt-toast--info {
+	background: var(--rt-accent-2);
+}
+
+.rt-toast--success {
+	background: var(--rt-accent);
+}
+
+.rt-toast--warning {
+	background: var(--rt-warn);
+}
+
+.rt-toast--error {
+	background: var(--rt-danger);
+}

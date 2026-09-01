@@ -1,0 +1,17 @@
+.rt-terminal-view {
+	background: var(--rt-bg);
+	border: 1px solid var(--rt-border);
+	border-radius: var(--rt-radius);
+	padding: 12px 16px;
+	font-family: var(--rt-font-mono);
+	font-size: 13px;
+	line-height: 1.5;
+	color: var(--rt-fg);
+	overflow: auto;
+	max-height: 320px;
+	white-space: pre;
+}
+
+.rt-terminal-view-line {
+	min-height: 1.5em;
+}

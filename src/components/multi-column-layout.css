@@ -1,0 +1,22 @@
+.rt-multi-column-layout {
+	display: flex;
+	gap: 8px;
+	align-items: stretch;
+	width: 100%;
+	border: 1px solid var(--rt-border);
+	border-radius: var(--rt-radius);
+	overflow: hidden;
+	background: var(--rt-panel);
+}
+
+.rt-multi-column {
+	flex-shrink: 0;
+	padding: 12px;
+	border-right: 1px solid var(--rt-border);
+	min-height: 80px;
+	overflow: auto;
+}
+
+.rt-multi-column:last-child {
+	border-right: none;
+}

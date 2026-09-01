@@ -1,0 +1,48 @@
+.rt-fuzzy-finder {
+	background: var(--rt-panel);
+	border: 1px solid var(--rt-border);
+	border-radius: var(--rt-radius);
+	overflow: hidden;
+}
+
+.rt-fuzzy-finder-input {
+	width: 100%;
+	background: var(--rt-bg);
+	border: none;
+	border-bottom: 1px solid var(--rt-border);
+	color: var(--rt-fg);
+	padding: 10px 14px;
+	font-family: var(--rt-font-mono);
+	font-size: 14px;
+}
+
+.rt-fuzzy-finder-input:focus {
+	outline: none;
+	border-color: var(--rt-accent);
+}
+
+.rt-fuzzy-finder-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	max-height: 240px;
+	overflow-y: auto;
+}
+
+.rt-fuzzy-finder-item {
+	padding: 8px 14px;
+	cursor: pointer;
+	color: var(--rt-fg-dim);
+	font-size: 13px;
+}
+
+.rt-fuzzy-finder-item:hover {
+	background: rgba(86, 182, 255, 0.12);
+	color: var(--rt-fg);
+}
+
+.rt-fuzzy-finder-empty {
+	padding: 12px 14px;
+	color: var(--rt-fg-dim);
+	font-size: 13px;
+}

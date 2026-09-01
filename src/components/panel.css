@@ -1,0 +1,33 @@
+.rt-panel {
+	border: 1px solid var(--rt-border);
+	background: var(--rt-panel);
+	border-radius: 4px;
+	position: relative;
+	margin-top: 10px;
+}
+
+.rt-panel--accent {
+	border-color: var(--rt-accent);
+}
+
+.rt-panel--warn {
+	border-color: var(--rt-warn);
+}
+
+.rt-panel--danger {
+	border-color: var(--rt-danger);
+}
+
+.rt-panel-title {
+	position: absolute;
+	top: -10px;
+	left: 12px;
+	background: var(--rt-bg);
+	padding: 0 6px;
+	font-size: 12px;
+	color: var(--rt-fg-dim);
+}
+
+.rt-panel-body {
+	padding: 16px;
+}

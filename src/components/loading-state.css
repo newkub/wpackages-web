@@ -1,0 +1,12 @@
+.rt-loading-state {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 16px;
+	color: var(--rt-fg-dim);
+	font-size: 13px;
+}
+
+.rt-loading-state__message {
+	color: var(--rt-fg-dim);
+}

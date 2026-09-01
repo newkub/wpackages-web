@@ -1,0 +1,37 @@
+.rt-tag {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 2px 8px;
+	background: var(--rt-bg-alt);
+	color: var(--rt-fg-dim);
+	border: 1px solid var(--rt-border);
+	border-radius: var(--rt-radius);
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+.rt-tag__remove {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 14px;
+	height: 14px;
+	padding: 0;
+	margin-left: 2px;
+	background: transparent;
+	border: none;
+	color: var(--rt-fg-dim);
+	cursor: pointer;
+	font-size: 14px;
+	line-height: 1;
+	border-radius: 3px;
+	transition:
+		color 0.15s ease,
+		background 0.15s ease;
+}
+
+.rt-tag__remove:hover {
+	color: var(--rt-fg);
+	background: rgba(255, 107, 107, 0.15);
+}

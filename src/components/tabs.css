@@ -1,0 +1,27 @@
+.rt-tabs {
+	display: flex;
+	border-bottom: 1px solid var(--rt-border);
+	gap: 4px;
+}
+
+.rt-tab {
+	background: transparent;
+	border: none;
+	color: var(--rt-fg-dim);
+	padding: 8px 16px;
+	cursor: pointer;
+	font-family: var(--rt-font-mono);
+	font-size: 13px;
+	border-bottom: 2px solid transparent;
+}
+
+.rt-tab:hover {
+	color: var(--rt-fg);
+}
+
+.rt-tab--active {
+	color: var(--rt-bg);
+	background: var(--rt-accent);
+	border-bottom-color: var(--rt-accent);
+	font-weight: bold;
+}

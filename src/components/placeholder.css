@@ -1,0 +1,45 @@
+.rt-placeholder {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	padding: 24px;
+	border: 1px dashed var(--rt-border);
+	border-radius: var(--rt-radius);
+	color: var(--rt-fg-dim);
+	font-size: 14px;
+}
+
+.rt-placeholder-icon {
+	font-size: 20px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	border: 1px solid var(--rt-border);
+}
+
+.rt-placeholder--loading .rt-placeholder-icon {
+	color: var(--rt-accent);
+	animation: rt-spin 1s linear infinite;
+}
+
+.rt-placeholder--empty .rt-placeholder-icon {
+	color: var(--rt-fg-dim);
+}
+
+.rt-placeholder--error .rt-placeholder-icon {
+	color: var(--rt-danger);
+}
+
+.rt-placeholder--error .rt-placeholder-message {
+	color: var(--rt-danger);
+}
+
+@keyframes rt-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}

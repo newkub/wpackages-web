@@ -1,0 +1,54 @@
+.rt-markdown-block {
+	font-size: 14px;
+	line-height: 1.6;
+	color: var(--rt-fg);
+}
+
+.rt-markdown-block-heading {
+	color: var(--rt-accent);
+	margin: 16px 0 8px;
+}
+
+.rt-markdown-block-heading--1 {
+	font-size: 20px;
+}
+.rt-markdown-block-heading--2 {
+	font-size: 18px;
+}
+.rt-markdown-block-heading--3 {
+	font-size: 16px;
+}
+.rt-markdown-block-heading--4 {
+	font-size: 15px;
+}
+.rt-markdown-block-heading--5 {
+	font-size: 14px;
+}
+.rt-markdown-block-heading--6 {
+	font-size: 13px;
+}
+
+.rt-markdown-block-paragraph {
+	margin: 0 0 12px;
+	color: var(--rt-fg-dim);
+}
+
+.rt-markdown-block-list {
+	margin: 0 0 12px;
+	padding-left: 20px;
+	color: var(--rt-fg-dim);
+}
+
+.rt-markdown-block-li {
+	margin: 4px 0;
+}
+
+.rt-markdown-block strong {
+	color: var(--rt-fg);
+	font-weight: 700;
+}
+
+.rt-markdown-block em {
+	color: var(--rt-warn);
+	font-style: italic;
+}

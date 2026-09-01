@@ -1,0 +1,43 @@
+.rt-popup-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.7);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+}
+
+.rt-popup {
+	background: var(--rt-panel);
+	border: 1px solid var(--rt-border);
+	padding: 16px;
+	min-width: 300px;
+}
+
+.rt-popup--small {
+	width: 320px;
+}
+
+.rt-popup--medium {
+	width: 480px;
+}
+
+.rt-popup--large {
+	width: 720px;
+}
+
+.rt-popup-title {
+	font-weight: bold;
+	margin-bottom: 12px;
+	color: var(--rt-accent);
+}
+
+.rt-popup-body {
+	margin-bottom: 16px;
+}
+
+.rt-popup-actions {
+	display: flex;
+	justify-content: flex-end;
+}

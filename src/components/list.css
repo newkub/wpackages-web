@@ -1,0 +1,32 @@
+.rt-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 1px solid var(--rt-border);
+	border-radius: 4px;
+	background: var(--rt-panel);
+	max-height: 260px;
+	overflow-y: auto;
+}
+
+.rt-list-item {
+	padding: 6px 12px;
+	font-size: 13px;
+	cursor: pointer;
+	color: var(--rt-fg-dim);
+}
+
+.rt-list-item:hover {
+	background: rgba(126, 231, 135, 0.06);
+}
+
+.rt-list-item--active {
+	background: rgba(126, 231, 135, 0.12);
+	color: var(--rt-fg);
+}
+
+.rt-list-marker {
+	display: inline-block;
+	width: 14px;
+	color: var(--rt-accent);
+}

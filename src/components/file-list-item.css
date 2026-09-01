@@ -1,0 +1,64 @@
+.rt-file-list-item {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 6px 12px;
+	color: var(--rt-fg-dim);
+	font-size: 13px;
+	cursor: pointer;
+	border-bottom: 1px solid var(--rt-border);
+}
+
+.rt-file-list-item:last-child {
+	border-bottom: none;
+}
+
+.rt-file-list-item:hover,
+.rt-file-list-item--selected {
+	background: rgba(126, 231, 135, 0.08);
+	color: var(--rt-fg);
+}
+
+.rt-file-list-icon {
+	color: var(--rt-accent-2);
+	width: 14px;
+	text-align: center;
+}
+
+.rt-file-list-name {
+	flex: 1;
+	min-width: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.rt-file-list-size,
+.rt-file-list-modified,
+.rt-file-list-perms {
+	color: var(--rt-fg-dim);
+	min-width: 70px;
+	text-align: right;
+}
+
+.rt-file-list-git {
+	min-width: 28px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.rt-git-modified {
+	color: var(--rt-warn);
+}
+.rt-git-added {
+	color: var(--rt-accent);
+}
+.rt-git-deleted {
+	color: var(--rt-danger);
+}
+.rt-git-untracked {
+	color: var(--rt-fg-dim);
+}
+.rt-git-updated {
+	color: var(--rt-accent-2);
+}

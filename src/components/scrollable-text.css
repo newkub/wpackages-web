@@ -1,0 +1,14 @@
+.rt-scrollable-text {
+	overflow: auto;
+	border: 1px solid var(--rt-border);
+	border-radius: var(--rt-radius);
+	background: var(--rt-panel);
+	padding: 12px 16px;
+}
+
+.rt-scrollable-text-paragraph {
+	margin: 0;
+	color: var(--rt-fg-dim);
+	font-size: 13px;
+	line-height: 1.6;
+}

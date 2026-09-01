@@ -1,0 +1,39 @@
+.rt-sidebar {
+	width: 260px;
+	flex-shrink: 0;
+	background: var(--rt-bg-alt);
+	border-right: 1px solid var(--rt-border);
+	padding: 16px;
+	overflow-y: auto;
+}
+
+.rt-sidebar-title {
+	font-size: 16px;
+	font-weight: bold;
+	color: var(--rt-accent);
+	margin-bottom: 16px;
+}
+
+.rt-sidebar-section {
+	margin-bottom: 16px;
+	border: 1px solid var(--rt-border);
+	border-radius: var(--rt-radius);
+	background: var(--rt-panel);
+	overflow: hidden;
+}
+
+.rt-sidebar-section-title {
+	padding: 8px 12px;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: var(--rt-fg-dim);
+	background: var(--rt-bg);
+	border-bottom: 1px solid var(--rt-border);
+}
+
+.rt-sidebar-section-body {
+	padding: 12px;
+	font-size: 13px;
+	color: var(--rt-fg-dim);
+}

@@ -1,0 +1,254 @@
+:root {
+	--rt-bg: #080a0f;
+	--rt-bg-alt: #0d1016;
+	--rt-panel: #0f1319;
+	--rt-border: #232a36;
+	--rt-border-focus: #7ee787;
+	--rt-fg: #e3e8ef;
+	--rt-fg-dim: #8b95a7;
+	--rt-accent: #7ee787;
+	--rt-accent-2: #56b6ff;
+	--rt-warn: #f2c14e;
+	--rt-danger: #ff6b6b;
+	--rt-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+	--rt-radius: 8px;
+	--rt-font-mono:
+		"Cascadia Code", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+		Consolas, monospace;
+	color-scheme: dark;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	background: var(--rt-bg);
+	color: var(--rt-fg);
+	font-family: var(--rt-font-mono);
+	line-height: 1.5;
+}
+
+#root {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+a {
+	color: var(--rt-accent-2);
+}
+
+button {
+	font-family: inherit;
+}
+
+:focus-visible {
+	outline: 2px solid var(--rt-border-focus);
+	outline-offset: 2px;
+}
+
+.rt-app {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.rt-layout {
+	display: flex;
+	flex: 1;
+	min-height: 0;
+}
+
+.rt-nav {
+	width: 220px;
+	flex-shrink: 0;
+	border-right: 1px solid var(--rt-border);
+	background: var(--rt-bg-alt);
+	padding: 12px 0;
+	overflow-y: auto;
+	transition: transform 0.2s ease;
+}
+
+.rt-nav-header {
+	padding: 8px 16px 4px;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: var(--rt-fg-dim);
+	font-weight: 600;
+}
+
+.rt-nav-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.rt-nav-link {
+	display: block;
+	padding: 8px 16px;
+	color: var(--rt-fg-dim);
+	text-decoration: none;
+	border-left: 2px solid transparent;
+	font-size: 13px;
+	transition:
+		color 0.15s ease,
+		background 0.15s ease,
+		border-color 0.15s ease;
+}
+
+.rt-nav-link:hover {
+	color: var(--rt-fg);
+	background: rgba(126, 231, 135, 0.06);
+}
+
+.rt-nav-link--active,
+.rt-nav-link[aria-current="page"] {
+	color: var(--rt-accent);
+	border-left-color: var(--rt-accent);
+	background: rgba(126, 231, 135, 0.1);
+}
+
+.rt-main {
+	flex: 1;
+	overflow-y: auto;
+	padding: 24px;
+}
+
+.rt-page-title {
+	margin: 0 0 4px 0;
+	font-size: 20px;
+	color: var(--rt-accent);
+	font-weight: 600;
+}
+
+.rt-page-desc {
+	margin: 0 0 20px 0;
+	color: var(--rt-fg-dim);
+	font-size: 13px;
+}
+
+.rt-section {
+	margin-bottom: 28px;
+}
+
+.rt-nav-toggle {
+	display: none;
+	position: fixed;
+	top: 12px;
+	right: 12px;
+	z-index: 50;
+	width: 40px;
+	height: 40px;
+	background: var(--rt-panel);
+	border: 1px solid var(--rt-border);
+	border-radius: var(--rt-radius);
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	cursor: pointer;
+	padding: 0;
+}
+
+.rt-nav-toggle span {
+	display: block;
+	width: 20px;
+	height: 2px;
+	background: var(--rt-fg);
+	border-radius: 2px;
+	transition:
+		transform 0.2s ease,
+		opacity 0.2s ease;
+}
+
+.rt-nav-toggle--open span:nth-child(1) {
+	transform: translateY(7px) rotate(45deg);
+}
+
+.rt-nav-toggle--open span:nth-child(2) {
+	opacity: 0;
+}
+
+.rt-nav-toggle--open span:nth-child(3) {
+	transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+	.rt-nav-toggle {
+		display: flex;
+	}
+
+	.rt-nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 220px;
+		z-index: 40;
+		transform: translateX(-100%);
+		border-right: none;
+		border-radius: 0 var(--rt-radius) var(--rt-radius) 0;
+		box-shadow: var(--rt-shadow);
+	}
+
+	.rt-layout--nav-open .rt-nav {
+		transform: translateX(0);
+	}
+
+	.rt-main {
+		padding: 16px;
+		padding-top: 64px;
+	}
+
+	.rt-page-title {
+		font-size: 18px;
+	}
+}
+
+.rt-nav-group {
+	margin-bottom: 4px;
+}
+
+.rt-nav-group__title {
+	padding: 10px 16px 4px;
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: var(--rt-fg-dim);
+	font-weight: 700;
+}
+
+.rt-nav-group__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.rt-overlay {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.rt-overlay {
+		display: block;
+		position: fixed;
+		inset: 0;
+		z-index: 30;
+		background: rgba(0, 0, 0, 0.5);
+		animation: rt-overlay-fade 0.2s ease;
+	}
+
+	@keyframes rt-overlay-fade {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+}

@@ -1,0 +1,63 @@
+.rt-autocomplete {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.rt-autocomplete-input {
+	width: 100%;
+	background: var(--rt-bg);
+	border: 1px solid var(--rt-border);
+	color: var(--rt-fg);
+	padding: 8px 12px;
+	font-family: var(--rt-font-mono);
+	font-size: 14px;
+	border-radius: var(--rt-radius);
+}
+
+.rt-autocomplete-input:focus {
+	outline: none;
+	border-color: var(--rt-accent);
+}
+
+.rt-autocomplete-list {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	z-index: 50;
+	list-style: none;
+	margin: 4px 0 0 0;
+	padding: 0;
+	background: var(--rt-panel);
+	border: 1px solid var(--rt-border);
+	border-radius: var(--rt-radius);
+	max-height: 220px;
+	overflow-y: auto;
+	box-shadow: var(--rt-shadow);
+}
+
+.rt-autocomplete-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 8px 12px;
+	cursor: pointer;
+	color: var(--rt-fg-dim);
+	font-size: 13px;
+}
+
+.rt-autocomplete-item:hover {
+	background: rgba(126, 231, 135, 0.12);
+	color: var(--rt-fg);
+}
+
+.rt-autocomplete-kind {
+	font-size: 10px;
+	text-transform: uppercase;
+	color: var(--rt-accent-2);
+	border: 1px solid var(--rt-border);
+	padding: 1px 4px;
+	border-radius: 4px;
+}
