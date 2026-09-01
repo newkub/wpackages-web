@@ -77,6 +77,7 @@ interface Span {
 function parseAnsi(line: string): Span[] {
 	const spans: Span[] = [];
 	let style: StyleMap = {};
+	// biome-ignore lint/complexity/useRegexLiterals: ANSI escape regex uses string to avoid control char warning
 	const regex = new RegExp("\\x1b\\[([\\d;]*)m", "g");
 	let last = 0;
 	let m: RegExpExecArray | null = regex.exec(line);

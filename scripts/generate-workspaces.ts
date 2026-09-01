@@ -1,5 +1,5 @@
 import { mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
-import { basename, dirname, extname, join, relative, sep } from "node:path";
+import { basename, dirname, extname, join, relative } from "node:path";
 
 const repoRoot = "../../..";
 const scanRoots = ["apps", "packages"];
@@ -208,7 +208,7 @@ function extractCargoSection(
 }
 
 function extractCargoMembers(text: string): string[] | undefined {
-	const regex = new RegExp(`^\\s*members\\s*=\\s*\\[([^\\]]*)\\]`, "m");
+	const regex = /^\s*members\s*=\s*\[([^\]]*)\]/m;
 	const match = text.match(regex);
 	if (!match) return undefined;
 	return match[1]
@@ -221,11 +221,11 @@ function extractCargoFeatures(
 	text: string,
 ): Record<string, string[]> | undefined {
 	const result: Record<string, string[]> = {};
-	const regex = new RegExp(`\\[features\\]([^\\[]*)`);
+	const regex = /\[features\]([^[]*)/;
 	const match = text.match(regex);
 	if (!match) return undefined;
 	const lines = match[1].split("\n");
-	const featureRegex = new RegExp(`^([a-zA-Z0-9_-]+)\\s*=\\s*\\[([^\\]]*)\\]`);
+	const featureRegex = /^([a-zA-Z0-9_-]+)\s*=\s*\[([^\]]*)\]/;
 	for (const line of lines) {
 		const trimmed = line.trim();
 		if (!trimmed || trimmed.startsWith("#")) continue;
@@ -266,10 +266,7 @@ async function detectCargoBinaries(
 	} catch {
 		// ignore
 	}
-	const inlineBinRegex = new RegExp(
-		`\\[\\[bin\\]\\][\\s\\S]*?^\\s*name\\s*=\\s*"([^"]+)"`,
-		"gm",
-	);
+	const inlineBinRegex = /\[\[bin\]\][\s\S]*?^\s*name\s*=\s*"([^"]+)"/gm;
 	for (const m of text.matchAll(inlineBinRegex)) {
 		if (!bins.includes(m[1])) bins.push(m[1]);
 	}
@@ -436,7 +433,6 @@ async function generateDoc(
 	workspace: Workspace,
 	workspaceDir: string,
 	info?: CargoInfo | NpmInfo,
-	allWorkspaces?: Workspace[],
 ): Promise<string> {
 	const lines: string[] = [];
 	lines.push(`# ${workspace.label}`);
@@ -813,7 +809,7 @@ async function main() {
 						type: "rust",
 					};
 					workspaces.push(workspace);
-					const doc = await generateDoc(workspace, dir, info, workspaces);
+					const doc = await generateDoc(workspace, dir, info);
 					await writeFile(join(docsDir, `${workspace.id}.md`), doc, "utf-8");
 				}
 			} else if (name === "package.json") {
@@ -830,7 +826,7 @@ async function main() {
 						type: "npm",
 					};
 					workspaces.push(workspace);
-					const doc = await generateDoc(workspace, dir, info, workspaces);
+					const doc = await generateDoc(workspace, dir, info);
 					await writeFile(join(docsDir, `${workspace.id}.md`), doc, "utf-8");
 				}
 			}
@@ -849,12 +845,7 @@ async function main() {
 		type: "rust",
 	};
 	workspaces.unshift(rootCargoWorkspace);
-	const rootCargoDoc = await generateDoc(
-		rootCargoWorkspace,
-		".",
-		rootInfo,
-		workspaces,
-	);
+	const rootCargoDoc = await generateDoc(rootCargoWorkspace, ".", rootInfo);
 	await writeFile(
 		join(docsDir, `${rootCargoWorkspace.id}.md`),
 		rootCargoDoc,
@@ -877,7 +868,6 @@ async function main() {
 		rootPkgWorkspace,
 		".",
 		rootPkg ?? undefined,
-		workspaces,
 	);
 	await writeFile(
 		join(docsDir, `${rootPkgWorkspace.id}.md`),
