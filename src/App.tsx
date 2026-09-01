@@ -9,7 +9,6 @@ import {
 import { EmptyState } from "./components/EmptyState";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
-import { LoadingState } from "./components/LoadingState";
 import { SearchInput } from "./components/SearchInput";
 import { StatusBar } from "./components/StatusBar";
 import { sectionMeta } from "./section-meta";
@@ -24,7 +23,6 @@ export function App() {
 	const [active, setActive] = createSignal(defaultId);
 	const [search, setSearch] = createSignal("");
 	const [navOpen, setNavOpen] = createSignal(false);
-	const [isReady, setIsReady] = createSignal(false);
 
 	onMount(() => {
 		const resolveId = (raw: string): string => {
@@ -37,7 +35,6 @@ export function App() {
 
 		const id = resolveId(window.location.pathname);
 		setActive(id);
-		setIsReady(true);
 
 		const onPopState = () => {
 			const newId = resolveId(window.location.pathname);
@@ -187,22 +184,17 @@ export function App() {
 					</Show>
 				</nav>
 				<main class="rt-main" onClick={() => setNavOpen(false)}>
-					<Show
-						when={isReady()}
-						fallback={<LoadingState message="Loading workspaces..." />}
-					>
-						{activeSection() ? (
-							activeSection()?.render()
-						) : (
-							<div class="rt-component-demo rt-component-demo--flat">
-								<EmptyState
-									icon="📁"
-									title="Select a workspace"
-									message="Choose a workspace from the sidebar to view details."
-								/>
-							</div>
-						)}
-					</Show>
+					{activeSection() ? (
+						activeSection()?.render()
+					) : (
+						<div class="rt-component-demo rt-component-demo--flat">
+							<EmptyState
+								icon="📁"
+								title="Select a workspace"
+								message="Choose a workspace from the sidebar to view details."
+							/>
+						</div>
+					)}
 				</main>
 			</div>
 			{navOpen() && (

@@ -44,3 +44,127 @@
 	overflow-wrap: break-word;
 	word-break: break-all;
 }
+
+.rt-workspace__docs {
+	margin-top: 8px;
+	padding-top: 16px;
+	border-top: 1px solid var(--rt-border);
+}
+
+.rt-markdown {
+	font-size: 14px;
+	line-height: 1.7;
+	color: var(--rt-fg);
+}
+
+.rt-markdown h1,
+.rt-markdown h2,
+.rt-markdown h3,
+.rt-markdown h4,
+.rt-markdown h5,
+.rt-markdown h6 {
+	margin-top: 24px;
+	margin-bottom: 12px;
+	color: var(--rt-fg);
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.rt-markdown h1 {
+	font-size: 20px;
+	color: var(--rt-accent);
+	border-bottom: 1px solid var(--rt-border);
+	padding-bottom: 8px;
+}
+
+.rt-markdown h2 {
+	font-size: 16px;
+	color: var(--rt-accent-2);
+}
+
+.rt-markdown h3 {
+	font-size: 14px;
+	color: var(--rt-fg);
+}
+
+.rt-markdown p {
+	margin: 0 0 12px;
+}
+
+.rt-markdown a {
+	color: var(--rt-accent-2);
+	text-decoration: none;
+}
+
+.rt-markdown a:hover {
+	text-decoration: underline;
+}
+
+.rt-markdown ul,
+.rt-markdown ol {
+	margin: 0 0 16px;
+	padding-left: 24px;
+}
+
+.rt-markdown li {
+	margin-bottom: 4px;
+}
+
+.rt-markdown code {
+	background: var(--rt-bg);
+	padding: 2px 6px;
+	border-radius: 4px;
+	font-family: var(--rt-font-mono);
+	font-size: 0.92em;
+	color: var(--rt-fg-dim);
+}
+
+.rt-markdown pre {
+	background: var(--rt-bg);
+	border: 1px solid var(--rt-border);
+	border-radius: var(--rt-radius);
+	padding: 12px 16px;
+	overflow-x: auto;
+	margin: 0 0 16px;
+}
+
+.rt-markdown pre code {
+	background: transparent;
+	padding: 0;
+	font-size: 13px;
+	color: var(--rt-fg);
+}
+
+.rt-markdown blockquote {
+	margin: 0 0 16px;
+	padding: 8px 16px;
+	border-left: 3px solid var(--rt-accent);
+	background: var(--rt-bg-alt);
+	border-radius: 0 var(--rt-radius) var(--rt-radius) 0;
+	color: var(--rt-fg-dim);
+}
+
+.rt-markdown table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 16px;
+	font-size: 13px;
+}
+
+.rt-markdown th,
+.rt-markdown td {
+	border: 1px solid var(--rt-border);
+	padding: 8px 12px;
+	text-align: left;
+}
+
+.rt-markdown th {
+	background: var(--rt-bg-alt);
+	font-weight: 600;
+}
+
+.rt-markdown img {
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--rt-radius);
+}

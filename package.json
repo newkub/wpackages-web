@@ -12,6 +12,7 @@
 	},
 	"dependencies": {
 		"@cloudflare/kv-asset-handler": "^0.3.4",
+		"marked": "^18.0.11",
 		"solid-js": "^1.9.15"
 	},
 	"devDependencies": {

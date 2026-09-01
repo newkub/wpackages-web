@@ -1,9 +1,11 @@
-import { readdir, readFile, stat, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
 import { basename, dirname, join, relative } from "node:path";
 
 const repoRoot = "../../..";
 const scanRoots = ["apps", "packages"];
 const outFile = "src/workspaces.ts";
+const docsDir = "docs";
+const docsOutFile = "src/docs.ts";
 
 interface Workspace {
 	id: string;
@@ -80,8 +82,58 @@ function makeId(rel: string, type: "rust" | "npm"): string {
 	return `${clean}-${type}`;
 }
 
+function safeIdentifier(id: string): string {
+	return id.replace(/[^a-zA-Z0-9_$]/g, "_");
+}
+
+async function tryReadReadme(path: string): Promise<string | undefined> {
+	try {
+		return await readFile(path, "utf-8");
+	} catch {
+		return undefined;
+	}
+}
+
+async function generateDoc(
+	workspace: Workspace,
+	workspaceDir: string,
+): Promise<string> {
+	const lines: string[] = [];
+	lines.push(`# ${workspace.label}`);
+	lines.push("");
+	lines.push(`- **Type:** ${workspace.type.toUpperCase()}`);
+	lines.push(`- **Category:** ${workspace.category}`);
+	lines.push(`- **Path:** \`${workspace.path}\``);
+	lines.push("");
+
+	const readme = await tryReadReadme(join(repoRoot, workspaceDir, "README.md"));
+
+	lines.push("## Description");
+	lines.push("");
+	lines.push(workspace.description || "No description available.");
+	lines.push("");
+
+	if (readme?.trim()) {
+		lines.push("## README");
+		lines.push("");
+		lines.push(readme.trim());
+		lines.push("");
+	} else {
+		lines.push(
+			"> This workspace does not have a `README.md` yet. Consider adding one to improve documentation.",
+		);
+		lines.push("");
+	}
+
+	return lines.join("\n");
+}
+
 async function main() {
 	const workspaces: Workspace[] = [];
+
+	// Ensure docs dir exists
+	await mkdir(docsDir, { recursive: true });
+
 	for (const scanRoot of scanRoots) {
 		const rootDir = join(repoRoot, scanRoot);
 		try {
@@ -97,7 +149,7 @@ async function main() {
 				const text = await readFile(file, "utf-8");
 				const info = cargoNameAndDesc(text);
 				if (info.name) {
-					workspaces.push({
+					const workspace: Workspace = {
 						id: makeId(rel, "rust"),
 						label: info.name,
 						category: inferCategory(dir),
@@ -105,14 +157,17 @@ async function main() {
 							info.description || `${info.name} Rust workspace at ${rel}`,
 						path: rel,
 						type: "rust",
-					});
+					};
+					workspaces.push(workspace);
+					const doc = await generateDoc(workspace, dir);
+					await writeFile(join(docsDir, `${workspace.id}.md`), doc, "utf-8");
 				}
 			} else if (name === "package.json") {
 				const text = await readFile(file, "utf-8");
 				try {
 					const json = JSON.parse(text);
 					if (json.name) {
-						workspaces.push({
+						const workspace: Workspace = {
 							id: makeId(rel, "npm"),
 							label: json.name,
 							category: inferCategory(dir),
@@ -120,7 +175,10 @@ async function main() {
 								json.description || `${json.name} npm workspace at ${rel}`,
 							path: rel,
 							type: "npm",
-						});
+						};
+						workspaces.push(workspace);
+						const doc = await generateDoc(workspace, dir);
+						await writeFile(join(docsDir, `${workspace.id}.md`), doc, "utf-8");
 					}
 				} catch {
 					// ignore malformed
@@ -129,10 +187,10 @@ async function main() {
 		}
 	}
 
-	// Add root manifests
+	// Root Cargo
 	const rootCargo = await readFile(join(repoRoot, "Cargo.toml"), "utf-8");
 	const rootInfo = cargoNameAndDesc(rootCargo);
-	workspaces.unshift({
+	const rootCargoWorkspace: Workspace = {
 		id: "root-cargo",
 		label: rootInfo.name || "rust-packages",
 		category: "Root",
@@ -140,19 +198,34 @@ async function main() {
 			rootInfo.description || "Cargo workspace root for rust-packages",
 		path: "Cargo.toml",
 		type: "rust",
-	});
+	};
+	workspaces.unshift(rootCargoWorkspace);
+	const rootCargoDoc = await generateDoc(rootCargoWorkspace, ".");
+	await writeFile(
+		join(docsDir, `${rootCargoWorkspace.id}.md`),
+		rootCargoDoc,
+		"utf-8",
+	);
 
+	// Root package.json
 	const rootPkg = JSON.parse(
 		await readFile(join(repoRoot, "package.json"), "utf-8"),
 	);
-	workspaces.unshift({
+	const rootPkgWorkspace: Workspace = {
 		id: "root-package-json",
 		label: rootPkg.name,
 		category: "Root",
 		description: rootPkg.description || "npm workspace root for rust-packages",
 		path: "package.json",
 		type: "npm",
-	});
+	};
+	workspaces.unshift(rootPkgWorkspace);
+	const rootPkgDoc = await generateDoc(rootPkgWorkspace, ".");
+	await writeFile(
+		join(docsDir, `${rootPkgWorkspace.id}.md`),
+		rootPkgDoc,
+		"utf-8",
+	);
 
 	const output = `export interface Workspace {
   id: string;
@@ -167,9 +240,30 @@ export const workspaces: Workspace[] = ${JSON.stringify(workspaces, null, 2)};
 
 export const categories = Array.from(new Set(workspaces.map((w) => w.category))).sort();
 `;
-
 	await writeFile(outFile, output, "utf-8");
 	console.log(`Generated ${outFile} with ${workspaces.length} workspaces`);
+
+	// Generate docs.ts
+	const imports: string[] = [];
+	const mapEntries: string[] = [];
+
+	for (let i = 0; i < workspaces.length; i++) {
+		const w = workspaces[i];
+		const ident = `doc_${i}`;
+		imports.push(
+			`import ${safeIdentifier(ident)} from "../docs/${w.id}.md?raw";`,
+		);
+		mapEntries.push(`  "${w.id}": ${safeIdentifier(ident)},`);
+	}
+
+	const docsOutput = `${imports.join("\n")}
+
+export const docs: Record<string, string> = {
+${mapEntries.join("\n")}
+};
+`;
+	await writeFile(docsOutFile, docsOutput, "utf-8");
+	console.log(`Generated ${docsOutFile} with ${workspaces.length} docs`);
 }
 
 main().catch((err) => {

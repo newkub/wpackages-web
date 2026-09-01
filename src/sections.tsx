@@ -1,9 +1,11 @@
+import { marked } from "marked";
 import type { JSX } from "solid-js";
 import { createSignal } from "solid-js";
 import { Badge } from "./components/Badge";
 import { ComponentDemo } from "./components/ComponentDemo";
 import { Tag } from "./components/Tag";
 import { Text } from "./components/Text";
+import { docs } from "./docs";
 import { workspaces } from "./workspaces";
 import "./sections.css";
 
@@ -41,6 +43,17 @@ function CopyButton(props: { text: string }) {
 	);
 }
 
+function MarkdownDoc(props: { source: string }) {
+	const html = () => marked.parse(props.source) as string;
+	return (
+		<div
+			class="rt-markdown"
+			// eslint-disable-next-line solid/no-innerhtml
+			innerHTML={html()}
+		/>
+	);
+}
+
 function WorkspaceView(props: {
 	id: string;
 	label: string;
@@ -49,6 +62,8 @@ function WorkspaceView(props: {
 	path: string;
 	type: "rust" | "npm";
 }) {
+	const source = () => docs[props.id] ?? "";
+
 	return (
 		<div class="rt-workspace">
 			<div class="rt-workspace__meta">
@@ -68,6 +83,9 @@ function WorkspaceView(props: {
 					<code class="rt-workspace__path-code">{props.path}</code>
 					<CopyButton text={props.path} />
 				</div>
+			</div>
+			<div class="rt-workspace__docs">
+				<MarkdownDoc source={source()} />
 			</div>
 		</div>
 	);
