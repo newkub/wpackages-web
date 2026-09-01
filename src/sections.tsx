@@ -1,13 +1,6 @@
 import { marked } from "marked";
 import type { JSX } from "solid-js";
-import {
-	createEffect,
-	createMemo,
-	createSignal,
-	For,
-	onCleanup,
-	Show,
-} from "solid-js";
+import { createSignal } from "solid-js";
 import { Badge } from "./components/Badge";
 import { ComponentDemo } from "./components/ComponentDemo";
 import { Tag } from "./components/Tag";
@@ -22,14 +15,6 @@ export interface Section {
 	render: () => JSX.Element;
 	category?: string;
 	description?: string;
-}
-
-function slugify(text: string): string {
-	return text
-		.toLowerCase()
-		.trim()
-		.replace(/[^\w\s-]/g, "")
-		.replace(/\s+/g, "-");
 }
 
 function CopyButton(props: { text: string }) {
@@ -58,118 +43,9 @@ function CopyButton(props: { text: string }) {
 	);
 }
 
-function enhanceMarkdown(el: HTMLDivElement) {
-	// Assign stable IDs to headings for TOC and deep links
-	const headings = Array.from(el.querySelectorAll("h1, h2, h3, h4, h5, h6"));
-	for (const h of headings) {
-		const text = h.textContent ?? "";
-		const id = slugify(text);
-		if (id && !h.id) h.id = id;
-	}
-
-	// Add copy buttons to code blocks
-	const pres = Array.from(el.querySelectorAll("pre"));
-	for (const pre of pres) {
-		if (pre.querySelector(".rt-code-copy")) continue;
-		const code = pre.querySelector("code");
-		const text = code?.textContent ?? pre.textContent ?? "";
-		const btn = document.createElement("button");
-		btn.className = "rt-code-copy";
-		btn.type = "button";
-		btn.textContent = "Copy";
-		btn.setAttribute("aria-label", "Copy code");
-		btn.addEventListener("click", async () => {
-			try {
-				await navigator.clipboard.writeText(text);
-				btn.textContent = "Copied!";
-				setTimeout(() => (btn.textContent = "Copy"), 1500);
-			} catch {
-				// ignore
-			}
-		});
-		pre.appendChild(btn);
-	}
-}
-
 function MarkdownDoc(props: { source: string }) {
-	let el: HTMLDivElement | undefined;
-
-	const renderMarkdown = () => {
-		if (!el) return;
-		try {
-			const str = marked.parse(props.source) as string;
-			el.innerHTML = str;
-			queueMicrotask(() => enhanceMarkdown(el as HTMLDivElement));
-		} catch (err) {
-			el.innerHTML = `<p class="rt-markdown__error">Failed to render docs: ${err}</p>`;
-		}
-	};
-
-	createEffect(renderMarkdown);
-	onCleanup(() => {
-		el = undefined;
-	});
-
-	return (
-		<div
-			ref={(node) => {
-				el = node;
-				renderMarkdown();
-			}}
-			class="rt-markdown"
-		/>
-	);
-}
-
-function TableOfContents(props: { source: string }) {
-	const headings = createMemo(() => {
-		const list: { depth: number; text: string; id: string }[] = [];
-		const regex = /^(#{1,6})\s+(.+)$/gm;
-		let match = regex.exec(props.source);
-		while (match !== null) {
-			const depth = (match[1] ?? "").length;
-			const raw = (match[2] ?? "").trim().replace(/`/g, "");
-			const id = slugify(raw);
-			if (id) list.push({ depth, text: raw, id });
-			match = regex.exec(props.source);
-		}
-		return list;
-	});
-
-	const scrollTo = (id: string) => {
-		const target = document.getElementById(id);
-		target?.scrollIntoView({ behavior: "smooth", block: "start" });
-		history.pushState(null, "", `#${id}`);
-	};
-
-	return (
-		<nav class="rt-toc" aria-label="On this page">
-			<div class="rt-toc__title">On this page</div>
-			<Show
-				when={headings().length > 0}
-				fallback={<div class="rt-toc__empty">No headings</div>}
-			>
-				<ul class="rt-toc__list">
-					<For each={headings()}>
-						{(h) => (
-							<li
-								class="rt-toc__item"
-								classList={{ [`rt-toc__item--depth-${h.depth}`]: true }}
-							>
-								<button
-									type="button"
-									class="rt-toc__link"
-									onClick={() => scrollTo(h.id)}
-								>
-									{h.text}
-								</button>
-							</li>
-						)}
-					</For>
-				</ul>
-			</Show>
-		</nav>
-	);
+	const html = () => marked.parse(props.source) as string;
+	return <div class="rt-markdown" innerHTML={html()} />;
 }
 
 function WorkspaceView(props: {
@@ -202,13 +78,8 @@ function WorkspaceView(props: {
 					<CopyButton text={props.path} />
 				</div>
 			</div>
-			<div class="rt-workspace__body">
-				<div class="rt-workspace__docs">
-					<MarkdownDoc source={source()} />
-				</div>
-				<aside class="rt-workspace__toc">
-					<TableOfContents source={source()} />
-				</aside>
+			<div class="rt-workspace__docs">
+				<MarkdownDoc source={source()} />
 			</div>
 		</div>
 	);
